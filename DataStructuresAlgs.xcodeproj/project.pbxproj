@@ -19,6 +19,7 @@
 		9AF47A1E2429622000345C01 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A1D2429622000345C01 /* Stack.swift */; };
 		9AF47A202429622800345C01 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A1F2429622800345C01 /* Queue.swift */; };
 		9AF47A22242BDA7600345C01 /* MinHeap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A21242BDA7600345C01 /* MinHeap.swift */; };
+		9AF47A24242D278B00345C01 /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A23242D278B00345C01 /* HashTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		9AF47A1D2429622000345C01 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		9AF47A1F2429622800345C01 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		9AF47A21242BDA7600345C01 /* MinHeap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinHeap.swift; sourceTree = "<group>"; };
+		9AF47A23242D278B00345C01 /* HashTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				9AF47A1D2429622000345C01 /* Stack.swift */,
 				9AF47A1F2429622800345C01 /* Queue.swift */,
 				9AF47A21242BDA7600345C01 /* MinHeap.swift */,
+				9AF47A23242D278B00345C01 /* HashTable.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			files = (
 				9AF47A22242BDA7600345C01 /* MinHeap.swift in Sources */,
 				9AF47A072429354E00345C01 /* ViewController.swift in Sources */,
+				9AF47A24242D278B00345C01 /* HashTable.swift in Sources */,
 				9AF47A192429357100345C01 /* Trie.swift in Sources */,
 				9AF47A1E2429622000345C01 /* Stack.swift in Sources */,
 				9AF47A202429622800345C01 /* Queue.swift in Sources */,

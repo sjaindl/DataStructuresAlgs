@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         Stack<Int>().test()
         Queue<Int>().test()
         MinHeap<Int>().test()
+        HashTable.test()
     }
 
 
