@@ -24,13 +24,10 @@ class HashTable {
         
         for char in Array(val) {
             index += 1
-            let asciiValue = UnicodeScalar(char.asciiValue!)
-            let charhash = Int(asciiValue.value) * index
-            hash = hash + charhash
+            hash += Int(char.asciiValue!) * index
         }
         
         hash %= table.count
-        
         
         return Int(hash)
     }

@@ -28,6 +28,10 @@ class Stack<T> {
         return node.val
     }
     
+    func isEmpty() -> Bool {
+        return size == 0
+    }
+    
     func test() {
         debugPrint("Stack")
         let stack = Stack<Int>()

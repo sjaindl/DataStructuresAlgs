@@ -21,6 +21,8 @@ class ViewController: UIViewController {
         Queue<Int>().test()
         MinHeap<Int>().test()
         HashTable.test()
+        GraphSearch.testBFS()
+        GraphSearch.testDFS()
     }
 
 

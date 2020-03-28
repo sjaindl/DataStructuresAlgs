@@ -20,6 +20,8 @@
 		9AF47A202429622800345C01 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A1F2429622800345C01 /* Queue.swift */; };
 		9AF47A22242BDA7600345C01 /* MinHeap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A21242BDA7600345C01 /* MinHeap.swift */; };
 		9AF47A24242D278B00345C01 /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A23242D278B00345C01 /* HashTable.swift */; };
+		9AF47A26242EB54C00345C01 /* UndirectedGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A25242EB54C00345C01 /* UndirectedGraph.swift */; };
+		9AF47A29242EB68500345C01 /* GraphSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A28242EB68500345C01 /* GraphSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		9AF47A1F2429622800345C01 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		9AF47A21242BDA7600345C01 /* MinHeap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinHeap.swift; sourceTree = "<group>"; };
 		9AF47A23242D278B00345C01 /* HashTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
+		9AF47A25242EB54C00345C01 /* UndirectedGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndirectedGraph.swift; sourceTree = "<group>"; };
+		9AF47A28242EB68500345C01 /* GraphSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 		9AF47A012429354E00345C01 /* DataStructuresAlgs */ = {
 			isa = PBXGroup;
 			children = (
+				9AF47A27242EB67500345C01 /* Algorithms */,
 				9AF47A1C2429357900345C01 /* DataStructures */,
 				9AF47A022429354E00345C01 /* AppDelegate.swift */,
 				9AF47A042429354E00345C01 /* SceneDelegate.swift */,
@@ -92,8 +97,17 @@
 				9AF47A1F2429622800345C01 /* Queue.swift */,
 				9AF47A21242BDA7600345C01 /* MinHeap.swift */,
 				9AF47A23242D278B00345C01 /* HashTable.swift */,
+				9AF47A25242EB54C00345C01 /* UndirectedGraph.swift */,
 			);
 			path = DataStructures;
+			sourceTree = "<group>";
+		};
+		9AF47A27242EB67500345C01 /* Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				9AF47A28242EB68500345C01 /* GraphSearch.swift */,
+			);
+			path = Algorithms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AF47A29242EB68500345C01 /* GraphSearch.swift in Sources */,
 				9AF47A22242BDA7600345C01 /* MinHeap.swift in Sources */,
 				9AF47A072429354E00345C01 /* ViewController.swift in Sources */,
 				9AF47A24242D278B00345C01 /* HashTable.swift in Sources */,
@@ -174,6 +189,7 @@
 				9AF47A1E2429622000345C01 /* Stack.swift in Sources */,
 				9AF47A202429622800345C01 /* Queue.swift in Sources */,
 				9AF47A1A2429357100345C01 /* LinkedList.swift in Sources */,
+				9AF47A26242EB54C00345C01 /* UndirectedGraph.swift in Sources */,
 				9AF47A032429354E00345C01 /* AppDelegate.swift in Sources */,
 				9AF47A052429354E00345C01 /* SceneDelegate.swift in Sources */,
 				9AF47A1B2429357100345C01 /* RedBlackTree.swift in Sources */,

@@ -51,7 +51,11 @@ class Queue<T> {
         return item!.val
     }
     
-    func rebuildArray() {
+    func isEmpty() -> Bool {
+        return size == 0
+    }
+    
+    private func rebuildArray() {
         var newArr = [Node<T>?] (repeating: nil, count: items.count)
         for n in frontPos ... nextPos {
             newArr.append(items[n])
@@ -61,7 +65,7 @@ class Queue<T> {
         frontPos = 0
     }
     
-    func resizeArray(newSize: Int) {
+    private func resizeArray(newSize: Int) {
         var newArr = [Node<T>?] (repeating: nil, count: newSize)
         for n in frontPos ... nextPos {
             newArr.append(items[n])

@@ -4,7 +4,7 @@ enum MyError: Error {
     case runtimeError(String)
 }
 
-open class Node<T> {
+class Node<T> {
     var next: Node?
     var val: T
     var prev: Node?
@@ -16,7 +16,7 @@ open class Node<T> {
     }
 }
 
-open class LinkedList<T> {
+class LinkedList<T> {
     var head: Node<T>?
     var tail: Node<T>?
     var count: Int = 0
