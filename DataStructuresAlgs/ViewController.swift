@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         HashTable.test()
         GraphSearch.testBFS()
         GraphSearch.testDFS()
+        MergeSort<Int>.test()
     }
 
 
