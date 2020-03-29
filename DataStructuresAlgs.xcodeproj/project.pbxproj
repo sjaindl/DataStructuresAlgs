@@ -23,6 +23,7 @@
 		9AF47A26242EB54C00345C01 /* UndirectedGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A25242EB54C00345C01 /* UndirectedGraph.swift */; };
 		9AF47A29242EB68500345C01 /* GraphSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A28242EB68500345C01 /* GraphSearch.swift */; };
 		9AF47A2B242FEACD00345C01 /* MergeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A2A242FEACD00345C01 /* MergeSort.swift */; };
+		9AF47A2D243101F800345C01 /* QuickSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A2C243101F800345C01 /* QuickSort.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		9AF47A25242EB54C00345C01 /* UndirectedGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndirectedGraph.swift; sourceTree = "<group>"; };
 		9AF47A28242EB68500345C01 /* GraphSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphSearch.swift; sourceTree = "<group>"; };
 		9AF47A2A242FEACD00345C01 /* MergeSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeSort.swift; sourceTree = "<group>"; };
+		9AF47A2C243101F800345C01 /* QuickSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSort.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				9AF47A28242EB68500345C01 /* GraphSearch.swift */,
 				9AF47A2A242FEACD00345C01 /* MergeSort.swift */,
+				9AF47A2C243101F800345C01 /* QuickSort.swift */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				9AF47A1E2429622000345C01 /* Stack.swift in Sources */,
 				9AF47A202429622800345C01 /* Queue.swift in Sources */,
 				9AF47A1A2429357100345C01 /* LinkedList.swift in Sources */,
+				9AF47A2D243101F800345C01 /* QuickSort.swift in Sources */,
 				9AF47A26242EB54C00345C01 /* UndirectedGraph.swift in Sources */,
 				9AF47A032429354E00345C01 /* AppDelegate.swift in Sources */,
 				9AF47A052429354E00345C01 /* SceneDelegate.swift in Sources */,

@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         GraphSearch.testBFS()
         GraphSearch.testDFS()
         MergeSort<Int>.test()
+        QuickSort<Int>.test()
     }
 
 
