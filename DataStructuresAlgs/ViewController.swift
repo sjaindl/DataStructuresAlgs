@@ -25,6 +25,8 @@ class ViewController: UIViewController {
         GraphSearch.testDFS()
         MergeSort<Int>.test()
         QuickSort<Int>.test()
+        TopologicalSort.test()
+        Djikstra.test()
     }
 
 

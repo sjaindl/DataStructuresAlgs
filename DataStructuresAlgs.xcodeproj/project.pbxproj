@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A7ADB192434EF10004D4665 /* TopologicalSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7ADB182434EF10004D4665 /* TopologicalSort.swift */; };
+		9A7ADB1B2434EF2C004D4665 /* DirectedGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7ADB1A2434EF2C004D4665 /* DirectedGraph.swift */; };
+		9A7ADB1D2434F18D004D4665 /* Vertice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7ADB1C2434F18D004D4665 /* Vertice.swift */; };
+		9A7ADB1F243687DD004D4665 /* Djikstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7ADB1E243687DD004D4665 /* Djikstra.swift */; };
+		9A7ADB2224368815004D4665 /* WeightedDirectedGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7ADB2124368815004D4665 /* WeightedDirectedGraph.swift */; };
+		9A7ADB2424368A73004D4665 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7ADB2324368A73004D4665 /* Edge.swift */; };
 		9AF47A032429354E00345C01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A022429354E00345C01 /* AppDelegate.swift */; };
 		9AF47A052429354E00345C01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A042429354E00345C01 /* SceneDelegate.swift */; };
 		9AF47A072429354E00345C01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A062429354E00345C01 /* ViewController.swift */; };
@@ -27,6 +33,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A7ADB182434EF10004D4665 /* TopologicalSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopologicalSort.swift; sourceTree = "<group>"; };
+		9A7ADB1A2434EF2C004D4665 /* DirectedGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectedGraph.swift; sourceTree = "<group>"; };
+		9A7ADB1C2434F18D004D4665 /* Vertice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vertice.swift; sourceTree = "<group>"; };
+		9A7ADB1E243687DD004D4665 /* Djikstra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Djikstra.swift; sourceTree = "<group>"; };
+		9A7ADB2124368815004D4665 /* WeightedDirectedGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightedDirectedGraph.swift; sourceTree = "<group>"; };
+		9A7ADB2324368A73004D4665 /* Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
 		9AF479FF2429354E00345C01 /* DataStructuresAlgs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataStructuresAlgs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF47A022429354E00345C01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AF47A042429354E00345C01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +114,10 @@
 				9AF47A21242BDA7600345C01 /* MinHeap.swift */,
 				9AF47A23242D278B00345C01 /* HashTable.swift */,
 				9AF47A25242EB54C00345C01 /* UndirectedGraph.swift */,
+				9A7ADB1A2434EF2C004D4665 /* DirectedGraph.swift */,
+				9A7ADB1C2434F18D004D4665 /* Vertice.swift */,
+				9A7ADB2124368815004D4665 /* WeightedDirectedGraph.swift */,
+				9A7ADB2324368A73004D4665 /* Edge.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -112,6 +128,8 @@
 				9AF47A28242EB68500345C01 /* GraphSearch.swift */,
 				9AF47A2A242FEACD00345C01 /* MergeSort.swift */,
 				9AF47A2C243101F800345C01 /* QuickSort.swift */,
+				9A7ADB182434EF10004D4665 /* TopologicalSort.swift */,
+				9A7ADB1E243687DD004D4665 /* Djikstra.swift */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -189,7 +207,12 @@
 			files = (
 				9AF47A2B242FEACD00345C01 /* MergeSort.swift in Sources */,
 				9AF47A29242EB68500345C01 /* GraphSearch.swift in Sources */,
+				9A7ADB192434EF10004D4665 /* TopologicalSort.swift in Sources */,
 				9AF47A22242BDA7600345C01 /* MinHeap.swift in Sources */,
+				9A7ADB1D2434F18D004D4665 /* Vertice.swift in Sources */,
+				9A7ADB1F243687DD004D4665 /* Djikstra.swift in Sources */,
+				9A7ADB1B2434EF2C004D4665 /* DirectedGraph.swift in Sources */,
+				9A7ADB2224368815004D4665 /* WeightedDirectedGraph.swift in Sources */,
 				9AF47A072429354E00345C01 /* ViewController.swift in Sources */,
 				9AF47A24242D278B00345C01 /* HashTable.swift in Sources */,
 				9AF47A192429357100345C01 /* Trie.swift in Sources */,
@@ -200,6 +223,7 @@
 				9AF47A26242EB54C00345C01 /* UndirectedGraph.swift in Sources */,
 				9AF47A032429354E00345C01 /* AppDelegate.swift in Sources */,
 				9AF47A052429354E00345C01 /* SceneDelegate.swift in Sources */,
+				9A7ADB2424368A73004D4665 /* Edge.swift in Sources */,
 				9AF47A1B2429357100345C01 /* RedBlackTree.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,7 @@
 import Foundation
 
 class MinHeap<T: Comparable> {
-    var array = [T] ()
+    private var array = [T] ()
     
     func insert(val: T) {
         array.append(val)
@@ -31,6 +31,18 @@ class MinHeap<T: Comparable> {
         sink(key: 0)
         
         return min
+    }
+    
+    func update(_ item: T) {
+        for (index, curItem) in array.enumerated() {
+            if curItem == item {
+                array[index] = item
+            }
+        }
+    }
+    
+    func isEmpty() -> Bool {
+        return array.count == 0
     }
     
     private func swim(key: Int) {
@@ -70,7 +82,6 @@ class MinHeap<T: Comparable> {
         heap.insert(val: 2)
         heap.insert(val: 10)
         heap.insert(val: -5)
-        
         
         try! debugPrint(heap.peekMin())
         try! debugPrint(heap.extractMin())
