@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         TopologicalSort.test()
         Djikstra.test()
         RabinKarpSubstringSearch.test()
+        AVLTree<Int>.test()
     }
 
 

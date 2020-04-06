@@ -22,6 +22,7 @@ class RabinKarpSubstringSearch {
         if sub.count < 1 {
             return nil
         }
+        
         if sub.count > str.count {
             return nil
         }
