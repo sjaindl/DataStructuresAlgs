@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         Djikstra.test()
         RabinKarpSubstringSearch.test()
         AVLTree<Int>.test()
+        MapReduceWordCount.testMapReduceMock()
     }
 
 

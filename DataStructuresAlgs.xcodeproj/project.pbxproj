@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		192D15C1243E017F00CF0733 /* MapReduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D15C0243E017F00CF0733 /* MapReduce.swift */; };
 		9A2EA483243A50DD0070964F /* AVLTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2EA482243A50DD0070964F /* AVLTree.swift */; };
 		9A7ADB192434EF10004D4665 /* TopologicalSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7ADB182434EF10004D4665 /* TopologicalSort.swift */; };
 		9A7ADB1B2434EF2C004D4665 /* DirectedGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7ADB1A2434EF2C004D4665 /* DirectedGraph.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		192D15C0243E017F00CF0733 /* MapReduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapReduce.swift; sourceTree = "<group>"; };
 		9A2EA482243A50DD0070964F /* AVLTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLTree.swift; sourceTree = "<group>"; };
 		9A7ADB182434EF10004D4665 /* TopologicalSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopologicalSort.swift; sourceTree = "<group>"; };
 		9A7ADB1A2434EF2C004D4665 /* DirectedGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectedGraph.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				9A7ADB182434EF10004D4665 /* TopologicalSort.swift */,
 				9A7ADB1E243687DD004D4665 /* Djikstra.swift */,
 				9A7ADB2524391781004D4665 /* RabinKarp.swift */,
+				192D15C0243E017F00CF0733 /* MapReduce.swift */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				9AF47A1A2429357100345C01 /* LinkedList.swift in Sources */,
 				9AF47A2D243101F800345C01 /* QuickSort.swift in Sources */,
 				9AF47A26242EB54C00345C01 /* UndirectedGraph.swift in Sources */,
+				192D15C1243E017F00CF0733 /* MapReduce.swift in Sources */,
 				9AF47A032429354E00345C01 /* AppDelegate.swift in Sources */,
 				9AF47A052429354E00345C01 /* SceneDelegate.swift in Sources */,
 				9A7ADB2424368A73004D4665 /* Edge.swift in Sources */,
