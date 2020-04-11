@@ -30,6 +30,8 @@ class ViewController: UIViewController {
         RabinKarpSubstringSearch.test()
         AVLTree<Int>.test()
         MapReduceWordCount.testMapReduceMock()
+        BellmanFord.test()
+        FloydWarshall.test()
     }
 
 

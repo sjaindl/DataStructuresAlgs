@@ -32,15 +32,15 @@ class Djikstra {
         while !pq.isEmpty(), let v = try? pq.extractMin() {
             let neighbours = g.neighbours(v: v)
             var neighbour = neighbours.head
-            while let n = neighbour, let curDistToV = distanceTo[v], let curDistToNeighbour = distanceTo[n.val.vertice] {
+            while let n = neighbour, let curDistToV = distanceTo[v], let curDistToNeighbour = distanceTo[n.val.to] {
                 let distInPath = curDistToV == Int.max ? Int.max : curDistToV + n.val.weight
                 if distInPath < curDistToNeighbour {
-                    distanceTo[n.val.vertice] = distInPath
-                    previous[n.val.vertice] = v
+                    distanceTo[n.val.to] = distInPath
+                    previous[n.val.to] = v
                     
-                    debugPrint("update node \(n.val.vertice.id) to dist \(distInPath) from node \(v.id)")
-                    n.val.vertice.distanceTo = distInPath
-                    pq.update(n.val.vertice)
+                    debugPrint("update node \(n.val.to.id) to dist \(distInPath) from node \(v.id)")
+                    n.val.to.distanceTo = distInPath
+                    pq.update(n.val.to)
                 }
                 
                 neighbour = neighbour?.next
@@ -63,7 +63,7 @@ class Djikstra {
         debugPrint("Djikstra")
         let djikstra = Djikstra(g: g)
         let distance = djikstra.djikstra(from: g.vertices[0], to: g.vertices[8])
-        debugPrint("distance: \(distance)")
+        debugPrint("distance: \(distance!)")
     }
     
     private static func setupTestGraph() -> WeightedDirectedGraph {

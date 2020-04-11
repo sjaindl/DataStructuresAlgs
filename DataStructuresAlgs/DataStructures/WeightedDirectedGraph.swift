@@ -21,11 +21,24 @@ class WeightedDirectedGraph {
     }
     
     func addEdge(v1: Vertice, v2: Vertice, weight: Int) {
-        let edge = Edge(vertice: v2, weight: weight)
+        let edge = Edge(from: v1, to: v2, weight: weight)
         adjList[v1.id].add(node: Node(val: edge))
     }
     
     func neighbours(v: Vertice) -> LinkedList<Edge> {
         return adjList[v.id]
+    }
+    
+    func edges() -> [Edge] {
+        var edges: [Edge] = []
+        for edgeList in adjList {
+            var current = edgeList.head
+            while let cur = current {
+                edges.append(cur.val)
+                current = cur.next
+            }
+        }
+        
+        return edges
     }
 }

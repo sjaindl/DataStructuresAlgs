@@ -9,11 +9,13 @@
 import Foundation
 
 class Edge {
-    let vertice: Vertice
+    let from: Vertice
+    let to: Vertice
     let weight: Int
     
-    init(vertice: Vertice, weight: Int) {
-        self.vertice = vertice
+    init(from: Vertice, to: Vertice, weight: Int) {
+        self.from = from
+        self.to = to
         self.weight = weight
     }
 }
