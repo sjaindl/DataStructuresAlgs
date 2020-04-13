@@ -32,6 +32,8 @@ class ViewController: UIViewController {
         MapReduceWordCount.testMapReduceMock()
         BellmanFord.test()
         FloydWarshall.test()
+        MinimumSpanningTreeKruskal.test()
+        MinimumSpanningTreePrim.test()
     }
 
 

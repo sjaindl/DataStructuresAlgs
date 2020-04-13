@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		192D15C1243E017F00CF0733 /* MapReduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D15C0243E017F00CF0733 /* MapReduce.swift */; };
 		9A2EA483243A50DD0070964F /* AVLTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2EA482243A50DD0070964F /* AVLTree.swift */; };
+		9A762C822443709A0068A5A5 /* UnionFind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A762C812443709A0068A5A5 /* UnionFind.swift */; };
+		9A762C8424438D680068A5A5 /* MinimumSpanningTreeKruskal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A762C8324438D680068A5A5 /* MinimumSpanningTreeKruskal.swift */; };
+		9A762C86244390750068A5A5 /* WeightedUndirectedGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A762C85244390750068A5A5 /* WeightedUndirectedGraph.swift */; };
+		9A762C8824447F940068A5A5 /* MinimumSpanningTreePrim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A762C8724447F940068A5A5 /* MinimumSpanningTreePrim.swift */; };
+		9A762C8C2444F20D0068A5A5 /* MinIndexPriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A762C8B2444F20D0068A5A5 /* MinIndexPriorityQueue.swift */; };
 		9A7ADB192434EF10004D4665 /* TopologicalSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7ADB182434EF10004D4665 /* TopologicalSort.swift */; };
 		9A7ADB1B2434EF2C004D4665 /* DirectedGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7ADB1A2434EF2C004D4665 /* DirectedGraph.swift */; };
 		9A7ADB1D2434F18D004D4665 /* Vertice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7ADB1C2434F18D004D4665 /* Vertice.swift */; };
@@ -41,6 +46,11 @@
 /* Begin PBXFileReference section */
 		192D15C0243E017F00CF0733 /* MapReduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapReduce.swift; sourceTree = "<group>"; };
 		9A2EA482243A50DD0070964F /* AVLTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLTree.swift; sourceTree = "<group>"; };
+		9A762C812443709A0068A5A5 /* UnionFind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionFind.swift; sourceTree = "<group>"; };
+		9A762C8324438D680068A5A5 /* MinimumSpanningTreeKruskal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimumSpanningTreeKruskal.swift; sourceTree = "<group>"; };
+		9A762C85244390750068A5A5 /* WeightedUndirectedGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightedUndirectedGraph.swift; sourceTree = "<group>"; };
+		9A762C8724447F940068A5A5 /* MinimumSpanningTreePrim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimumSpanningTreePrim.swift; sourceTree = "<group>"; };
+		9A762C8B2444F20D0068A5A5 /* MinIndexPriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinIndexPriorityQueue.swift; sourceTree = "<group>"; };
 		9A7ADB182434EF10004D4665 /* TopologicalSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopologicalSort.swift; sourceTree = "<group>"; };
 		9A7ADB1A2434EF2C004D4665 /* DirectedGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectedGraph.swift; sourceTree = "<group>"; };
 		9A7ADB1C2434F18D004D4665 /* Vertice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vertice.swift; sourceTree = "<group>"; };
@@ -50,6 +60,7 @@
 		9A7ADB2524391781004D4665 /* RabinKarp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabinKarp.swift; sourceTree = "<group>"; };
 		9AB2A7D1244257F200D68903 /* FloydWarshall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloydWarshall.swift; sourceTree = "<group>"; };
 		9AB2A7D3244258CB00D68903 /* WeightedDirectedGraphWithAjdMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightedDirectedGraphWithAjdMatrix.swift; sourceTree = "<group>"; };
+		9AB2A7D52442631400D68903 /* DataStructuresAlgs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DataStructuresAlgs.entitlements; sourceTree = "<group>"; };
 		9AF479FF2429354E00345C01 /* DataStructuresAlgs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataStructuresAlgs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF47A022429354E00345C01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AF47A042429354E00345C01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +113,7 @@
 		9AF47A012429354E00345C01 /* DataStructuresAlgs */ = {
 			isa = PBXGroup;
 			children = (
+				9AB2A7D52442631400D68903 /* DataStructuresAlgs.entitlements */,
 				9AF47A27242EB67500345C01 /* Algorithms */,
 				9AF47A1C2429357900345C01 /* DataStructures */,
 				9AF47A022429354E00345C01 /* AppDelegate.swift */,
@@ -132,6 +144,9 @@
 				9A7ADB2324368A73004D4665 /* Edge.swift */,
 				9A2EA482243A50DD0070964F /* AVLTree.swift */,
 				9AB2A7D3244258CB00D68903 /* WeightedDirectedGraphWithAjdMatrix.swift */,
+				9A762C812443709A0068A5A5 /* UnionFind.swift */,
+				9A762C85244390750068A5A5 /* WeightedUndirectedGraph.swift */,
+				9A762C8B2444F20D0068A5A5 /* MinIndexPriorityQueue.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -148,6 +163,8 @@
 				192D15C0243E017F00CF0733 /* MapReduce.swift */,
 				9AFC2FE7243FB69000AC2E73 /* BellmanFord.swift */,
 				9AB2A7D1244257F200D68903 /* FloydWarshall.swift */,
+				9A762C8324438D680068A5A5 /* MinimumSpanningTreeKruskal.swift */,
+				9A762C8724447F940068A5A5 /* MinimumSpanningTreePrim.swift */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -223,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A762C8824447F940068A5A5 /* MinimumSpanningTreePrim.swift in Sources */,
 				9A7ADB2624391781004D4665 /* RabinKarp.swift in Sources */,
 				9AF47A2B242FEACD00345C01 /* MergeSort.swift in Sources */,
 				9AFC2FE8243FB69000AC2E73 /* BellmanFord.swift in Sources */,
@@ -230,17 +248,21 @@
 				9A7ADB192434EF10004D4665 /* TopologicalSort.swift in Sources */,
 				9AF47A22242BDA7600345C01 /* MinHeap.swift in Sources */,
 				9A7ADB1D2434F18D004D4665 /* Vertice.swift in Sources */,
+				9A762C822443709A0068A5A5 /* UnionFind.swift in Sources */,
+				9A762C8424438D680068A5A5 /* MinimumSpanningTreeKruskal.swift in Sources */,
 				9A7ADB1F243687DD004D4665 /* Djikstra.swift in Sources */,
 				9A7ADB1B2434EF2C004D4665 /* DirectedGraph.swift in Sources */,
 				9A7ADB2224368815004D4665 /* WeightedDirectedGraph.swift in Sources */,
 				9AB2A7D4244258CB00D68903 /* WeightedDirectedGraphWithAjdMatrix.swift in Sources */,
 				9AF47A072429354E00345C01 /* ViewController.swift in Sources */,
+				9A762C8C2444F20D0068A5A5 /* MinIndexPriorityQueue.swift in Sources */,
 				9AF47A24242D278B00345C01 /* HashTable.swift in Sources */,
 				9AF47A192429357100345C01 /* Trie.swift in Sources */,
 				9AF47A1E2429622000345C01 /* Stack.swift in Sources */,
 				9A2EA483243A50DD0070964F /* AVLTree.swift in Sources */,
 				9AF47A202429622800345C01 /* Queue.swift in Sources */,
 				9AF47A1A2429357100345C01 /* LinkedList.swift in Sources */,
+				9A762C86244390750068A5A5 /* WeightedUndirectedGraph.swift in Sources */,
 				9AF47A2D243101F800345C01 /* QuickSort.swift in Sources */,
 				9AF47A26242EB54C00345C01 /* UndirectedGraph.swift in Sources */,
 				192D15C1243E017F00CF0733 /* MapReduce.swift in Sources */,
@@ -392,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DataStructuresAlgs/DataStructuresAlgs.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MAJ9QA679A;
 				INFOPLIST_FILE = DataStructuresAlgs/Info.plist;
@@ -401,6 +424,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jnd.DataStructuresAlgs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -410,6 +434,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DataStructuresAlgs/DataStructuresAlgs.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MAJ9QA679A;
 				INFOPLIST_FILE = DataStructuresAlgs/Info.plist;
@@ -419,6 +444,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jnd.DataStructuresAlgs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
