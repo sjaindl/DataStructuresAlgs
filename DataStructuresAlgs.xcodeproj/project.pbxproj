@@ -13,7 +13,6 @@
 		9A762C8424438D680068A5A5 /* MinimumSpanningTreeKruskal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A762C8324438D680068A5A5 /* MinimumSpanningTreeKruskal.swift */; };
 		9A762C86244390750068A5A5 /* WeightedUndirectedGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A762C85244390750068A5A5 /* WeightedUndirectedGraph.swift */; };
 		9A762C8824447F940068A5A5 /* MinimumSpanningTreePrim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A762C8724447F940068A5A5 /* MinimumSpanningTreePrim.swift */; };
-		9A762C8C2444F20D0068A5A5 /* MinIndexPriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A762C8B2444F20D0068A5A5 /* MinIndexPriorityQueue.swift */; };
 		9A7ADB192434EF10004D4665 /* TopologicalSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7ADB182434EF10004D4665 /* TopologicalSort.swift */; };
 		9A7ADB1B2434EF2C004D4665 /* DirectedGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7ADB1A2434EF2C004D4665 /* DirectedGraph.swift */; };
 		9A7ADB1D2434F18D004D4665 /* Vertice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7ADB1C2434F18D004D4665 /* Vertice.swift */; };
@@ -50,7 +49,6 @@
 		9A762C8324438D680068A5A5 /* MinimumSpanningTreeKruskal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimumSpanningTreeKruskal.swift; sourceTree = "<group>"; };
 		9A762C85244390750068A5A5 /* WeightedUndirectedGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightedUndirectedGraph.swift; sourceTree = "<group>"; };
 		9A762C8724447F940068A5A5 /* MinimumSpanningTreePrim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimumSpanningTreePrim.swift; sourceTree = "<group>"; };
-		9A762C8B2444F20D0068A5A5 /* MinIndexPriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinIndexPriorityQueue.swift; sourceTree = "<group>"; };
 		9A7ADB182434EF10004D4665 /* TopologicalSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopologicalSort.swift; sourceTree = "<group>"; };
 		9A7ADB1A2434EF2C004D4665 /* DirectedGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectedGraph.swift; sourceTree = "<group>"; };
 		9A7ADB1C2434F18D004D4665 /* Vertice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vertice.swift; sourceTree = "<group>"; };
@@ -146,7 +144,6 @@
 				9AB2A7D3244258CB00D68903 /* WeightedDirectedGraphWithAjdMatrix.swift */,
 				9A762C812443709A0068A5A5 /* UnionFind.swift */,
 				9A762C85244390750068A5A5 /* WeightedUndirectedGraph.swift */,
-				9A762C8B2444F20D0068A5A5 /* MinIndexPriorityQueue.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -255,7 +252,6 @@
 				9A7ADB2224368815004D4665 /* WeightedDirectedGraph.swift in Sources */,
 				9AB2A7D4244258CB00D68903 /* WeightedDirectedGraphWithAjdMatrix.swift in Sources */,
 				9AF47A072429354E00345C01 /* ViewController.swift in Sources */,
-				9A762C8C2444F20D0068A5A5 /* MinIndexPriorityQueue.swift in Sources */,
 				9AF47A24242D278B00345C01 /* HashTable.swift in Sources */,
 				9AF47A192429357100345C01 /* Trie.swift in Sources */,
 				9AF47A1E2429622000345C01 /* Stack.swift in Sources */,

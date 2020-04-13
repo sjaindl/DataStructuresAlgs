@@ -37,6 +37,14 @@ class MinHeap<T: Comparable> {
         for (index, curItem) in array.enumerated() {
             if curItem == item {
                 array[index] = item
+                
+                if item < curItem {
+                    sink(key: index)
+                } else {
+                    swim(key: index)   
+                }
+                
+                return
             }
         }
     }
