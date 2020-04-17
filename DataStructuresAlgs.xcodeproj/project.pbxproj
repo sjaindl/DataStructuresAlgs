@@ -39,6 +39,7 @@
 		9AF47A29242EB68500345C01 /* GraphSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A28242EB68500345C01 /* GraphSearch.swift */; };
 		9AF47A2B242FEACD00345C01 /* MergeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A2A242FEACD00345C01 /* MergeSort.swift */; };
 		9AF47A2D243101F800345C01 /* QuickSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A2C243101F800345C01 /* QuickSort.swift */; };
+		9AFBAC3524479E17005E59BB /* IndexedMinPriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFBAC3424479E17005E59BB /* IndexedMinPriorityQueue.swift */; };
 		9AFC2FE8243FB69000AC2E73 /* BellmanFord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFC2FE7243FB69000AC2E73 /* BellmanFord.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		9AF47A28242EB68500345C01 /* GraphSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphSearch.swift; sourceTree = "<group>"; };
 		9AF47A2A242FEACD00345C01 /* MergeSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeSort.swift; sourceTree = "<group>"; };
 		9AF47A2C243101F800345C01 /* QuickSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSort.swift; sourceTree = "<group>"; };
+		9AFBAC3424479E17005E59BB /* IndexedMinPriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedMinPriorityQueue.swift; sourceTree = "<group>"; };
 		9AFC2FE7243FB69000AC2E73 /* BellmanFord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BellmanFord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +146,7 @@
 				9AB2A7D3244258CB00D68903 /* WeightedDirectedGraphWithAjdMatrix.swift */,
 				9A762C812443709A0068A5A5 /* UnionFind.swift */,
 				9A762C85244390750068A5A5 /* WeightedUndirectedGraph.swift */,
+				9AFBAC3424479E17005E59BB /* IndexedMinPriorityQueue.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				9AF47A1E2429622000345C01 /* Stack.swift in Sources */,
 				9A2EA483243A50DD0070964F /* AVLTree.swift in Sources */,
 				9AF47A202429622800345C01 /* Queue.swift in Sources */,
+				9AFBAC3524479E17005E59BB /* IndexedMinPriorityQueue.swift in Sources */,
 				9AF47A1A2429357100345C01 /* LinkedList.swift in Sources */,
 				9A762C86244390750068A5A5 /* WeightedUndirectedGraph.swift in Sources */,
 				9AF47A2D243101F800345C01 /* QuickSort.swift in Sources */,

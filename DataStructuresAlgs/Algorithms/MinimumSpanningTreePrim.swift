@@ -19,16 +19,16 @@ class MinimumSpanningTreePrim {
     func minimumSpanningTree() -> [Edge] {
         var mstEdges: [Edge] = []
         var mstVertices: Set<Vertice> = Set()
-        let outsideVertices: MinHeap<Vertice> = MinHeap()
+        let outsideVertices: IndexedMinPriorityQueue<Vertice> = IndexedMinPriorityQueue(maxElements: graph.vertices.count)
         
         for vertice in graph.vertices { // O(V)
             let weight = vertice.id == 0 ? 0 : Int.max
             vertice.weight = weight
-            outsideVertices.insert(val: vertice)
+            try! outsideVertices.insert(index: vertice.id, key: vertice)
         }
         
         while mstVertices.count < graph.vertices.count { // O(V)
-            let minVertice = try! outsideVertices.extractMin() //O(log V)
+            let minVertice = try! outsideVertices.extractMin()! //O(log V)
             mstVertices.insert(minVertice)
             
             if let edge = minVertice.minIngoingEdge {
@@ -45,8 +45,8 @@ class MinimumSpanningTreePrim {
                     if otherVertice.weight > edge.weight {
                         otherVertice.weight = edge.weight
                         otherVertice.minIngoingEdge = edge
-                        outsideVertices.update(otherVertice) //O(V) with MinHeap. Could be O(log V) with IndexPQ.
-                        debugPrint("update edge \(minVertice.id) -> \(otherVertice.id): \(otherVertice.weight)")
+                        try! outsideVertices.changeKey(index: otherVertice.id, key: otherVertice) //O(log V) with IndexPQ.
+                        //debugPrint("update edge \(minVertice.id) -> \(otherVertice.id): \(otherVertice.weight)")
                     }
                 }
                 
