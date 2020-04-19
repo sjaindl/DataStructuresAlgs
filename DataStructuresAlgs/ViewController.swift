@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         IndexedMinPriorityQueue<Int>.test()
         MinimumSpanningTreeKruskal.test()
         MinimumSpanningTreePrim.test()
+        BTree<Int>.test()
     }
 
 
