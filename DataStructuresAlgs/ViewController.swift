@@ -36,6 +36,7 @@ class ViewController: UIViewController {
         MinimumSpanningTreeKruskal.test()
         MinimumSpanningTreePrim.test()
         BTree<Int>.test()
+        IntervalTree<Int>.test()
     }
 
 

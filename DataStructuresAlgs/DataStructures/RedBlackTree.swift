@@ -157,6 +157,5 @@ open class RedBlackTree {
 
         debugPrint(tree.root?.left?.left?.value as Any)
         debugPrint(tree.root?.left?.left?.color as Any)
-
     }
 }

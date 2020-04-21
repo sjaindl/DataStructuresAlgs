@@ -228,6 +228,7 @@ class BTree<T: Comparable> {
     }
     
     static func test() {
+        //https://www.geeksforgeeks.org/insert-operation-in-b-tree/
         debugPrint("BTree")
         
         let degree: Int = 3

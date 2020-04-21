@@ -23,6 +23,7 @@
 		9AB2A7D2244257F200D68903 /* FloydWarshall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB2A7D1244257F200D68903 /* FloydWarshall.swift */; };
 		9AB2A7D4244258CB00D68903 /* WeightedDirectedGraphWithAjdMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB2A7D3244258CB00D68903 /* WeightedDirectedGraphWithAjdMatrix.swift */; };
 		9AE491D4244B7F0D00E111EA /* BTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE491D3244B7F0D00E111EA /* BTree.swift */; };
+		9AE49214244CC06000E111EA /* IntervalTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE49213244CC06000E111EA /* IntervalTree.swift */; };
 		9AF47A032429354E00345C01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A022429354E00345C01 /* AppDelegate.swift */; };
 		9AF47A052429354E00345C01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A042429354E00345C01 /* SceneDelegate.swift */; };
 		9AF47A072429354E00345C01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A062429354E00345C01 /* ViewController.swift */; };
@@ -62,6 +63,7 @@
 		9AB2A7D3244258CB00D68903 /* WeightedDirectedGraphWithAjdMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightedDirectedGraphWithAjdMatrix.swift; sourceTree = "<group>"; };
 		9AB2A7D52442631400D68903 /* DataStructuresAlgs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DataStructuresAlgs.entitlements; sourceTree = "<group>"; };
 		9AE491D3244B7F0D00E111EA /* BTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTree.swift; sourceTree = "<group>"; };
+		9AE49213244CC06000E111EA /* IntervalTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTree.swift; sourceTree = "<group>"; };
 		9AF479FF2429354E00345C01 /* DataStructuresAlgs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataStructuresAlgs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF47A022429354E00345C01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AF47A042429354E00345C01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				9A762C85244390750068A5A5 /* WeightedUndirectedGraph.swift */,
 				9AFBAC3424479E17005E59BB /* IndexedMinPriorityQueue.swift */,
 				9AE491D3244B7F0D00E111EA /* BTree.swift */,
+				9AE49213244CC06000E111EA /* IntervalTree.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				9AB2A7D4244258CB00D68903 /* WeightedDirectedGraphWithAjdMatrix.swift in Sources */,
 				9AF47A072429354E00345C01 /* ViewController.swift in Sources */,
 				9AF47A24242D278B00345C01 /* HashTable.swift in Sources */,
+				9AE49214244CC06000E111EA /* IntervalTree.swift in Sources */,
 				9AF47A192429357100345C01 /* Trie.swift in Sources */,
 				9AF47A1E2429622000345C01 /* Stack.swift in Sources */,
 				9A2EA483243A50DD0070964F /* AVLTree.swift in Sources */,
