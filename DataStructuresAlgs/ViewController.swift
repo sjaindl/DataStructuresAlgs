@@ -37,6 +37,8 @@ class ViewController: UIViewController {
         MinimumSpanningTreePrim.test()
         BTree<Int>.test()
         IntervalTree<Int>.test()
+        BipartiteGraphChecker.test()
+        Knapsack.test()
     }
 
 

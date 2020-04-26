@@ -24,6 +24,8 @@
 		9AB2A7D4244258CB00D68903 /* WeightedDirectedGraphWithAjdMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB2A7D3244258CB00D68903 /* WeightedDirectedGraphWithAjdMatrix.swift */; };
 		9AE491D4244B7F0D00E111EA /* BTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE491D3244B7F0D00E111EA /* BTree.swift */; };
 		9AE49214244CC06000E111EA /* IntervalTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE49213244CC06000E111EA /* IntervalTree.swift */; };
+		9AE492162450FBFE00E111EA /* BipartiteGraphChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE492152450FBFD00E111EA /* BipartiteGraphChecker.swift */; };
+		9AE49218245594E000E111EA /* Knapsack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE49217245594E000E111EA /* Knapsack.swift */; };
 		9AF47A032429354E00345C01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A022429354E00345C01 /* AppDelegate.swift */; };
 		9AF47A052429354E00345C01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A042429354E00345C01 /* SceneDelegate.swift */; };
 		9AF47A072429354E00345C01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A062429354E00345C01 /* ViewController.swift */; };
@@ -64,6 +66,8 @@
 		9AB2A7D52442631400D68903 /* DataStructuresAlgs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DataStructuresAlgs.entitlements; sourceTree = "<group>"; };
 		9AE491D3244B7F0D00E111EA /* BTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTree.swift; sourceTree = "<group>"; };
 		9AE49213244CC06000E111EA /* IntervalTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTree.swift; sourceTree = "<group>"; };
+		9AE492152450FBFD00E111EA /* BipartiteGraphChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BipartiteGraphChecker.swift; sourceTree = "<group>"; };
+		9AE49217245594E000E111EA /* Knapsack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knapsack.swift; sourceTree = "<group>"; };
 		9AF479FF2429354E00345C01 /* DataStructuresAlgs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataStructuresAlgs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF47A022429354E00345C01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AF47A042429354E00345C01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 				9AB2A7D1244257F200D68903 /* FloydWarshall.swift */,
 				9A762C8324438D680068A5A5 /* MinimumSpanningTreeKruskal.swift */,
 				9A762C8724447F940068A5A5 /* MinimumSpanningTreePrim.swift */,
+				9AE492152450FBFD00E111EA /* BipartiteGraphChecker.swift */,
+				9AE49217245594E000E111EA /* Knapsack.swift */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -271,10 +277,12 @@
 				9AF47A1A2429357100345C01 /* LinkedList.swift in Sources */,
 				9A762C86244390750068A5A5 /* WeightedUndirectedGraph.swift in Sources */,
 				9AF47A2D243101F800345C01 /* QuickSort.swift in Sources */,
+				9AE49218245594E000E111EA /* Knapsack.swift in Sources */,
 				9AE491D4244B7F0D00E111EA /* BTree.swift in Sources */,
 				9AF47A26242EB54C00345C01 /* UndirectedGraph.swift in Sources */,
 				192D15C1243E017F00CF0733 /* MapReduce.swift in Sources */,
 				9AF47A032429354E00345C01 /* AppDelegate.swift in Sources */,
+				9AE492162450FBFE00E111EA /* BipartiteGraphChecker.swift in Sources */,
 				9AF47A052429354E00345C01 /* SceneDelegate.swift in Sources */,
 				9A7ADB2424368A73004D4665 /* Edge.swift in Sources */,
 				9AB2A7D2244257F200D68903 /* FloydWarshall.swift in Sources */,
