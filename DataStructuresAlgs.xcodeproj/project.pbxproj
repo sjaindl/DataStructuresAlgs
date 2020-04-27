@@ -26,6 +26,9 @@
 		9AE49214244CC06000E111EA /* IntervalTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE49213244CC06000E111EA /* IntervalTree.swift */; };
 		9AE492162450FBFE00E111EA /* BipartiteGraphChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE492152450FBFD00E111EA /* BipartiteGraphChecker.swift */; };
 		9AE49218245594E000E111EA /* Knapsack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE49217245594E000E111EA /* Knapsack.swift */; };
+		9AE4921A245643D100E111EA /* Permutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE49219245643D100E111EA /* Permutation.swift */; };
+		9AE4921C2457508D00E111EA /* TravelingSalesman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4921B2457508D00E111EA /* TravelingSalesman.swift */; };
+		9AE4921E2457585200E111EA /* UndirectedGraphWithAdjMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4921D2457585200E111EA /* UndirectedGraphWithAdjMatrix.swift */; };
 		9AF47A032429354E00345C01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A022429354E00345C01 /* AppDelegate.swift */; };
 		9AF47A052429354E00345C01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A042429354E00345C01 /* SceneDelegate.swift */; };
 		9AF47A072429354E00345C01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF47A062429354E00345C01 /* ViewController.swift */; };
@@ -68,6 +71,9 @@
 		9AE49213244CC06000E111EA /* IntervalTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTree.swift; sourceTree = "<group>"; };
 		9AE492152450FBFD00E111EA /* BipartiteGraphChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BipartiteGraphChecker.swift; sourceTree = "<group>"; };
 		9AE49217245594E000E111EA /* Knapsack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knapsack.swift; sourceTree = "<group>"; };
+		9AE49219245643D100E111EA /* Permutation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permutation.swift; sourceTree = "<group>"; };
+		9AE4921B2457508D00E111EA /* TravelingSalesman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelingSalesman.swift; sourceTree = "<group>"; };
+		9AE4921D2457585200E111EA /* UndirectedGraphWithAdjMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndirectedGraphWithAdjMatrix.swift; sourceTree = "<group>"; };
 		9AF479FF2429354E00345C01 /* DataStructuresAlgs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataStructuresAlgs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF47A022429354E00345C01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AF47A042429354E00345C01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +163,7 @@
 				9AFBAC3424479E17005E59BB /* IndexedMinPriorityQueue.swift */,
 				9AE491D3244B7F0D00E111EA /* BTree.swift */,
 				9AE49213244CC06000E111EA /* IntervalTree.swift */,
+				9AE4921D2457585200E111EA /* UndirectedGraphWithAdjMatrix.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -177,6 +184,8 @@
 				9A762C8724447F940068A5A5 /* MinimumSpanningTreePrim.swift */,
 				9AE492152450FBFD00E111EA /* BipartiteGraphChecker.swift */,
 				9AE49217245594E000E111EA /* Knapsack.swift */,
+				9AE49219245643D100E111EA /* Permutation.swift */,
+				9AE4921B2457508D00E111EA /* TravelingSalesman.swift */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -259,6 +268,7 @@
 				9AF47A29242EB68500345C01 /* GraphSearch.swift in Sources */,
 				9A7ADB192434EF10004D4665 /* TopologicalSort.swift in Sources */,
 				9AF47A22242BDA7600345C01 /* MinHeap.swift in Sources */,
+				9AE4921C2457508D00E111EA /* TravelingSalesman.swift in Sources */,
 				9A7ADB1D2434F18D004D4665 /* Vertice.swift in Sources */,
 				9A762C822443709A0068A5A5 /* UnionFind.swift in Sources */,
 				9A762C8424438D680068A5A5 /* MinimumSpanningTreeKruskal.swift in Sources */,
@@ -272,6 +282,7 @@
 				9AF47A192429357100345C01 /* Trie.swift in Sources */,
 				9AF47A1E2429622000345C01 /* Stack.swift in Sources */,
 				9A2EA483243A50DD0070964F /* AVLTree.swift in Sources */,
+				9AE4921A245643D100E111EA /* Permutation.swift in Sources */,
 				9AF47A202429622800345C01 /* Queue.swift in Sources */,
 				9AFBAC3524479E17005E59BB /* IndexedMinPriorityQueue.swift in Sources */,
 				9AF47A1A2429357100345C01 /* LinkedList.swift in Sources */,
@@ -286,6 +297,7 @@
 				9AF47A052429354E00345C01 /* SceneDelegate.swift in Sources */,
 				9A7ADB2424368A73004D4665 /* Edge.swift in Sources */,
 				9AB2A7D2244257F200D68903 /* FloydWarshall.swift in Sources */,
+				9AE4921E2457585200E111EA /* UndirectedGraphWithAdjMatrix.swift in Sources */,
 				9AF47A1B2429357100345C01 /* RedBlackTree.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

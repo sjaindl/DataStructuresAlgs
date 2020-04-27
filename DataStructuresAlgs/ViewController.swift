@@ -39,6 +39,8 @@ class ViewController: UIViewController {
         IntervalTree<Int>.test()
         BipartiteGraphChecker.test()
         Knapsack.test()
+        Permuation<Int>.test()
+        TravelingSalesman.test()
     }
 
 
