@@ -41,6 +41,7 @@ class ViewController: UIViewController {
         Knapsack.test()
         Permuation<Int>.test()
         TravelingSalesman.test()
+        UniqueStringSearch.test()
     }
 
 

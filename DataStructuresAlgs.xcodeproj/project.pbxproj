@@ -20,6 +20,8 @@
 		9A7ADB2224368815004D4665 /* WeightedDirectedGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7ADB2124368815004D4665 /* WeightedDirectedGraph.swift */; };
 		9A7ADB2424368A73004D4665 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7ADB2324368A73004D4665 /* Edge.swift */; };
 		9A7ADB2624391781004D4665 /* RabinKarp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7ADB2524391781004D4665 /* RabinKarp.swift */; };
+		9A9DECB2245F2EF400CA0FCD /* UniqueStringSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9DECB1245F2EF400CA0FCD /* UniqueStringSearch.swift */; };
+		9A9DECB4245F325400CA0FCD /* BitVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9DECB3245F325400CA0FCD /* BitVector.swift */; };
 		9AB2A7D2244257F200D68903 /* FloydWarshall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB2A7D1244257F200D68903 /* FloydWarshall.swift */; };
 		9AB2A7D4244258CB00D68903 /* WeightedDirectedGraphWithAjdMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB2A7D3244258CB00D68903 /* WeightedDirectedGraphWithAjdMatrix.swift */; };
 		9AE491D4244B7F0D00E111EA /* BTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE491D3244B7F0D00E111EA /* BTree.swift */; };
@@ -64,6 +66,8 @@
 		9A7ADB2124368815004D4665 /* WeightedDirectedGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightedDirectedGraph.swift; sourceTree = "<group>"; };
 		9A7ADB2324368A73004D4665 /* Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
 		9A7ADB2524391781004D4665 /* RabinKarp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabinKarp.swift; sourceTree = "<group>"; };
+		9A9DECB1245F2EF400CA0FCD /* UniqueStringSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueStringSearch.swift; sourceTree = "<group>"; };
+		9A9DECB3245F325400CA0FCD /* BitVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitVector.swift; sourceTree = "<group>"; };
 		9AB2A7D1244257F200D68903 /* FloydWarshall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloydWarshall.swift; sourceTree = "<group>"; };
 		9AB2A7D3244258CB00D68903 /* WeightedDirectedGraphWithAjdMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightedDirectedGraphWithAjdMatrix.swift; sourceTree = "<group>"; };
 		9AB2A7D52442631400D68903 /* DataStructuresAlgs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DataStructuresAlgs.entitlements; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				9AE491D3244B7F0D00E111EA /* BTree.swift */,
 				9AE49213244CC06000E111EA /* IntervalTree.swift */,
 				9AE4921D2457585200E111EA /* UndirectedGraphWithAdjMatrix.swift */,
+				9A9DECB3245F325400CA0FCD /* BitVector.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 				9AE49217245594E000E111EA /* Knapsack.swift */,
 				9AE49219245643D100E111EA /* Permutation.swift */,
 				9AE4921B2457508D00E111EA /* TravelingSalesman.swift */,
+				9A9DECB1245F2EF400CA0FCD /* UniqueStringSearch.swift */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -281,6 +287,7 @@
 				9AE49214244CC06000E111EA /* IntervalTree.swift in Sources */,
 				9AF47A192429357100345C01 /* Trie.swift in Sources */,
 				9AF47A1E2429622000345C01 /* Stack.swift in Sources */,
+				9A9DECB4245F325400CA0FCD /* BitVector.swift in Sources */,
 				9A2EA483243A50DD0070964F /* AVLTree.swift in Sources */,
 				9AE4921A245643D100E111EA /* Permutation.swift in Sources */,
 				9AF47A202429622800345C01 /* Queue.swift in Sources */,
@@ -288,6 +295,7 @@
 				9AF47A1A2429357100345C01 /* LinkedList.swift in Sources */,
 				9A762C86244390750068A5A5 /* WeightedUndirectedGraph.swift in Sources */,
 				9AF47A2D243101F800345C01 /* QuickSort.swift in Sources */,
+				9A9DECB2245F2EF400CA0FCD /* UniqueStringSearch.swift in Sources */,
 				9AE49218245594E000E111EA /* Knapsack.swift in Sources */,
 				9AE491D4244B7F0D00E111EA /* BTree.swift in Sources */,
 				9AF47A26242EB54C00345C01 /* UndirectedGraph.swift in Sources */,
