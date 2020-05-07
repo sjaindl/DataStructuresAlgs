@@ -11,8 +11,8 @@ import XCTest
 
 open class BTreeTests: XCTestCase {
     
-    //https://www.geeksforgeeks.org/insert-operation-in-b-tree/
-    func testBTree() throws {
+    //https://www.geeksforgeeks.org/insert-operation-in-b-tree
+    open func testBTree() throws {
         let degree: Int = 3
         let rootNode = BTreeNode<Int>(degree: degree)
         let bTree = BTree<Int>(root: rootNode)

@@ -11,7 +11,7 @@ import XCTest
 
 open class BipartiteGraphCheckerTests: XCTestCase {
     
-    func testBipartiteGraph() {
+    open func testBipartiteGraph() {
         let graph = setupTestGraph()
         let bipartite = BipartiteGraphChecker(graph: graph)
         let colors = try? bipartite.isBipartite()
@@ -26,13 +26,13 @@ open class BipartiteGraphCheckerTests: XCTestCase {
         }
     }
     
+    //https://www.geeksforgeeks.org/bipartite-graph
     private func setupTestGraph() -> UndirectedGraph {
         let vertices: [Vertice] = [Vertice(id: 0), Vertice(id: 1), Vertice(id: 2), Vertice(id: 3),
                                    Vertice(id: 4), Vertice(id: 5), Vertice(id: 6), Vertice(id: 7),
                                    Vertice(id: 8), Vertice(id: 9), Vertice(id: 10), Vertice(id: 11)]
         let graph = UndirectedGraph(vertices: vertices)
         
-        //https://www.geeksforgeeks.org/bipartite-graph/
         graph.addEdge(v1: vertices[0], v2: vertices[1])
         graph.addEdge(v1: vertices[1], v2: vertices[2])
         graph.addEdge(v1: vertices[2], v2: vertices[3])

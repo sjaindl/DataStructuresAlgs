@@ -11,7 +11,7 @@ import XCTest
 
 open class HashTableTests: XCTestCase {
     
-    func testHashTable() {
+   open func testHashTable() {
         let hashTable = HashTable(size: 2069) //prime number
         
         hashTable.insert(val: "abcdef")

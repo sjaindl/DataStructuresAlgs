@@ -11,7 +11,7 @@ import XCTest
 
 open class MinHeapTests: XCTestCase {
     
-    func testMinHeap() throws {
+    open func testMinHeap() throws {
         let heap = MinHeap<Int>()
         
         heap.insert(val: 1)
@@ -34,7 +34,7 @@ open class MinHeapTests: XCTestCase {
         XCTAssertEqual(try heap.extractMin(), 11)
     }
     
-    func testMinHeapEqualValues() throws {
+    open func testMinHeapEqualValues() throws {
         let heap = MinHeap<Int>()
         let test = [1, 1, 2, 7, 6, 8, 4, 7, 8, 8, 10, 10, 11, 11,
                     9, 7, 6, 4, 2, 4, 8, 9, 4, 2, 2, 7, 14, 14]

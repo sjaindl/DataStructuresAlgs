@@ -12,12 +12,12 @@ open class UniqueStringSearch {
     
     private let alphabetSize: Int
     
-    init(alphabetSize: Int) {
+    public init(alphabetSize: Int) {
         self.alphabetSize = alphabetSize
     }
     
     //V1: HashTable/Set
-    func isUniqueStringWithHash(input: String) -> Bool {
+    open func isUniqueStringWithHash(input: String) -> Bool {
         if input.count > alphabetSize {
             return false
         }
@@ -36,7 +36,7 @@ open class UniqueStringSearch {
     }
     
     //V2: BitVector
-    func isUniqueStringWithBitVector(input: String) -> Bool {
+    open func isUniqueStringWithBitVector(input: String) -> Bool {
         if input.count > alphabetSize {
             return false
         }
@@ -59,7 +59,7 @@ open class UniqueStringSearch {
     }
     
     //V3: Without additional datastructures
-    func isUniqueStringWithSorting(input: String) -> Bool {
+    open func isUniqueStringWithSorting(input: String) -> Bool {
         if input.count > alphabetSize {
             return false
         }

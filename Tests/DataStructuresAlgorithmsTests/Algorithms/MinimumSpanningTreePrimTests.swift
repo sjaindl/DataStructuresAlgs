@@ -11,7 +11,7 @@ import XCTest
 
 open class MinimumSpanningTreePrimTests: XCTestCase {
     
-    func testMSTPrim() {
+    open func testMSTPrim() {
         let graph = setupTestGraph()
         let mstPrim = MinimumSpanningTreePrim(graph: graph)
         let mst = mstPrim.minimumSpanningTree()

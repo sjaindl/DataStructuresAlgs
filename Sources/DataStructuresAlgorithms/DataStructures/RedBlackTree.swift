@@ -2,27 +2,27 @@ import Foundation
 
 open class TreeNode {
     
-    enum TreeColor {
+    public enum TreeColor {
         case red
         case black
     }
     
-    var left: TreeNode?
-    var right: TreeNode?
-    var parent: TreeNode?
-    var value: Int
-    var color = TreeColor.red
+    public var left: TreeNode?
+    public var right: TreeNode?
+    public var parent: TreeNode?
+    public var value: Int
+    public var color = TreeColor.red
     
-    init(parent: TreeNode?, value: Int) {
+    public init(parent: TreeNode?, value: Int) {
         self.parent = parent
         self.value = value
     }
     
-    func isRoot() -> Bool {
+    open func isRoot() -> Bool {
         return parent == nil
     }
     
-    func uncle() -> TreeNode? {
+    open func uncle() -> TreeNode? {
         if let left = parent?.parent?.left, left.value == parent?.value {
             return parent?.parent?.right
         }
@@ -37,9 +37,9 @@ extension TreeNode : Equatable {
 }
 
 open class RedBlackTree {
-    var root: TreeNode?
+    public var root: TreeNode?
     
-    func insert(value: Int) {
+    open func insert(value: Int) {
         if root == nil {
             root = TreeNode(parent: nil, value: value)
             root?.color = .black

@@ -10,23 +10,23 @@ import Foundation
 
 open class AVLTreeNode<T: Comparable> {
     
-    var left: AVLTreeNode?
-    var right: AVLTreeNode?
-    var parent: AVLTreeNode?
-    var value: T
-    var height: Int
+    public var left: AVLTreeNode?
+    public var right: AVLTreeNode?
+    public var parent: AVLTreeNode?
+    public var value: T
+    public var height: Int
     
-    init(parent: AVLTreeNode?, value: T, height: Int) {
+    public init(parent: AVLTreeNode?, value: T, height: Int) {
         self.parent = parent
         self.value = value
         self.height = height
     }
     
-    func isRoot() -> Bool {
+    open func isRoot() -> Bool {
         return parent == nil
     }
     
-    func other() -> AVLTreeNode? {
+    open func other() -> AVLTreeNode? {
         if let left = parent?.left, left.value == value {
             return parent?.right
         }
@@ -36,9 +36,9 @@ open class AVLTreeNode<T: Comparable> {
 }
 
 open class AVLTree<T: Comparable> {
-    var root: AVLTreeNode<T>?
+    public var root: AVLTreeNode<T>?
     
-    func insert(val: T) {
+    open func insert(val: T) {
         if root == nil {
             root = AVLTreeNode(parent: nil, value: val, height: 1)
             return
@@ -66,7 +66,7 @@ open class AVLTree<T: Comparable> {
         }
     }
     
-    func increaseHeight(_ node: AVLTreeNode<T>) {
+    private func increaseHeight(_ node: AVLTreeNode<T>) {
         if node.left != nil, node.right != nil {
             return //must be balanced
         }
@@ -116,14 +116,14 @@ open class AVLTree<T: Comparable> {
         }
     }
     
-    func description() -> Stack<String> {
+    open func description() -> Stack<String> {
         var stack = Stack<String>()
         description(node: root, stack: &stack)
         
         return stack
     }
     
-    func description(node: AVLTreeNode<T>?, stack: inout Stack<String>) {
+    private func description(node: AVLTreeNode<T>?, stack: inout Stack<String>) {
         if let node = node {
             stack.push(val: "\(node.value): \(node.height)")
             description(node: node.left, stack: &stack)

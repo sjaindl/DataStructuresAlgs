@@ -11,7 +11,7 @@ import XCTest
 
 open class UnionFindTests: XCTestCase {
     
-    func testUnionFind() {
+    open func testUnionFind() {
         let graph = setupTestGraph()
         let unionFind = UnionFind(graph: graph)
         

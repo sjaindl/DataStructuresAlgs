@@ -11,21 +11,21 @@ import XCTest
 
 open class GraphSearchTests: XCTestCase {
     
-    func testBFS() {
+    open func testBFS() {
         let graph = setupTestGraph()
         
         let gsBfs = GraphSearch(graph: graph, start: graph.vertices[0])
         gsBfs.bfs()
     }
     
-    func testDFS() {
+    open func testDFS() {
         let graph = setupTestGraph()
         
         let gsDfs = GraphSearch(graph: graph, start: graph.vertices[0])
         gsDfs.dfs()
     }
     
-    func testDFSIterative() {
+    open func testDFSIterative() {
         let graph = setupTestGraph()
         
         let gsDfsIt = GraphSearch(graph: graph, start: graph.vertices[0])

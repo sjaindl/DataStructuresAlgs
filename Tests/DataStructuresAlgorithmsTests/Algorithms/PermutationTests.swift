@@ -12,7 +12,7 @@ import XCTest
 //https://www.topcoder.com/generating-permutations/
 open class PermuationTests: XCTestCase {
     
-    func testPermutations() {
+    open func testPermutations() {
         let permutation = Permuation<Int>()
         var array = [1,2,3,4]
         

@@ -11,7 +11,7 @@ import XCTest
 
 open class MinimumSpanningTreeKruskalTests: XCTestCase {
     
-    func testMSTKruskalQuickSort() {
+    open func testMSTKruskalQuickSort() {
         let graph = setupTestGraph()
         let mstKruskal = MinimumSpanningTreeKruskal(graph: graph)
         let mst = mstKruskal.minimumSpanningTreeQuickSort()
@@ -30,7 +30,7 @@ open class MinimumSpanningTreeKruskalTests: XCTestCase {
                                "3 -> 4: 9"])
     }
     
-    func testMSTKruskalHeap() {
+    open func testMSTKruskalHeap() {
         let graph = setupTestGraph()
         let mstKruskal = MinimumSpanningTreeKruskal(graph: graph)
         let mst = mstKruskal.minimumSpanningTreeQuickSort()

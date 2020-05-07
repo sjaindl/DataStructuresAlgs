@@ -11,7 +11,7 @@ import XCTest
 
 open class DjikstraTests: XCTestCase {
     
-    func testDjikstra() throws {
+    open func testDjikstra() throws {
         let graph = setupTestGraph()
         let djikstra = Djikstra(graph: graph)
         let distance = try djikstra.djikstra(from: graph.vertices[0], to: graph.vertices[4])

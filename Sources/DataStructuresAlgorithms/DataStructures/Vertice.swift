@@ -18,18 +18,18 @@ open class Vertice: NSObject, Comparable {
         return lhs.id == rhs.id
     }
     
-    var id: Int
+    public var id: Int
     
     //Needed for topological sort:
-    var inboundCount: Int = 0
+    public var inboundCount: Int = 0
     
     //Needed for Djikstra + Prim's MST (weight):
-    var distanceTo: Int = 0
+    public var distanceTo: Int = 0
     
     //Needed for Prim's MST:
-    var minIngoingEdge: Edge?
+    public var minIngoingEdge: Edge?
     
-    var weight: Int {
+    public var weight: Int {
         get {
             return distanceTo
         }
@@ -38,7 +38,7 @@ open class Vertice: NSObject, Comparable {
         }
     }
     
-    init(id: Int) {
+    public init(id: Int) {
         self.id = id
     }
 }

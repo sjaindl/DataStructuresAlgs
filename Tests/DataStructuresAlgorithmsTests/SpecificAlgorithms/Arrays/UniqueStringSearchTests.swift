@@ -11,7 +11,7 @@ import XCTest
 
 open class UniqueStringSearchTests: XCTestCase {
     
-    func testUniqueStringSearch() {
+    open func testUniqueStringSearch() {
         let stringSearch = UniqueStringSearch(alphabetSize: 256) //Extended ASCII alphabet
         
         let testString1 = "test"

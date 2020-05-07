@@ -9,16 +9,16 @@
 import Foundation
 
 open class RabinKarpSubstringSearch {
-    var base: Int
-    let hashSize: Int = 2147483647
+    private var base: Int
+    public let hashSize: Int = 2147483647
     //A good rule of thumb is to pick both values as prime numbers with M (hashSize) as large as possible
     //so that no integer overflow occurs and "base" being at least the size of the alphabet.
     
-    init(base: Int) {
+    public init(base: Int) {
         self.base = base
     }
     
-    func substr(of sub: String, in str: String) -> Int? {
+    open func substr(of sub: String, in str: String) -> Int? {
         if sub.count < 1 {
             return nil
         }

@@ -11,7 +11,7 @@ import XCTest
 
 open class MapReduceTests: XCTestCase {
     
-    func testMapReduceMock() {
+    open func testMapReduceMock() {
         let words = ["Test", "document", "for", "map", "reduce", "Lorem", "Ipsum", "Dolores", "map", "map", "reduce"]
         let document = Document(words: words)
         let mapReduce = MapReduceWordCount()

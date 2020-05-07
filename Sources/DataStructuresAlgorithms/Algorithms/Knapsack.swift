@@ -11,9 +11,11 @@ import Foundation
 //https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
 open class Knapsack {
     
-    var knapsack: [[Int]] = []
+    private var knapsack: [[Int]] = []
     
-    func knapsack(weights: [Int], values: [Int], maxWeight: Int) throws -> Int {
+    public init() { }
+    
+    open func knapsack(weights: [Int], values: [Int], maxWeight: Int) throws -> Int {
         if values.count != weights.count {
             throw NSError(domain: "Knapsack: values and weights are not of same size", code: 0, userInfo: nil)
         }
@@ -39,7 +41,7 @@ open class Knapsack {
         return max(knapsackWithLastElement, knapsackWithoutLastElement)
     }
     
-    func knapsackDynamicProgramming(weights: [Int], values: [Int], maxWeight: Int) throws -> Int {
+    open func knapsackDynamicProgramming(weights: [Int], values: [Int], maxWeight: Int) throws -> Int {
         if values.count != weights.count {
             throw NSError(domain: "Knapsack: values and weights are not of same size", code: 0, userInfo: nil)
         }

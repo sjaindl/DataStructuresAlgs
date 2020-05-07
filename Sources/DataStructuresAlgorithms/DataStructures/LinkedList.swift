@@ -1,6 +1,6 @@
 import Foundation
 
-enum MyError: Error {
+public enum MyError: Error {
     case runtimeError(String)
 }
 
@@ -17,11 +17,13 @@ open class Node<T> {
 }
 
 open class LinkedList<T> {
-    var head: Node<T>?
-    var tail: Node<T>?
-    var count: Int = 0
+    public var head: Node<T>?
+    public var tail: Node<T>?
+    public var count: Int = 0
     
-    func add(node: Node<T>) {
+    public init() { }
+    
+    open func add(node: Node<T>) {
         if count == 0 {
             head = node
             tail = node
@@ -34,7 +36,7 @@ open class LinkedList<T> {
         count += 1
     }
     
-    func removeLast() throws {
+    open func removeLast() throws {
         if count == 0 {
             throw MyError.runtimeError("Invalid call")
         }
@@ -48,7 +50,7 @@ open class LinkedList<T> {
         count -= 1
     }
     
-    func removeByKey(val: Int) {
+    open func removeByKey(val: Int) {
         var current = head
         
         while current != nil {

@@ -3,7 +3,7 @@ import XCTest
 
 open class RedBlackTreeTests: XCTestCase {
     
-    func testRedBlackTree() {
+    open func testRedBlackTree() {
         let rootValue = 10
         let tree = RedBlackTree()
 

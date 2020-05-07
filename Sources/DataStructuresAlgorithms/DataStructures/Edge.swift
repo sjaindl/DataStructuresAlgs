@@ -9,11 +9,11 @@
 import Foundation
 
 open class Edge: Comparable {
-    let from: Vertice
-    let to: Vertice
-    let weight: Int
+    public let from: Vertice
+    public let to: Vertice
+    public let weight: Int
     
-    init(from: Vertice, to: Vertice, weight: Int) {
+    public init(from: Vertice, to: Vertice, weight: Int) {
         self.from = from
         self.to = to
         self.weight = weight

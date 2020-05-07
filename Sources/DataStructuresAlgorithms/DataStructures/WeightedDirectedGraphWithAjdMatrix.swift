@@ -9,10 +9,10 @@
 import Foundation
 
 open class WeightedDirectedGraphWithAdjMatrix {
-    let vertices: [Vertice]
-    var adjMatrix: [[Int]]
+    public let vertices: [Vertice]
+    public var adjMatrix: [[Int]]
     
-    init(vertices: [Vertice]) {
+    public init(vertices: [Vertice]) {
         self.vertices = vertices
         
         adjMatrix = Array(repeating: Array(repeating: Int.max, count: vertices.count), count: vertices.count)
@@ -22,7 +22,7 @@ open class WeightedDirectedGraphWithAdjMatrix {
         }
     }
     
-    func addEdge(v1: Vertice, v2: Vertice, weight: Int) {
+    open func addEdge(v1: Vertice, v2: Vertice, weight: Int) {
         adjMatrix[v1.id][v2.id] = weight
     }
 }

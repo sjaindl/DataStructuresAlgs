@@ -9,16 +9,16 @@
 import Foundation
 
 open class Stack<T> {
-    var head: Node<T>?
-    var size: Int = 0
+    public var head: Node<T>?
+    public var size: Int = 0
     
-    func push(val: T) {
+    open func push(val: T) {
         let newHead = Node(val: val, next: head)
         head = newHead
         size += 1
     }
     
-    func pop() throws -> T {
+    open func pop() throws -> T {
         guard let node = head else {
             throw NSError(domain: "Stack: Invalid call", code: 0, userInfo: nil)
         }
@@ -28,7 +28,7 @@ open class Stack<T> {
         return node.val
     }
     
-    func isEmpty() -> Bool {
+    open func isEmpty() -> Bool {
         return size == 0
     }   
 }

@@ -11,7 +11,7 @@ import XCTest
 
 open class BitVectorTests: XCTestCase {
     
-    func testBitVector() {
+    open func testBitVector() {
         let bitVector = BitVector(numberOfBits: 256)
         
         XCTAssertFalse(bitVector.isBitSet(index: 101))

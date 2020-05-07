@@ -10,13 +10,13 @@ import Foundation
 
 open class MinimumSpanningTreePrim {
     
-    var graph: WeightedUndirectedGraph
+    public var graph: WeightedUndirectedGraph
     
-    init(graph: WeightedUndirectedGraph) {
+    public init(graph: WeightedUndirectedGraph) {
         self.graph = graph
     }
     
-    func minimumSpanningTree() -> [Edge] {
+    open func minimumSpanningTree() -> [Edge] {
         var mstEdges: [Edge] = []
         var mstVertices: Set<Vertice> = Set()
         let outsideVertices: IndexedMinPriorityQueue<Vertice> = IndexedMinPriorityQueue(maxElements: graph.vertices.count)

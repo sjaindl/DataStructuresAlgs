@@ -10,19 +10,19 @@ import Foundation
 
 open class BipartiteGraphChecker {
     
-    enum Color {
+    public enum Color {
         case red
         case black
         case none
     }
     
-    var graph: UndirectedGraph
+    public var graph: UndirectedGraph
     
-    init(graph: UndirectedGraph) {
+    public init(graph: UndirectedGraph) {
         self.graph = graph
     }
     
-    func isBipartite() throws -> [Color]? {
+    open func isBipartite() throws -> [Color]? {
         if graph.vertices.count < 1 {
             return []
             //a graph with no edges is also Bipiartite. Note that the Bipartite condition says all edges should be from one set to another.
@@ -39,7 +39,7 @@ open class BipartiteGraphChecker {
         return colors
     }
     
-    func isBipartite(vertice: Vertice, colors: [Color]?) throws -> [Color]? {
+    open func isBipartite(vertice: Vertice, colors: [Color]?) throws -> [Color]? {
         guard var colors = colors else {
             return nil
         }

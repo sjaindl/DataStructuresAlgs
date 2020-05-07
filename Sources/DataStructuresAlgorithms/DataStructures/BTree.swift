@@ -10,23 +10,23 @@ import Foundation
 
 open class BTreeNode<T: Comparable> {
     
-    var degree: Int
+    public var degree: Int
     
-    var numberOfKeys: Int
-    var numberOfChilds: Int
+    public var numberOfKeys: Int
+    public var numberOfChilds: Int
     
-    var keys: [T?]
-    var childNodes: [BTreeNode?]
+    public var keys: [T?]
+    public var childNodes: [BTreeNode?]
     
-    var maxKeys: Int {
+    private var maxKeys: Int {
         return 2 * degree - 1
     }
     
-    var maxChilds: Int {
+    private var maxChilds: Int {
         return 2 * degree
     }
     
-    init(degree: Int) {
+    public init(degree: Int) {
         self.degree = degree
         numberOfKeys = 0
         numberOfChilds = 0
@@ -34,7 +34,7 @@ open class BTreeNode<T: Comparable> {
         childNodes = [BTreeNode?] (repeatElement(nil, count: 2 * degree))
     }
     
-    func traverse(stack: inout Stack<T>) {
+    open func traverse(stack: inout Stack<T>) {
         //inorder traversal
         for keyIndex in 0 ... numberOfKeys { // numberOfChilds can be one greater than numberOfKeys
             childNodes[keyIndex]?.traverse(stack: &stack)
@@ -44,7 +44,7 @@ open class BTreeNode<T: Comparable> {
         }
     }
     
-    func search(key: T) -> Bool {
+    open func search(key: T) -> Bool {
         for nodeIndex in 0 ... numberOfKeys { // numberOfChilds can be one greater than numberOfKeys
             if let child = childNodes[nodeIndex], child.search(key: key) {
                 return true
@@ -60,15 +60,15 @@ open class BTreeNode<T: Comparable> {
         return false
     }
     
-    func isLeafNode() -> Bool {
+    open func isLeafNode() -> Bool {
         return numberOfChilds == 0
     }
     
-    func isFull() -> Bool {
+    open func isFull() -> Bool {
         return numberOfKeys == maxKeys
     }
     
-    func insert(key: T) throws {
+    open func insert(key: T) throws {
         if numberOfKeys == 0 {
             try insert(key: key, at: 0)
         } else {
@@ -82,7 +82,7 @@ open class BTreeNode<T: Comparable> {
         }
     }
     
-    func insert(key: T?, at index: Int) throws {
+    open func insert(key: T?, at index: Int) throws {
         guard let key = key else {
             return
         }
@@ -99,7 +99,7 @@ open class BTreeNode<T: Comparable> {
         numberOfKeys += 1
     }
     
-    func addChild(child: BTreeNode<T>?, at index: Int) throws {
+    open func addChild(child: BTreeNode<T>?, at index: Int) throws {
         guard let child = child else {
             return
         }
@@ -116,7 +116,7 @@ open class BTreeNode<T: Comparable> {
         numberOfChilds += 1
     }
     
-    func replaceChild(child: BTreeNode<T>?, at index: Int) {
+    open func replaceChild(child: BTreeNode<T>?, at index: Int) {
         if child != nil, childNodes[index] == nil {
             numberOfChilds += 1
         }
@@ -126,13 +126,13 @@ open class BTreeNode<T: Comparable> {
 }
 
 open class BTree<T: Comparable> {
-    var root: BTreeNode<T>?
+    public var root: BTreeNode<T>?
     
-    init(root: BTreeNode<T>) {
+    public init(root: BTreeNode<T>) {
         self.root = root
     }
     
-    func traverse() -> Stack<T> {
+    open func traverse() -> Stack<T> {
         var stack = Stack<T>()
         
         guard let root = root else {
@@ -144,7 +144,7 @@ open class BTree<T: Comparable> {
         return stack
     }
     
-    func search(key: T) -> Bool {
+    open func search(key: T) -> Bool {
         guard let root = root else {
             return false
         }
@@ -152,7 +152,7 @@ open class BTree<T: Comparable> {
         return root.search(key: key)
     }
     
-    func insert(key: T) throws {
+    open func insert(key: T) throws {
         guard var root = root else {
             return
         }
@@ -191,7 +191,7 @@ open class BTree<T: Comparable> {
         try currentNode.insert(key: key)
     }
     
-    func splitChild(_ child: BTreeNode<T>, of root: BTreeNode<T>?, childIndex: Int) throws -> BTreeNode<T> {
+    private func splitChild(_ child: BTreeNode<T>, of root: BTreeNode<T>?, childIndex: Int) throws -> BTreeNode<T> {
         let leftChild: BTreeNode<T> = BTreeNode(degree: child.degree)
         let rightChild: BTreeNode<T> = BTreeNode(degree: child.degree)
         

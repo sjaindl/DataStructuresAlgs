@@ -11,7 +11,7 @@ import XCTest
 
 open class BellmanFordTests: XCTestCase {
     
-    func testBellmanFord() {
+    open func testBellmanFord() {
         let graph = setupTestGraph()
         let bellmanFord = BellmanFord(graph: graph)
         
@@ -22,12 +22,12 @@ open class BellmanFordTests: XCTestCase {
         XCTAssertEqual(try? bellmanFord.findShortestPath(source: graph.vertices[0], target: graph.vertices[4]), 1)
     }
     
+    //https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/?ref=lbp
     private func setupTestGraph() -> WeightedDirectedGraph {
         let vertices: [Vertice] = [Vertice(id: 0), Vertice(id: 1), Vertice(id: 2),
                                     Vertice(id: 3), Vertice(id: 4)]
         let graph = WeightedDirectedGraph(vertices: vertices)
         
-        //https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/?ref=lbp
         graph.addEdge(v1: vertices[0], v2: vertices[1], weight: -1)
         graph.addEdge(v1: vertices[0], v2: vertices[2], weight: 4)
         graph.addEdge(v1: vertices[1], v2: vertices[2], weight: 3)

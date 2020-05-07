@@ -11,7 +11,9 @@ import Foundation
 //https://www.topcoder.com/generating-permutations/
 open class Permuation<T> {
     
-    public func permutations(array: inout [T]) -> [[T]] {
+    public init() { }
+    
+    open func permutations(array: inout [T]) -> [[T]] {
         var generatedPermutations: [[T]] = []
         permutations(array: &array, currentArrayCount: array.count, generatedPermutations: &generatedPermutations)
         return generatedPermutations
@@ -30,7 +32,7 @@ open class Permuation<T> {
         }
     }
     
-    public func heapsPermutations(array: inout [T]) -> [[T]] {
+    open func heapsPermutations(array: inout [T]) -> [[T]] {
         var permutations: [[T]] = []
         heapsPermutations(array: &array, currentArrayCount: array.count, permutations: &permutations)
         return permutations
@@ -53,7 +55,7 @@ open class Permuation<T> {
         heapsPermutations(array: &array, currentArrayCount: currentArrayCount - 1, permutations: &permutations)
     }
     
-    func swap(array: inout [T], from: Int, to: Int) {
+    private func swap(array: inout [T], from: Int, to: Int) {
         let temp = array[from]
         array[from] = array[to]
         array[to] = temp

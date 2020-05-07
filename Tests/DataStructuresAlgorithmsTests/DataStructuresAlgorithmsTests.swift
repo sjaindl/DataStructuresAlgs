@@ -3,7 +3,7 @@ import XCTest
 
 open class DataStructuresAlgorithmsTests: XCTestCase {
 
-    func testAll() throws {
+    open func testAll() throws {
         BellmanFordTests().testBellmanFord()
         BipartiteGraphCheckerTests().testBipartiteGraph()
         try DjikstraTests().testDjikstra()

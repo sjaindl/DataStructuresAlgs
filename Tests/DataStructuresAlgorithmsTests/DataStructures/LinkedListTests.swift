@@ -3,7 +3,7 @@ import XCTest
 
 open class LinkedListTests: XCTestCase {
     
-    func testLinkedList() {
+    open func testLinkedList() {
         let list = LinkedList<Int>()
 
         let node1 = Node(val: 1)

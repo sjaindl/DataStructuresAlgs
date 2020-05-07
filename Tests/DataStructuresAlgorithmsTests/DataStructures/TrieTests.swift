@@ -3,7 +3,7 @@ import XCTest
 
 open class TrieTests: XCTestCase {
     
-    func testTrie() {
+    open func testTrie() {
         let trieValue = "Trie"
         let trie = Trie()
 

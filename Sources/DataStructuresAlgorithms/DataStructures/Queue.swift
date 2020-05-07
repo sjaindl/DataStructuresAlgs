@@ -9,18 +9,17 @@
 import Foundation
 
 open class Queue<T> {
+    private var items: [Node<T>?]
+    private var capacity: Int = 10
+    private var nextPos: Int = 0
+    private var frontPos: Int = 0
+    public var size: Int = 0
     
-    var items: [Node<T>?]
-    var size: Int = 0
-    var capacity: Int = 10
-    var nextPos: Int = 0
-    var frontPos: Int = 0
-    
-    init() {
+    public init() {
         items = [Node<T>?](repeating: nil, count: capacity)
     }
     
-    func enqueue(val: T) {
+    open func enqueue(val: T) {
         if size == items.count {
             resizeArray(newSize: size * 2)
         }
@@ -35,7 +34,7 @@ open class Queue<T> {
         nextPos += 1
     }
     
-    func dequeue() throws -> T {
+    open func dequeue() throws -> T {
         if size == 0 {
             throw NSError(domain: "No element in queue", code: 0, userInfo: nil)
         }
@@ -51,7 +50,7 @@ open class Queue<T> {
         return item!.val
     }
     
-    func isEmpty() -> Bool {
+    open func isEmpty() -> Bool {
         return size == 0
     }
     

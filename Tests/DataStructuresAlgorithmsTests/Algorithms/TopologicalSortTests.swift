@@ -11,7 +11,7 @@ import XCTest
 
 open class TopologicalSortTests: XCTestCase {
 
-    public func testTopologicalSort() throws {
+    open func testTopologicalSort() throws {
         let graph = setupTestGraph()
         let topological = TopologicalSort(graph: graph)
         

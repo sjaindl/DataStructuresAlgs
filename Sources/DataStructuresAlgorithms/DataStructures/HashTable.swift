@@ -9,16 +9,16 @@
 import Foundation
 
 open class HashTable {
-    var table: [LinkedList<String>] = []
+    private var table: [LinkedList<String>] = []
     
-    init(size: Int) {
+    public init(size: Int) {
         table = [LinkedList<String>] (repeating: LinkedList(), count: size)
         for i in 0 ... size - 1 {
             table[i] = LinkedList<String>()
         }
     }
     
-    func hash(val: String) -> Int {
+    open func hash(val: String) -> Int {
         var hash: Int = 0
         var index: Int = 0
         
@@ -32,12 +32,12 @@ open class HashTable {
         return Int(hash)
     }
     
-    func insert(val: String) {
+    open func insert(val: String) {
         let h = hash(val: val)
         table[h].add(node: Node(val: val))
     }
     
-    func contains(val: String) -> Bool {
+    open func contains(val: String) -> Bool {
         let h = hash(val: val)
         let list = table[h]
         

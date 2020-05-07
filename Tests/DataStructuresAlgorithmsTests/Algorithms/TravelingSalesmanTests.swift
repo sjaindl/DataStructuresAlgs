@@ -11,7 +11,7 @@ import XCTest
 
 open class TravelingSalesmanTests: XCTestCase {
     
-    func testTravelingSalesman() {
+    open func testTravelingSalesman() {
         let graph = setupTestGraph()
         let travelingSalesman = TravelingSalesman(graph: graph)
         let minRoute = travelingSalesman.travelingSalesman(startCity: graph.vertices[0])

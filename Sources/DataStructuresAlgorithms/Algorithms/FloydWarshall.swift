@@ -9,13 +9,13 @@
 import Foundation
 
 open class FloydWarshall {
-    let graph: WeightedDirectedGraphWithAdjMatrix
+    public let graph: WeightedDirectedGraphWithAdjMatrix
     
-    init(graph: WeightedDirectedGraphWithAdjMatrix) {
+    public init(graph: WeightedDirectedGraphWithAdjMatrix) {
         self.graph = graph
     }
     
-    func findShortestPaths() throws {
+    open func findShortestPaths() throws {
         for intermediateIndex in 0 ... graph.vertices.count - 1 {
             for startIndex in 0 ... graph.vertices.count - 1 {
                 for endIndex in 0 ... graph.vertices.count - 1 {

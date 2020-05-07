@@ -9,11 +9,12 @@
 import Foundation
 
 open class MergeSort<T: Comparable> {
-    static func mergeSort(array: inout [T]) {
+    
+    public static func mergeSort(array: inout [T]) {
         mergeSort(array: &array, min: 0, max: array.count - 1)
     }
     
-    static func mergeSort(array: inout [T], min: Int, max: Int) {
+    public static func mergeSort(array: inout [T], min: Int, max: Int) {
         if max <= min {
             return
         }
@@ -24,7 +25,7 @@ open class MergeSort<T: Comparable> {
         merge(array: &array, min: min, middle: middle, max: max)
     }
     
-    static private func merge(array: inout [T], min: Int, middle: Int, max: Int) {
+    private static func merge(array: inout [T], min: Int, middle: Int, max: Int) {
         let aux = array
         var cur = min
         var left = min

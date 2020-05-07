@@ -11,16 +11,16 @@ import Foundation
 open class Document {
     let words: [String]
     
-    init(words: [String]) {
+    public init(words: [String]) {
         self.words = words
     }
 }
 
 open class Result: Comparable {
-    let key: String
-    let value: Int
+    public let key: String
+    public let value: Int
     
-    init(key: String, value: Int) {
+    public init(key: String, value: Int) {
         self.key = key
         self.value = value
     }
@@ -35,25 +35,26 @@ open class Result: Comparable {
 }
 
 open class MapReduceWordCount {
-    
     var partialResults: [Result] = []
     var finalResults: [Result] = []
     
-    func map(document: Document) {
+    public init() { }
+    
+    open func map(document: Document) {
         for word in document.words {
             emit(partialResult: Result(key: word, value: 1))
         }
     }
     
-    func emit(partialResult: Result) {
+    open func emit(partialResult: Result) {
         partialResults.append(partialResult)
     }
     
-    func shuffleAndSort() {
+    open func shuffleAndSort() {
         partialResults.sort()
     }
     
-    func reduce(partialResults: [Result]) {
+    open func reduce(partialResults: [Result]) {
         if partialResults.count > 0 {
             let key = partialResults[0].key
             var sum = 0

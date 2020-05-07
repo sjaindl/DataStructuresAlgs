@@ -9,10 +9,10 @@
 import Foundation
 
 open class DirectedGraph {
-    let vertices: [Vertice]
-    var adjList: [LinkedList<Vertice>] = []
+    public let vertices: [Vertice]
+    private var adjList: [LinkedList<Vertice>] = []
     
-    init(vertices: [Vertice]) {
+    public init(vertices: [Vertice]) {
         self.vertices = vertices
         
         for _ in vertices {
@@ -20,11 +20,11 @@ open class DirectedGraph {
         }
     }
     
-    func addEdge(v1: Vertice, v2: Vertice) {
+    open func addEdge(v1: Vertice, v2: Vertice) {
         adjList[v1.id].add(node: Node(val: v2))
     }
     
-    func neighbours(v: Vertice) -> LinkedList<Vertice> {
+    open func neighbours(v: Vertice) -> LinkedList<Vertice> {
         return adjList[v.id]
     }
 }

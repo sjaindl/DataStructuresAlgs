@@ -11,7 +11,7 @@ import XCTest
 
 open class FloydWarshallTests: XCTestCase {
     
-    func testFloydWarshall() throws {
+    open func testFloydWarshall() throws {
         let graph = setupTestGraph()
         let floydWarshall = FloydWarshall(graph: graph)
         try floydWarshall.findShortestPaths()

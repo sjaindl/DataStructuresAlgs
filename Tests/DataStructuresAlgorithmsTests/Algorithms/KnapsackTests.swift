@@ -12,7 +12,7 @@ import XCTest
 //https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
 open class KnapsackTests: XCTestCase {
     
-    func testKnapsack() {
+    open func testKnapsack() {
         let knapsack = Knapsack()
         let weights = [1, 1, 1]
         let values = [20, 10, 30]

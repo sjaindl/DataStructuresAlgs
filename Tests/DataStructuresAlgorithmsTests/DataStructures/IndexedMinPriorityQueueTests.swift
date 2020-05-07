@@ -11,7 +11,7 @@ import XCTest
 
 open class IndexedMinPriorityQueueTests: XCTestCase {
    
-    func testIndexedMinPriorityQueue() throws {
+    open func testIndexedMinPriorityQueue() throws {
         let indexPq = IndexedMinPriorityQueue<Int>(maxElements: 10)
         
         try indexPq.insert(index: 4, key: 8)

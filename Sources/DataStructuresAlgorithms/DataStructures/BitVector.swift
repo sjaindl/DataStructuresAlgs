@@ -14,7 +14,7 @@ open class BitVector {
     private var bitStorage: [UInt64]
     private var base = 64
     
-    init(numberOfBits: Int) {
+    public init(numberOfBits: Int) {
         self.numberOfBits = numberOfBits
         
         //storage has place for 64 bits per UInt64 array entry. Round up.
@@ -22,7 +22,7 @@ open class BitVector {
         bitStorage = [UInt64] (repeating: 0, count: arraySize)
     }
     
-    func setBit(index: Int) {
+    open func setBit(index: Int) {
         let arrayIndex = index / 64
         let bitIndex = UInt64(index - arrayIndex * 64)
         let bit: UInt64 = 1 << bitIndex
@@ -30,7 +30,7 @@ open class BitVector {
         bitStorage[arrayIndex] |= bit
     }
     
-    func unsetBit(index: Int) {
+    open func unsetBit(index: Int) {
         let arrayIndex = index / 64
         let bitIndex = UInt64(index - arrayIndex * 64)
         let bit: UInt64 = UInt64.max & 0 << bitIndex
@@ -38,7 +38,7 @@ open class BitVector {
         bitStorage[arrayIndex] &= bit
     }
     
-    func isBitSet(index: Int) -> Bool {
+    open func isBitSet(index: Int) -> Bool {
         let arrayIndex = index / 64
         let bitIndex = UInt64(index - arrayIndex * 64)
         let bit: UInt64 = 1 << bitIndex

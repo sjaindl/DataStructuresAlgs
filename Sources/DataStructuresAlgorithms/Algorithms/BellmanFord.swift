@@ -9,13 +9,13 @@
 import Foundation
 
 open class BellmanFord {
-    let graph: WeightedDirectedGraph
+    public let graph: WeightedDirectedGraph
     
-    init(graph: WeightedDirectedGraph) {
+    public init(graph: WeightedDirectedGraph) {
         self.graph = graph
     }
     
-    func findShortestPath(source: Vertice, target: Vertice) throws -> Int {
+    open func findShortestPath(source: Vertice, target: Vertice) throws -> Int {
         var distTo = [Int] (repeating: Int.max, count: graph.vertices.count)
         distTo[source.id] = 0
         

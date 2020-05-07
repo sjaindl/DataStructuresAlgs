@@ -11,12 +11,14 @@ import Foundation
 open class MinHeap<T: Comparable> {
     private var array = [T] ()
     
-    func insert(val: T) {
+    public init() { }
+    
+    open func insert(val: T) {
         array.append(val)
         swim(key: array.count - 1)
     }
     
-    func peekMin() throws -> T {
+    open func peekMin() throws -> T {
         if array.count < 1 {
             throw NSError(domain: "Heap: no elements in heap", code: 0, userInfo: nil)
         }
@@ -24,7 +26,7 @@ open class MinHeap<T: Comparable> {
         return array[0]
     }
     
-    func extractMin() throws -> T {
+    open func extractMin() throws -> T {
         let min = try peekMin()
         array[0] = array[array.count - 1]
         array.removeLast()
@@ -33,7 +35,7 @@ open class MinHeap<T: Comparable> {
         return min
     }
     
-    func isEmpty() -> Bool {
+    open func isEmpty() -> Bool {
         return array.count == 0
     }
     

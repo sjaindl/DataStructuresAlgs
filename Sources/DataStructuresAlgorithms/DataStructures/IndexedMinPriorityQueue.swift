@@ -16,23 +16,23 @@ open class IndexedMinPriorityQueue<T: Comparable> {
     
     public var size: Int = 0
     
-    init(maxElements: Int) {
+    public init(maxElements: Int) {
         keyIndeces = [Int] (repeating: -1, count: maxElements)
         heapIndeces = [Int] (repeating: Int.max, count: maxElements)
         keys = [T?] (repeating: nil, count: maxElements)
         self.maxElements = maxElements
     }
     
-    func isEmpty() -> Bool {
+    open func isEmpty() -> Bool {
         return size == 0
     }
     
-    func contains(index: Int) -> Bool {
+    open func contains(index: Int) -> Bool {
         return keyIndeces[index] != -1
     }
     
     
-    func insert(index: Int, key: T) throws {
+    open func insert(index: Int, key: T) throws {
         if size >= maxElements {
             throw NSError(domain: "IndexedMinPriorityQueue: PQ is full", code: 0, userInfo: nil)
         }
@@ -45,7 +45,7 @@ open class IndexedMinPriorityQueue<T: Comparable> {
         size += 1
     }
     
-    func minIndex() throws -> Int {
+    open func minIndex() throws -> Int {
         if size < 1 {
             throw NSError(domain: "IndexedMinPriorityQueue: no elements in PQ", code: 0, userInfo: nil)
         }
@@ -53,7 +53,7 @@ open class IndexedMinPriorityQueue<T: Comparable> {
         return heapIndeces[0]
     }
     
-    func minKey() throws -> T? {
+    open func minKey() throws -> T? {
         if size < 1 {
             throw NSError(domain: "IndexedMinPriorityQueue: no elements in PQ", code: 0, userInfo: nil)
         }
@@ -61,7 +61,7 @@ open class IndexedMinPriorityQueue<T: Comparable> {
         return keys[heapIndeces[0]]
     }
     
-    func extractMin() throws -> T? {
+    open func extractMin() throws -> T? {
         let key = try minKey()
         let index = try minIndex()
         
@@ -76,7 +76,7 @@ open class IndexedMinPriorityQueue<T: Comparable> {
         return key
     }
     
-    func delete(index: Int) throws {
+    open func delete(index: Int) throws {
         if !contains(index: index) {
             throw NSError(domain: "IndexedMinPriorityQueue: Element not in queue", code: 0, userInfo: nil)
         }
@@ -92,11 +92,11 @@ open class IndexedMinPriorityQueue<T: Comparable> {
         heapIndeces[size] = Int.max
     }
     
-    func keyOf(index: Int) -> T? {
+    open func keyOf(index: Int) -> T? {
         return keys[index]
     }
     
-    func changeKey(index: Int, key: T) throws {
+    open func changeKey(index: Int, key: T) throws {
         if !contains(index: index) {
             throw NSError(domain: "IndexedMinPriorityQueue: Element not in queue", code: 0, userInfo: nil)
         }
@@ -106,7 +106,7 @@ open class IndexedMinPriorityQueue<T: Comparable> {
         swim(index: keyIndeces[index])
     }
     
-    func decreaseKey(index: Int, key: T) throws {
+    open func decreaseKey(index: Int, key: T) throws {
         if !contains(index: index) {
             throw NSError(domain: "IndexedMinPriorityQueue: Element not in queue", code: 0, userInfo: nil)
         }
@@ -119,7 +119,7 @@ open class IndexedMinPriorityQueue<T: Comparable> {
         swim(index: keyIndeces[index])
     }
     
-    func increaseKey(index: Int, key: T) throws {
+    open func increaseKey(index: Int, key: T) throws {
         if !contains(index: index) {
             throw NSError(domain: "IndexedMinPriorityQueue: Element not in queue", code: 0, userInfo: nil)
         }

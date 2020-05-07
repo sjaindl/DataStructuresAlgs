@@ -15,13 +15,13 @@ open class MinimumSpanningTreeKruskal {
     //3. If there is a cycle, discard (detection with UnionFind)
     //4. Else include in MST
     
-    var graph: WeightedUndirectedGraph
+    public var graph: WeightedUndirectedGraph
     
-    init(graph: WeightedUndirectedGraph) {
+    public init(graph: WeightedUndirectedGraph) {
         self.graph = graph
     }
     
-    func minimumSpanningTreeQuickSort() -> [Edge] {
+    open func minimumSpanningTreeQuickSort() -> [Edge] {
         var mst: [Edge] = []
         var edges = graph.edges()
         
@@ -56,7 +56,7 @@ open class MinimumSpanningTreeKruskal {
         return mst
     }
     
-    func minimumSpanningTreeHeap() -> [Edge] {
+    open func minimumSpanningTreeHeap() -> [Edge] {
         var mst: [Edge] = []
         let edges = graph.edges()
         
@@ -93,5 +93,5 @@ open class MinimumSpanningTreeKruskal {
         }
         
         return mst
-        }
+    }
 }

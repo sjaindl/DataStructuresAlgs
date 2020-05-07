@@ -9,11 +9,11 @@
 import Foundation
 
 open class Djikstra {
-    var graph: WeightedUndirectedGraph
-    var previous = Dictionary<Vertice, Vertice>()
-    var distanceTo = Dictionary<Vertice, Int>()
+    public var graph: WeightedUndirectedGraph
+    public var previous = Dictionary<Vertice, Vertice>()
+    public var distanceTo = Dictionary<Vertice, Int>()
     
-    init(graph: WeightedUndirectedGraph) {
+    public init(graph: WeightedUndirectedGraph) {
         self.graph = graph
         for vertice in graph.vertices {
             vertice.distanceTo = Int.max
@@ -21,7 +21,7 @@ open class Djikstra {
         }
     }
     
-    func djikstra(from: Vertice, to: Vertice) throws -> Int? {
+    open func djikstra(from: Vertice, to: Vertice) throws -> Int? {
         distanceTo[from] = 0
         let pq = IndexedMinPriorityQueue<Vertice>(maxElements: graph.vertices.count)
 
@@ -51,7 +51,7 @@ open class Djikstra {
         return distanceTo[to]
     }
     
-    func path(to: Vertice) -> [Vertice] {
+    open func path(to: Vertice) -> [Vertice] {
         var path: [Vertice] = []
         
         var prev: Vertice? = to

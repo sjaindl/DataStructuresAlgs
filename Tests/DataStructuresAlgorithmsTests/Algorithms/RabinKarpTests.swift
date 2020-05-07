@@ -11,7 +11,7 @@ import XCTest
 
 open class RabinKarpSubstringSearchTests: XCTestCase {
 
-    func testRabinKarp() {
+    open func testRabinKarp() {
         let rabinKarp = RabinKarpSubstringSearch(base: 128)
         
         XCTAssertNil(rabinKarp.substr(of: "xxx", in: "Substring"))

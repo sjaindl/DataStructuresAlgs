@@ -9,18 +9,18 @@
 import Foundation
 
 open class GraphSearch {
-    let graph: UndirectedGraph
-    let start: Vertice
-    var visited: [Bool]
+    private let graph: UndirectedGraph
+    private let start: Vertice
+    private var visited: [Bool]
     
-    init(graph: UndirectedGraph, start: Vertice) {
+    public init(graph: UndirectedGraph, start: Vertice) {
         self.graph = graph
         self.start = start
         
         visited = [Bool] (repeating: false, count: graph.vertices.count)
     }
     
-    func bfs() {
+    open func bfs() {
         let q = Queue<Vertice>()
         
         q.enqueue(val: start)
@@ -41,12 +41,12 @@ open class GraphSearch {
         }
     }
     
-    func dfs() {
+    open func dfs() {
         visited[start.id] = true
         dfs(v: start)
     }
     
-    func dfs(v: Vertice) {
+    open func dfs(v: Vertice) {
         debugPrint(v.id)
         let n = graph.neighbours(v: v)
         var curVertice = n.head
@@ -61,7 +61,7 @@ open class GraphSearch {
         }
     }
     
-    func dfsIterative() {
+    open func dfsIterative() {
         let s = Stack<Vertice>()
         s.push(val: start)
         visited[start.id] = true

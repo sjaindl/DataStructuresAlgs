@@ -10,14 +10,14 @@ import Foundation
 
 open class TravelingSalesman {
     
-    var graph: WeightedUndirectedGraphWithAdjMatrix
-    var minimumDistance = Int.max
+    private var graph: WeightedUndirectedGraphWithAdjMatrix
+    public var minimumDistance = Int.max
     
-    init(graph: WeightedUndirectedGraphWithAdjMatrix) {
+    public init(graph: WeightedUndirectedGraphWithAdjMatrix) {
         self.graph = graph //this should be a complete graph
     }
     
-    func travelingSalesman(startCity: Vertice) -> [Int] {
+    open func travelingSalesman(startCity: Vertice) -> [Int] {
         var cities: [Int] = []
         
         for city in graph.vertices {

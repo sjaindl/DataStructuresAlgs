@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct UnionFindElement {
-    var parent: Int
-    var size: Int
+public struct UnionFindElement {
+    public var parent: Int
+    public var size: Int
 }
 
 open class UnionFind {
@@ -18,12 +18,12 @@ open class UnionFind {
     private var components: [UnionFindElement]
     private(set) var numberOfComponents: Int
     
-    init(numberOfElements: Int) {
+    public init(numberOfElements: Int) {
         components = [UnionFindElement] (repeating: UnionFindElement(parent: -1, size: 0), count: numberOfElements)
         numberOfComponents = numberOfElements
     }
     
-    convenience init(graph: WeightedUndirectedGraph) {
+    public convenience init(graph: WeightedUndirectedGraph) {
         self.init(numberOfElements: graph.vertices.count)
         
         for vertice in graph.vertices {
@@ -31,7 +31,7 @@ open class UnionFind {
         }
     }
     
-    func find(index: Int) -> Int {
+    open func find(index: Int) -> Int {
         if components[index].parent != index {
             //path compression
             components[index].parent = find(index: components[index].parent)
@@ -40,7 +40,7 @@ open class UnionFind {
         return components[index].parent
     }
     
-    func union(firstIndex: Int, secondIndex: Int) {
+    open func union(firstIndex: Int, secondIndex: Int) {
         let firstElement = find(index: firstIndex)
         let secondElement = find(index: secondIndex)
         

@@ -1,20 +1,22 @@
 import Foundation
 
 open class TrieNode {
-    let value: Character
-    var terminates: Bool
-    var childNodes: Dictionary<Character, TrieNode> = Dictionary()
+    public let value: Character
+    public var terminates: Bool
+    public var childNodes: Dictionary<Character, TrieNode> = Dictionary()
     
-    init(value: Character, terminates: Bool = false) {
+    public init(value: Character, terminates: Bool = false) {
         self.value = value
         self.terminates = terminates
     }
 }
 
 open class Trie {
-    let root: TrieNode = TrieNode(value: " ")
+    public let root: TrieNode = TrieNode(value: " ")
     
-    func insert(word: String) {
+    public init() { }
+    
+    open func insert(word: String) {
         insert(word: Array(word), node: root)
     }
     
@@ -39,7 +41,7 @@ open class Trie {
         }
     }
     
-    func search(word: String) -> Bool {
+    open func search(word: String) -> Bool {
         var curNode: TrieNode? = root
         
         var chars = Array(word)

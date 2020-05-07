@@ -11,7 +11,7 @@ import XCTest
 
 open class QueueTests: XCTestCase {
     
-    func testQueue() throws {
+    open func testQueue() throws {
         let queue = Queue<Int>()
         
         queue.enqueue(val: 1)

@@ -9,13 +9,13 @@
 import Foundation
 
 open class TopologicalSort {
-    var graph: DirectedGraph
+    private var graph: DirectedGraph
     
-    init(graph: DirectedGraph) {
+    public init(graph: DirectedGraph) {
         self.graph = graph
     }
     
-    func topologicalSort() throws -> Queue<Vertice> {
+    open func topologicalSort() throws -> Queue<Vertice> {
         let sort = Queue<Vertice>()
         let processNext = Queue<Vertice>()
         

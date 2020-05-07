@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Interval<T: Comparable> {
+public struct Interval<T: Comparable> {
     var low: T
     var high: T
     
@@ -26,12 +26,12 @@ struct Interval<T: Comparable> {
 }
 
 open class IntervalNode<T: Comparable> {
-    var interval: Interval<T>
-    var minMaxInterval: Interval<T>
-    var left: IntervalNode?
-    var right: IntervalNode?
-    var parent: IntervalNode?
-    var height: Int
+    public var interval: Interval<T>
+    public var minMaxInterval: Interval<T>
+    public var left: IntervalNode?
+    public var right: IntervalNode?
+    public var parent: IntervalNode?
+    public var height: Int
     
     init(parent: IntervalNode? = nil, interval: Interval<T>, height: Int) {
         self.parent = parent
@@ -42,13 +42,13 @@ open class IntervalNode<T: Comparable> {
 }
 
 open class IntervalTree<T: Comparable> {
-    var root: IntervalNode<T>?
+    public var root: IntervalNode<T>?
     
-    init(root: IntervalNode<T>) {
+    public init(root: IntervalNode<T>) {
         self.root = root
     }
     
-    func overlapsInterval(interval: Interval<T>) -> Interval<T>? {
+    open func overlapsInterval(interval: Interval<T>) -> Interval<T>? {
         guard let root = root else {
             return nil
         }
@@ -56,7 +56,7 @@ open class IntervalTree<T: Comparable> {
         return overlapsInterval(interval: interval, node: root)
     }
     
-    func overlapsInterval(interval: Interval<T>, node: IntervalNode<T>) -> Interval<T>? {
+    private func overlapsInterval(interval: Interval<T>, node: IntervalNode<T>) -> Interval<T>? {
         if interval.low < node.interval.high && interval.high >= node.interval.high      //interval overlaps right
             || interval.low <= node.interval.low && interval.high > node.interval.low    //interval overlaps left
             || interval.low >= node.interval.low && interval.high <= node.interval.high  //interval inside
@@ -76,7 +76,7 @@ open class IntervalTree<T: Comparable> {
         return nil
     }
     
-    func insert(interval: Interval<T>) {
+    open func insert(interval: Interval<T>) {
         if root == nil {
             root = IntervalNode(parent: nil, interval: interval, height: 1)
             return
@@ -104,7 +104,7 @@ open class IntervalTree<T: Comparable> {
         }
     }
     
-    func increaseHeightAndSetIntervals(_ node: IntervalNode<T>) {
+    private func increaseHeightAndSetIntervals(_ node: IntervalNode<T>) {
         if node.left != nil, node.right != nil {
             return //must be balanced
         }
@@ -167,14 +167,14 @@ open class IntervalTree<T: Comparable> {
         }
     }
     
-    func description() -> Stack<String> {
+    open func description() -> Stack<String> {
         var stack = Stack<String>()
         description(node: root, stack: &stack)
         
         return stack
     }
     
-    func description(node: IntervalNode<T>?, stack: inout Stack<String>) {
+    private func description(node: IntervalNode<T>?, stack: inout Stack<String>) {
         if let node = node {
             stack.push(val: "Low/High: \(node.interval.low)-\(node.interval.high), Min/Max: \(node.minMaxInterval.low)-\(node.minMaxInterval.high), Height: \(node.height)")
 

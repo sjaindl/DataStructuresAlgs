@@ -11,8 +11,8 @@ import XCTest
 
 open class AVLTreeTests: XCTestCase {
     
-    //Sample Trees from https://www.geeksforgeeks.org/avl-tree-set-1-insertion/
-    func testAVLTree() throws {
+    //Sample Trees from https://www.geeksforgeeks.org/avl-tree-set-1-insertion
+    open func testAVLTree() throws {
         let rootValue = 13
         let treeLeftRotate = AVLTree<Int>()
 

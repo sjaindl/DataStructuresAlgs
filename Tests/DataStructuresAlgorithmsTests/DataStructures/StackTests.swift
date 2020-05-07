@@ -11,7 +11,7 @@ import XCTest
 
 open class StackTests: XCTestCase {
     
-    func testStack() throws {
+    open func testStack() throws {
         let stack = Stack<Int>()
         
         stack.push(val: 5)

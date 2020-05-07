@@ -11,8 +11,8 @@ import XCTest
 
 open class IntervalTreeTests: XCTestCase {
     
-    //https://www.geeksforgeeks.org/interval-tree/
-    func testIntervalTree() throws {
+    //https://www.geeksforgeeks.org/interval-tree
+    open func testIntervalTree() throws {
         let rootValue = Interval(low: 15, high: 20)
         let rootNode = IntervalNode<Int>(interval: rootValue, height: 1)
         let tree: IntervalTree<Int> = IntervalTree<Int>(root: rootNode)
