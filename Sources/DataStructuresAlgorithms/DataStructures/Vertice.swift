@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Vertice: NSObject, Comparable {
+open class Vertice: NSObject, Comparable {
     
-    static func < (lhs: Vertice, rhs: Vertice) -> Bool {
+    public static func < (lhs: Vertice, rhs: Vertice) -> Bool {
         return lhs.distanceTo < rhs.distanceTo
     }
     

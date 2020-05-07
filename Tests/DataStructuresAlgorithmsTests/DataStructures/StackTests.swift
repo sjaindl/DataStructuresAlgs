@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class StackTests: XCTestCase {
+open class StackTests: XCTestCase {
     
     func testStack() throws {
         let stack = Stack<Int>()

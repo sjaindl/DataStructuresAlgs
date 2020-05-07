@@ -1,7 +1,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class RedBlackTreeTests: XCTestCase {
+open class RedBlackTreeTests: XCTestCase {
     
     func testRedBlackTree() {
         let rootValue = 10

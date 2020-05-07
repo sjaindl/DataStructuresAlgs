@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class TopologicalSortTests: XCTestCase {
+open class TopologicalSortTests: XCTestCase {
 
     public func testTopologicalSort() throws {
         let graph = setupTestGraph()

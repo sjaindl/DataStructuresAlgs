@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Stack<T> {
+open class Stack<T> {
     var head: Node<T>?
     var size: Int = 0
     

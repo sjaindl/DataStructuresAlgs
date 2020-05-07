@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class QueueTests: XCTestCase {
+open class QueueTests: XCTestCase {
     
     func testQueue() throws {
         let queue = Queue<Int>()

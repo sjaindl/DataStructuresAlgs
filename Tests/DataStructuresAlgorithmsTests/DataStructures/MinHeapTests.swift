@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class MinHeapTests: XCTestCase {
+open class MinHeapTests: XCTestCase {
     
     func testMinHeap() throws {
         let heap = MinHeap<Int>()

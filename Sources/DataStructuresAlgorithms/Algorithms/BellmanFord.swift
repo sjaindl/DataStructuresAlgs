@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BellmanFord {
+open class BellmanFord {
     let graph: WeightedDirectedGraph
     
     init(graph: WeightedDirectedGraph) {

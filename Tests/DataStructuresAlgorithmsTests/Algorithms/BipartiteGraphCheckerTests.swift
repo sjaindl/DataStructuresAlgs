@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class BipartiteGraphCheckerTests: XCTestCase {
+open class BipartiteGraphCheckerTests: XCTestCase {
     
     func testBipartiteGraph() {
         let graph = setupTestGraph()

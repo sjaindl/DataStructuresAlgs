@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FloydWarshall {
+open class FloydWarshall {
     let graph: WeightedDirectedGraphWithAdjMatrix
     
     init(graph: WeightedDirectedGraphWithAdjMatrix) {

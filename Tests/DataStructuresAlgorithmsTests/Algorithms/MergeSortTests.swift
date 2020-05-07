@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class MergeSortTests: XCTestCase {
+open class MergeSortTests: XCTestCase {
     
     func testMergeSort() {
         var array1 = [4, 3, 2, 1]

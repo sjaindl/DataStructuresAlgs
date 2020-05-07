@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DirectedGraph {
+open class DirectedGraph {
     let vertices: [Vertice]
     var adjList: [LinkedList<Vertice>] = []
     

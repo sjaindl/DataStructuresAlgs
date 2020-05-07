@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Edge: Comparable {
+open class Edge: Comparable {
     let from: Vertice
     let to: Vertice
     let weight: Int
@@ -19,11 +19,11 @@ class Edge: Comparable {
         self.weight = weight
     }
     
-    static func < (lhs: Edge, rhs: Edge) -> Bool {
+    public static func < (lhs: Edge, rhs: Edge) -> Bool {
         return lhs.weight < rhs.weight
     }
     
-    static func == (lhs: Edge, rhs: Edge) -> Bool {
+    public static func == (lhs: Edge, rhs: Edge) -> Bool {
         return lhs.from == rhs.from && lhs.to == rhs.to
     }
     

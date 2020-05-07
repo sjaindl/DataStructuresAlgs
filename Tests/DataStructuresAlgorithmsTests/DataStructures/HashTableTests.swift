@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class HashTableTests: XCTestCase {
+open class HashTableTests: XCTestCase {
     
     func testHashTable() {
         let hashTable = HashTable(size: 2069) //prime number

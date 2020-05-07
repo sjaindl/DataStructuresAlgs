@@ -9,7 +9,7 @@
 import Foundation
 
 //https://www.topcoder.com/generating-permutations/
-class Permuation<T> {
+open class Permuation<T> {
     
     public func permutations(array: inout [T]) -> [[T]] {
         var generatedPermutations: [[T]] = []

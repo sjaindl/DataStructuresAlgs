@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class RabinKarpSubstringSearchTests: XCTestCase {
+open class RabinKarpSubstringSearchTests: XCTestCase {
 
     func testRabinKarp() {
         let rabinKarp = RabinKarpSubstringSearch(base: 128)

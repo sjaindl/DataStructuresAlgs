@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class IntervalTreeTests: XCTestCase {
+open class IntervalTreeTests: XCTestCase {
     
     //https://www.geeksforgeeks.org/interval-tree/
     func testIntervalTree() throws {

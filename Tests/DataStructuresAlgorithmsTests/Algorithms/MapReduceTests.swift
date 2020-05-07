@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class MapReduceTests: XCTestCase {
+open class MapReduceTests: XCTestCase {
     
     func testMapReduceMock() {
         let words = ["Test", "document", "for", "map", "reduce", "Lorem", "Ipsum", "Dolores", "map", "map", "reduce"]

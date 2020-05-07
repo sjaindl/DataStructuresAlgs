@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class FloydWarshallTests: XCTestCase {
+open class FloydWarshallTests: XCTestCase {
     
     func testFloydWarshall() throws {
         let graph = setupTestGraph()

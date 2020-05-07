@@ -1,7 +1,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class TrieTests: XCTestCase {
+open class TrieTests: XCTestCase {
     
     func testTrie() {
         let trieValue = "Trie"

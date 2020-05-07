@@ -8,7 +8,7 @@
 
 import Foundation
 
-class HashTable {
+open class HashTable {
     var table: [LinkedList<String>] = []
     
     init(size: Int) {

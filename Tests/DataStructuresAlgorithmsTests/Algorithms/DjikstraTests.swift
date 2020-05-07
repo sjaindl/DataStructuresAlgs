@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class DjikstraTests: XCTestCase {
+open class DjikstraTests: XCTestCase {
     
     func testDjikstra() throws {
         let graph = setupTestGraph()

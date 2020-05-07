@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MinimumSpanningTreePrim {
+open class MinimumSpanningTreePrim {
     
     var graph: WeightedUndirectedGraph
     

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MinimumSpanningTreeKruskal {
+open class MinimumSpanningTreeKruskal {
     //1. Sort edges by weight --> O(E log E)
         //alternative use priority queue --> O(E log E)
     //2. Pop min edge

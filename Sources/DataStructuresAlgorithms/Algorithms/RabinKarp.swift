@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RabinKarpSubstringSearch {
+open class RabinKarpSubstringSearch {
     var base: Int
     let hashSize: Int = 2147483647
     //A good rule of thumb is to pick both values as prime numbers with M (hashSize) as large as possible

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Djikstra {
+open class Djikstra {
     var graph: WeightedUndirectedGraph
     var previous = Dictionary<Vertice, Vertice>()
     var distanceTo = Dictionary<Vertice, Int>()

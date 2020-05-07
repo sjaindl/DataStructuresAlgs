@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class BitVectorTests: XCTestCase {
+open class BitVectorTests: XCTestCase {
     
     func testBitVector() {
         let bitVector = BitVector(numberOfBits: 256)

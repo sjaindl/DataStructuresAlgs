@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UndirectedGraph {
+open class UndirectedGraph {
     let vertices: [Vertice]
     var adjList: [LinkedList<Vertice>] = []
     

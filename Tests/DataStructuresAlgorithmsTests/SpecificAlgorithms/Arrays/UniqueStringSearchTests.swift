@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class UniqueStringSearchTests: XCTestCase {
+open class UniqueStringSearchTests: XCTestCase {
     
     func testUniqueStringSearch() {
         let stringSearch = UniqueStringSearch(alphabetSize: 256) //Extended ASCII alphabet

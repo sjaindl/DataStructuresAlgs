@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BipartiteGraphChecker {
+open class BipartiteGraphChecker {
     
     enum Color {
         case red

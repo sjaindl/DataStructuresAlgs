@@ -8,7 +8,7 @@
 
 import Foundation
 
-class QuickSort<T: Comparable> {
+open class QuickSort<T: Comparable> {
     static func quickSort(array: inout [T]) {
         if array.count <= 1 {
             return

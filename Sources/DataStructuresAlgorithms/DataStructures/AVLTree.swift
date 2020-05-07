@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AVLTreeNode<T: Comparable> {
+open class AVLTreeNode<T: Comparable> {
     
     var left: AVLTreeNode?
     var right: AVLTreeNode?
@@ -35,7 +35,7 @@ class AVLTreeNode<T: Comparable> {
     }
 }
 
-class AVLTree<T: Comparable> {
+open class AVLTree<T: Comparable> {
     var root: AVLTreeNode<T>?
     
     func insert(val: T) {

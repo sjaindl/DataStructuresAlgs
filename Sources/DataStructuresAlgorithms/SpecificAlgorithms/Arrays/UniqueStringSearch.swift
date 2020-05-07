@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UniqueStringSearch {
+open class UniqueStringSearch {
     
     private let alphabetSize: Int
     

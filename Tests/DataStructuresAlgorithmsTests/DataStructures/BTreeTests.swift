@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class BTreeTests: XCTestCase {
+open class BTreeTests: XCTestCase {
     
     //https://www.geeksforgeeks.org/insert-operation-in-b-tree/
     func testBTree() throws {

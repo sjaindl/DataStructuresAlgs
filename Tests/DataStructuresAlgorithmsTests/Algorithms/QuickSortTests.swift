@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class QuickSortTests: XCTestCase {
+open class QuickSortTests: XCTestCase {
     
     func testQuickSort() {
         var array1 = [2, 6, 5, 3, 8, 7, 1, 0]

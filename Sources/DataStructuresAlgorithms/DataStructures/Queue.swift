@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Queue<T> {
+open class Queue<T> {
     
     var items: [Node<T>?]
     var size: Int = 0

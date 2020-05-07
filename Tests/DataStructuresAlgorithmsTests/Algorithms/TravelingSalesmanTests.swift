@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class TravelingSalesmanTests: XCTestCase {
+open class TravelingSalesmanTests: XCTestCase {
     
     func testTravelingSalesman() {
         let graph = setupTestGraph()

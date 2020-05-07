@@ -8,7 +8,7 @@
 
 import Foundation
 
-class WeightedDirectedGraphWithAdjMatrix {
+open class WeightedDirectedGraphWithAdjMatrix {
     let vertices: [Vertice]
     var adjMatrix: [[Int]]
     

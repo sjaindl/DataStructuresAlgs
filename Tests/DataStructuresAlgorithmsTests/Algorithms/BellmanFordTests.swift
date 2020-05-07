@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class BellmanFordTests: XCTestCase {
+open class BellmanFordTests: XCTestCase {
     
     func testBellmanFord() {
         let graph = setupTestGraph()

@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class GraphSearchTests: XCTestCase {
+open class GraphSearchTests: XCTestCase {
     
     func testBFS() {
         let graph = setupTestGraph()

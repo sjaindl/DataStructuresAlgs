@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class MinimumSpanningTreeKruskalTests: XCTestCase {
+open class MinimumSpanningTreeKruskalTests: XCTestCase {
     
     func testMSTKruskalQuickSort() {
         let graph = setupTestGraph()

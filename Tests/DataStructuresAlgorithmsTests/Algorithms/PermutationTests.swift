@@ -10,7 +10,7 @@ import XCTest
 @testable import DataStructuresAlgorithms
 
 //https://www.topcoder.com/generating-permutations/
-class PermuationTests: XCTestCase {
+open class PermuationTests: XCTestCase {
     
     func testPermutations() {
         let permutation = Permuation<Int>()

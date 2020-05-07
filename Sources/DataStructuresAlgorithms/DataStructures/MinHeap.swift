@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MinHeap<T: Comparable> {
+open class MinHeap<T: Comparable> {
     private var array = [T] ()
     
     func insert(val: T) {

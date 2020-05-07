@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TravelingSalesman {
+open class TravelingSalesman {
     
     var graph: WeightedUndirectedGraphWithAdjMatrix
     var minimumDistance = Int.max

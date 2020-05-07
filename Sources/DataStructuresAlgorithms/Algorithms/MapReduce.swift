@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Document {
+open class Document {
     let words: [String]
     
     init(words: [String]) {
@@ -16,7 +16,7 @@ class Document {
     }
 }
 
-class Result: Comparable {
+open class Result: Comparable {
     let key: String
     let value: Int
     
@@ -25,16 +25,16 @@ class Result: Comparable {
         self.value = value
     }
     
-    static func < (lhs: Result, rhs: Result) -> Bool {
+    public static func < (lhs: Result, rhs: Result) -> Bool {
         return lhs.key < rhs.key
     }
     
-    static func == (lhs: Result, rhs: Result) -> Bool {
+    public static func == (lhs: Result, rhs: Result) -> Bool {
         return lhs.key == rhs.key
     }
 }
 
-class MapReduceWordCount {
+open class MapReduceWordCount {
     
     var partialResults: [Result] = []
     var finalResults: [Result] = []

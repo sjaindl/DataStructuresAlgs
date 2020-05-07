@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MergeSort<T: Comparable> {
+open class MergeSort<T: Comparable> {
     static func mergeSort(array: inout [T]) {
         mergeSort(array: &array, min: 0, max: array.count - 1)
     }

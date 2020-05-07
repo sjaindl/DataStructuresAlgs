@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class MinimumSpanningTreePrimTests: XCTestCase {
+open class MinimumSpanningTreePrimTests: XCTestCase {
     
     func testMSTPrim() {
         let graph = setupTestGraph()

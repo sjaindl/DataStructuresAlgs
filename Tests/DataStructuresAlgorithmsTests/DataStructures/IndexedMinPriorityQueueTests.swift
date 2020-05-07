@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class IndexedMinPriorityQueueTests: XCTestCase {
+open class IndexedMinPriorityQueueTests: XCTestCase {
    
     func testIndexedMinPriorityQueue() throws {
         let indexPq = IndexedMinPriorityQueue<Int>(maxElements: 10)

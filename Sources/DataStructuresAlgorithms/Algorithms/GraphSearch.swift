@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GraphSearch {
+open class GraphSearch {
     let graph: UndirectedGraph
     let start: Vertice
     var visited: [Bool]

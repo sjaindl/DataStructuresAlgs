@@ -1,6 +1,6 @@
 import Foundation
 
-class TreeNode {
+open class TreeNode {
     
     enum TreeColor {
         case red
@@ -31,7 +31,7 @@ class TreeNode {
 }
 
 extension TreeNode : Equatable {
-    static func == (lhs: TreeNode, rhs: TreeNode) -> Bool {
+    public static func == (lhs: TreeNode, rhs: TreeNode) -> Bool {
         return lhs.value == rhs.value
     }
 }

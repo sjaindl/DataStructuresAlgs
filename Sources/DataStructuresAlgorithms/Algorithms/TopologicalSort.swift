@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TopologicalSort {
+open class TopologicalSort {
     var graph: DirectedGraph
     
     init(graph: DirectedGraph) {

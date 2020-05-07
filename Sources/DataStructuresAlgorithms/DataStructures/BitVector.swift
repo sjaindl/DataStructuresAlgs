@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BitVector {
+open class BitVector {
     
     private let numberOfBits: Int
     private var bitStorage: [UInt64]

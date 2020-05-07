@@ -1,7 +1,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-final class DataStructuresAlgorithmsTests: XCTestCase {
+open class DataStructuresAlgorithmsTests: XCTestCase {
 
     func testAll() throws {
         BellmanFordTests().testBellmanFord()

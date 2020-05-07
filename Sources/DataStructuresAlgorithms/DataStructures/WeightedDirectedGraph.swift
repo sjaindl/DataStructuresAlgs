@@ -8,7 +8,7 @@
 
 import Foundation
 
-class WeightedDirectedGraph {
+open class WeightedDirectedGraph {
     let vertices: [Vertice]
     var adjList: [LinkedList<Edge>] = []
     

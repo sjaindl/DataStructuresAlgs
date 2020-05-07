@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class UnionFindTests: XCTestCase {
+open class UnionFindTests: XCTestCase {
     
     func testUnionFind() {
         let graph = setupTestGraph()

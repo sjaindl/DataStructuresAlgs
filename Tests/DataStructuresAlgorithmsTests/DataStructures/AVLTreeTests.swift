@@ -9,7 +9,7 @@
 import XCTest
 @testable import DataStructuresAlgorithms
 
-class AVLTreeTests: XCTestCase {
+open class AVLTreeTests: XCTestCase {
     
     //Sample Trees from https://www.geeksforgeeks.org/avl-tree-set-1-insertion/
     func testAVLTree() throws {

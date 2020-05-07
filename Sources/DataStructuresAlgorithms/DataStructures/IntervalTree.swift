@@ -25,7 +25,7 @@ struct Interval<T: Comparable> {
     }
 }
 
-class IntervalNode<T: Comparable> {
+open class IntervalNode<T: Comparable> {
     var interval: Interval<T>
     var minMaxInterval: Interval<T>
     var left: IntervalNode?
@@ -41,7 +41,7 @@ class IntervalNode<T: Comparable> {
     }
 }
 
-class IntervalTree<T: Comparable> {
+open class IntervalTree<T: Comparable> {
     var root: IntervalNode<T>?
     
     init(root: IntervalNode<T>) {

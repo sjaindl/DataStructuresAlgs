@@ -8,7 +8,7 @@
 
 import Foundation
 
-class IndexedMinPriorityQueue<T: Comparable> {
+open class IndexedMinPriorityQueue<T: Comparable> {
     private var keys = [T?]()
     private var keyIndeces: [Int] //qp
     private var heapIndeces = [Int]() //pq

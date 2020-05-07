@@ -13,7 +13,7 @@ struct UnionFindElement {
     var size: Int
 }
 
-class UnionFind {
+open class UnionFind {
     //union find with path compression and rank by size
     private var components: [UnionFindElement]
     private(set) var numberOfComponents: Int

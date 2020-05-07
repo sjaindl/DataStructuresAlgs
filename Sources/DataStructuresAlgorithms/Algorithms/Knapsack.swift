@@ -9,7 +9,7 @@
 import Foundation
 
 //https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
-class Knapsack {
+open class Knapsack {
     
     var knapsack: [[Int]] = []
     
