@@ -38,6 +38,8 @@ open class AVLTreeNode<T: Comparable> {
 open class AVLTree<T: Comparable> {
     public var root: AVLTreeNode<T>?
     
+    public init() { }
+    
     open func insert(val: T) {
         if root == nil {
             root = AVLTreeNode(parent: nil, value: val, height: 1)

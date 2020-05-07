@@ -39,6 +39,8 @@ extension TreeNode : Equatable {
 open class RedBlackTree {
     public var root: TreeNode?
     
+    public init() { }
+    
     open func insert(value: Int) {
         if root == nil {
             root = TreeNode(parent: nil, value: value)
