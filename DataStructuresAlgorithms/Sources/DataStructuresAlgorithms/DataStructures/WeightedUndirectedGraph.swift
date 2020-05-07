@@ -10,8 +10,8 @@ import Foundation
 
 class WeightedUndirectedGraph {
     let vertices: [Vertice]
-    var adjList: [LinkedList<Edge>] = []
-    var edgesOfGraph: [Edge] = []
+    private var adjList: [LinkedList<Edge>] = []
+    private var edgesOfGraph: [Edge] = []
     
     init(vertices: [Vertice]) {
         self.vertices = vertices

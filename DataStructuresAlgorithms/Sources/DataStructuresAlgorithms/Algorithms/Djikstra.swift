@@ -15,30 +15,30 @@ class Djikstra {
     
     init(graph: WeightedUndirectedGraph) {
         self.graph = graph
-        for v in graph.vertices {
-            distanceTo[v] = Int.max
+        for vertice in graph.vertices {
+            vertice.distanceTo = Int.max
+            distanceTo[vertice] = Int.max
         }
     }
     
     func djikstra(from: Vertice, to: Vertice) throws -> Int? {
         distanceTo[from] = 0
         let pq = IndexedMinPriorityQueue<Vertice>(maxElements: graph.vertices.count)
-        
-        for (key, val) in distanceTo {
-            key.distanceTo = val
-            try? pq.insert(index: key.id, key: key)
+
+        for vertice in graph.vertices {
+            try? pq.insert(index: vertice.id, key: vertice)
         }
         
-        while !pq.isEmpty(), let v = try? pq.extractMin() {
-            let neighbours = graph.neighbours(v: v)
+        while !pq.isEmpty(), let vertice = try? pq.extractMin() {
+            let neighbours = graph.neighbours(v: vertice)
             var neighbour = neighbours.head
             
-            while let n = neighbour, let curDistToV = distanceTo[v], let curDistToNeighbour = distanceTo[n.val.to] {
+            while let n = neighbour, let curDistToV = distanceTo[vertice], let curDistToNeighbour = distanceTo[n.val.to] {
                 let distInPath = curDistToV == Int.max ? Int.max : curDistToV + n.val.weight
                 
                 if distInPath < curDistToNeighbour {
                     distanceTo[n.val.to] = distInPath
-                    previous[n.val.to] = v
+                    previous[n.val.to] = vertice
                     
                     n.val.to.distanceTo = distInPath
                     try? pq.changeKey(index: n.val.to.id, key: n.val.to)

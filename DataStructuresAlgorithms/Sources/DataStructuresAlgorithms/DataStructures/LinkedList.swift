@@ -23,9 +23,13 @@ class LinkedList<T> {
     
     func add(node: Node<T>) {
         if count == 0 {
-            head = node; tail = node;
+            head = node
+            tail = node
         } else {
-            let temp = tail; tail = node; temp?.next = tail; tail?.prev = temp;
+            let temp = tail
+            tail = node
+            temp?.next = tail
+            tail?.prev = temp
         }
         count += 1
     }
@@ -36,10 +40,10 @@ class LinkedList<T> {
         }
         
         if count == 1 {
-            head = nil; tail = nil;
+            head = nil; tail = nil
         } else {
             tail?.prev?.next = nil
-            tail = tail?.prev;
+            tail = tail?.prev
         }
         count -= 1
     }
