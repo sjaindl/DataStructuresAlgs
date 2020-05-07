@@ -33,4 +33,22 @@ class MinHeapTests: XCTestCase {
         XCTAssertEqual(try heap.extractMin(), 10)
         XCTAssertEqual(try heap.extractMin(), 11)
     }
+    
+    func testMinHeapEqualValues() throws {
+        let heap = MinHeap<Int>()
+        let test = [1, 1, 2, 7, 6, 8, 4, 7, 8, 8, 10, 10, 11, 11,
+                    9, 7, 6, 4, 2, 4, 8, 9, 4, 2, 2, 7, 14, 14]
+        
+        for value in test {
+            heap.insert(val: value)
+        }
+        
+        var lastElement = Int.min
+        while !heap.isEmpty() {
+            let element = try heap.extractMin()
+            debugPrint(element)
+            XCTAssertLessThanOrEqual(lastElement, element)
+            lastElement = element
+        }
+    }
 }

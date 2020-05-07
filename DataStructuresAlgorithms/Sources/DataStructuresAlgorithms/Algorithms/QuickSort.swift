@@ -26,44 +26,58 @@ class QuickSort<T: Comparable> {
     }
     
     private static func partition(array: inout [T], min: Int, max: Int) -> Int {
-        var left = min
+        var left = min + 1
         var pivot = medianOfThree(array: array, min: min, max:  max)
-        exchange(array: &array, index1: pivot, index2: max)
-        pivot = max
-        var right = pivot - 1
+        exchange(array: &array, index1: pivot, index2: min)
+        pivot = min
+        var right = max
         
-        while left < right {
+        while true {
             while array[left] < array[pivot] {
                 left += 1
+                if left == max {
+                    break
+                }
             }
              
             while array[right] > array[pivot] {
                 right -= 1
+                if right == min {
+                    break
+                }
             }
             
-            if left < right {
+            if left >= right {
+                break
+            }
+            
+            if !(array[left] < array[right]), !(array[right] < array[left]) {
+                right -= 1
+            } else {
                 exchange(array: &array, index1: left, index2: right)
             }
         }
         
-        exchange(array: &array, index1: pivot, index2: left)
-        pivot = left
+        exchange(array: &array, index1: pivot, index2: right)
+        pivot = right
         
         return pivot
     }
     
     private static func medianOfThree(array: [T], min: Int, max: Int) -> Int {
-        if array[min] < array[max / 2] && array[min] > array[max]
-            || array[min] > array[max / 2] && array[min] < array[max] {
+        let middle = min + (max - min) / 2
+        
+        if array[min] < array[middle] && array[min] > array[max]
+            || array[min] > array[middle] && array[min] < array[max] {
             return min
         }
         
-        if array[max] < array[max / 2] && array[max] > array[min]
-            || array[max] > array[max / 2] && array[max] < array[min] {
+        if array[max] < array[middle] && array[max] > array[min]
+            || array[max] > array[middle] && array[max] < array[min] {
             return max
         }
         
-        return max / 2
+        return middle
     }
     
     private static func exchange(array: inout [T], index1: Int, index2: Int) {

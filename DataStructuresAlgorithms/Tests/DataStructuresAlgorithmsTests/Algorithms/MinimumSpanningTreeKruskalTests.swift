@@ -11,18 +11,42 @@ import XCTest
 
 class MinimumSpanningTreeKruskalTests: XCTestCase {
     
-    func testMSTKruskal() {
+    func testMSTKruskalQuickSort() {
         let graph = setupTestGraph()
         let mstKruskal = MinimumSpanningTreeKruskal(graph: graph)
-        let mst = mstKruskal.minimumSpanningTree()
+        let mst = mstKruskal.minimumSpanningTreeQuickSort()
         
         let array: [String] = mst.compactMap {
             return "\($0.from.id) -> \($0.to.id): \($0.weight)"
         }
         
-        XCTAssertEqual(array, ["2 -> 3: 4",
-                               "0 -> 3: 5",
-                               "3 -> 1: 15 xxx"])
+        XCTAssertEqual(array, ["6 -> 7: 1",
+                               "2 -> 8: 2",
+                               "6 -> 5: 2",
+                               "1 -> 0: 4",
+                               "2 -> 5: 4",
+                               "3 -> 2: 7",
+                               "0 -> 7: 8",
+                               "3 -> 4: 9"])
+    }
+    
+    func testMSTKruskalHeap() {
+        let graph = setupTestGraph()
+        let mstKruskal = MinimumSpanningTreeKruskal(graph: graph)
+        let mst = mstKruskal.minimumSpanningTreeQuickSort()
+        
+        let array: [String] = mst.compactMap {
+            return "\($0.from.id) -> \($0.to.id): \($0.weight)"
+        }
+        
+        XCTAssertEqual(array, ["6 -> 7: 1",
+                               "2 -> 8: 2",
+                               "6 -> 5: 2",
+                               "1 -> 0: 4",
+                               "2 -> 5: 4",
+                               "3 -> 2: 7",
+                               "0 -> 7: 8",
+                               "3 -> 4: 9"])
     }
     
     //https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/?ref=lbp

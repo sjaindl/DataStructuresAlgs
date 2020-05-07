@@ -33,22 +33,6 @@ class MinHeap<T: Comparable> {
         return min
     }
     
-    func update(_ item: T) {
-        for (index, curItem) in array.enumerated() {
-            if curItem == item {
-                array[index] = item
-                
-                if item < curItem {
-                    sink(key: index)
-                } else {
-                    swim(key: index)   
-                }
-                
-                return
-            }
-        }
-    }
-    
     func isEmpty() -> Bool {
         return array.count == 0
     }
@@ -61,16 +45,22 @@ class MinHeap<T: Comparable> {
     }
     
     private func sink(key: Int) {
-        if array.count - 1 >= 2 * key + 2 &&
-            array[key] > max(array[2 * key + 1], array[2 * key + 2]) {
-            if array[2 * key + 1] > array[2 * key + 2] {
-                exchange(index1: key, index2: 2 * key + 2)
+        let key1Index = 2 * key + 1
+        let key2Index = 2 * key + 2
+        
+        if array.count - 1 >= key2Index &&
+            array[key] > min(array[key1Index], array[key2Index]) {
+            if array[key1Index] > array[key2Index] {
+                exchange(index1: key, index2: key2Index)
+                sink(key: key2Index)
             } else {
-                exchange(index1: key, index2: 2 * key + 1)
+                exchange(index1: key, index2: key1Index)
+                sink(key: key1Index)
             }
-        } else if array.count - 1 >= 2 * key + 1 &&
-            array[key] > array[2 * key + 1] {
-            exchange(index1: key, index2: 2 * key + 1)
+        } else if array.count - 1 >= key1Index &&
+            array[key] > array[key1Index] {
+            exchange(index1: key, index2: key1Index)
+            sink(key: key1Index)
         }
     }
     
