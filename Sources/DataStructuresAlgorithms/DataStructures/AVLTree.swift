@@ -141,7 +141,7 @@ open class AVLTree<T: Comparable> {
         p?.left = n?.right
         p?.left?.parent = p
         
-        n?.right = p;
+        n?.right = p
         p?.parent = n // p? = n?.right
         
         n?.parent = gp
