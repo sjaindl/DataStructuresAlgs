@@ -33,7 +33,7 @@ open class BitVector {
     open func unsetBit(index: Int) {
         let arrayIndex = index / 64
         let bitIndex = UInt64(index - arrayIndex * 64)
-        let bit: UInt64 = UInt64.max & 0 << bitIndex
+        let bit: UInt64 = ~(1 << bitIndex)
         
         bitStorage[arrayIndex] &= bit
     }
