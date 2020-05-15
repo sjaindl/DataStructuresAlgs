@@ -45,5 +45,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         UniqueStringSearchTests().testUniqueStringSearch()
         UrlifierTests().testUrlify()
         PalindromePermutationTests().testPalindromePermutations()
+        OneAwayCheckerTests().testOneAwayChecker()
     }
 }
