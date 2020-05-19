@@ -12,7 +12,7 @@ open class Urlifier {
     public init() { }
     
     open func urlify(_ input: inout [Character]) {
-        if input.count < 1 {
+        if input.isEmpty {
             return
         }
         

@@ -21,7 +21,7 @@ open class Trie {
     }
     
     private func insert(word: [Character], node: TrieNode) {
-        if word.count == 0 {
+        if word.isEmpty {
             return
         }
         
@@ -54,7 +54,7 @@ open class Trie {
             let char = chars[0]
             curNode = curNode?.childNodes[char]
             chars = Array(chars[1...])
-            if chars.count == 0, let curNode = curNode, curNode.terminates {
+            if chars.isEmpty, let curNode = curNode, curNode.terminates {
                 return true
             }
         }

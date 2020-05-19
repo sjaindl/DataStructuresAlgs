@@ -21,7 +21,7 @@ open class Knapsack {
         }
         
         //base case: no more weight left OR no values left
-        if maxWeight == 0 || values.count == 0 {
+        if maxWeight == 0 || values.isEmpty {
             return 0
         }
         

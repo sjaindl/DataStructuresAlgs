@@ -36,7 +36,7 @@ open class MinHeap<T: Comparable> {
     }
     
     open func isEmpty() -> Bool {
-        return array.count == 0
+        return array.isEmpty
     }
     
     private func swim(key: Int) {

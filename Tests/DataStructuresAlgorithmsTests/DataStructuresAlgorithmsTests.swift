@@ -47,5 +47,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         PalindromePermutationTests().testPalindromePermutations()
         OneAwayCheckerTests().testOneAwayChecker()
         StringCompresserTests().testStringCompresser()
+        MatrixRotationTests().testMatrixRightRotation()
+        ZeroMatrixTests().testZeroMatrix()
     }
 }
