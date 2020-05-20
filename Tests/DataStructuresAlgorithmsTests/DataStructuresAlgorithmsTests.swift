@@ -49,5 +49,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         StringCompresserTests().testStringCompresser()
         MatrixRotationTests().testMatrixRightRotation()
         ZeroMatrixTests().testZeroMatrix()
+        StringRotationTests().testStringRotation()
     }
 }
