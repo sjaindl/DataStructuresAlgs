@@ -10,13 +10,13 @@ import Foundation
 
 open class UndirectedGraph {
     public let vertices: [Vertice]
-    private var adjList: [LinkedList<Vertice>] = []
+    private var adjList: [DoubleLinkedList<Vertice>] = []
     
     public init(vertices: [Vertice]) {
         self.vertices = vertices
         
         for _ in vertices {
-            adjList.append(LinkedList<Vertice>())
+            adjList.append(DoubleLinkedList<Vertice>())
         }
     }
     
@@ -25,7 +25,7 @@ open class UndirectedGraph {
         adjList[v2.id].add(node: Node(val: v1))
     }
     
-    open func neighbours(v: Vertice) -> LinkedList<Vertice> {
+    open func neighbours(v: Vertice) -> DoubleLinkedList<Vertice> {
         return adjList[v.id]
     }
 }

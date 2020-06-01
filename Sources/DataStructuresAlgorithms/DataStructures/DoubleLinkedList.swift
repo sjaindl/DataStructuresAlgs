@@ -16,7 +16,7 @@ open class Node<T> {
     }
 }
 
-open class LinkedList<T> {
+open class DoubleLinkedList<T> {
     public var head: Node<T>?
     public var tail: Node<T>?
     public var count: Int = 0
@@ -36,7 +36,7 @@ open class LinkedList<T> {
         count += 1
     }
     
-    open func removeLast() throws {
+    open func removeLast() throws -> Node<T>? {
         if count == 0 {
             throw MyError.runtimeError("Invalid call")
         }
@@ -47,7 +47,10 @@ open class LinkedList<T> {
             tail?.prev?.next = nil
             tail = tail?.prev
         }
+        
         count -= 1
+        
+        return tail
     }
     
     open func removeByKey(val: Int) {

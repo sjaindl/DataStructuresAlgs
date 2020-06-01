@@ -50,5 +50,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         MatrixRotationTests().testMatrixRightRotation()
         ZeroMatrixTests().testZeroMatrix()
         StringRotationTests().testStringRotation()
+        try DuplicateRemoverTests().testDuplicateRemoval()
     }
 }

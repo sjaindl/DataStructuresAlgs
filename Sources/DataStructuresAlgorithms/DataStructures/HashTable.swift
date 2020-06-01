@@ -9,12 +9,12 @@
 import Foundation
 
 open class HashTable {
-    private var table: [LinkedList<String>] = []
+    private var table: [DoubleLinkedList<String>] = []
     
     public init(size: Int) {
-        table = [LinkedList<String>] (repeating: LinkedList(), count: size)
+        table = [DoubleLinkedList<String>] (repeating: DoubleLinkedList(), count: size)
         for i in 0 ... size - 1 {
-            table[i] = LinkedList<String>()
+            table[i] = DoubleLinkedList<String>()
         }
     }
     

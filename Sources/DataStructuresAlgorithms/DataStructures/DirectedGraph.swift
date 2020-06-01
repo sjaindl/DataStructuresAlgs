@@ -10,13 +10,13 @@ import Foundation
 
 open class DirectedGraph {
     public let vertices: [Vertice]
-    private var adjList: [LinkedList<Vertice>] = []
+    private var adjList: [DoubleLinkedList<Vertice>] = []
     
     public init(vertices: [Vertice]) {
         self.vertices = vertices
         
         for _ in vertices {
-            adjList.append(LinkedList<Vertice>())
+            adjList.append(DoubleLinkedList<Vertice>())
         }
     }
     
@@ -24,7 +24,7 @@ open class DirectedGraph {
         adjList[v1.id].add(node: Node(val: v2))
     }
     
-    open func neighbours(v: Vertice) -> LinkedList<Vertice> {
+    open func neighbours(v: Vertice) -> DoubleLinkedList<Vertice> {
         return adjList[v.id]
     }
 }

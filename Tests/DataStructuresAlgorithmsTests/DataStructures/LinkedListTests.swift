@@ -4,7 +4,7 @@ import XCTest
 open class LinkedListTests: XCTestCase {
     
     open func testLinkedList() {
-        let list = LinkedList<Int>()
+        let list = DoubleLinkedList<Int>()
 
         let node1 = Node(val: 1)
         list.add(node: node1)

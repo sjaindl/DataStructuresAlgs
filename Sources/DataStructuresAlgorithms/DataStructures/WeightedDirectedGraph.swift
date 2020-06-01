@@ -10,13 +10,13 @@ import Foundation
 
 open class WeightedDirectedGraph {
     public let vertices: [Vertice]
-    private var adjList: [LinkedList<Edge>] = []
+    private var adjList: [DoubleLinkedList<Edge>] = []
     
     public init(vertices: [Vertice]) {
         self.vertices = vertices
         
         for _ in vertices {
-            adjList.append(LinkedList<Edge>())
+            adjList.append(DoubleLinkedList<Edge>())
         }
     }
     
@@ -25,7 +25,7 @@ open class WeightedDirectedGraph {
         adjList[v1.id].add(node: Node(val: edge))
     }
     
-    open func neighbours(v: Vertice) -> LinkedList<Edge> {
+    open func neighbours(v: Vertice) -> DoubleLinkedList<Edge> {
         return adjList[v.id]
     }
     

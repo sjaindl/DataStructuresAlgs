@@ -10,14 +10,14 @@ import Foundation
 
 open class WeightedUndirectedGraph {
     public let vertices: [Vertice]
-    private var adjList: [LinkedList<Edge>] = []
+    private var adjList: [DoubleLinkedList<Edge>] = []
     private var edgesOfGraph: [Edge] = []
     
     public init(vertices: [Vertice]) {
         self.vertices = vertices
         
         for _ in vertices {
-            adjList.append(LinkedList<Edge>())
+            adjList.append(DoubleLinkedList<Edge>())
         }
     }
     
@@ -31,7 +31,7 @@ open class WeightedUndirectedGraph {
         edgesOfGraph.append(edge2)
     }
     
-    open func neighbours(v: Vertice) -> LinkedList<Edge> {
+    open func neighbours(v: Vertice) -> DoubleLinkedList<Edge> {
         return adjList[v.id]
     }
     
