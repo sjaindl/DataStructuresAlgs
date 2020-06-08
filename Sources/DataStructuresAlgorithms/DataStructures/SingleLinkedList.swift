@@ -30,6 +30,13 @@ open class SingleLinkedList<T> {
         count += 1
     }
     
+    open func prepend(node: SingleNode<T>) {
+        node.next = head
+        head = node
+        
+        count += 1
+    }
+    
     open func removeLast() throws -> SingleNode<T>? {
         if count == 0 {
             throw MyError.runtimeError("Invalid call")

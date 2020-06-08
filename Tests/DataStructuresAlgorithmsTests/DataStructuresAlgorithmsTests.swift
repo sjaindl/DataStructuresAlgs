@@ -53,5 +53,9 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try DuplicateRemoverTests().testDuplicateRemoval()
         try KToLastTest().testKToLast()
         try DeleteMiddleNodeTest().testDeleteMiddleNode()
+        try PartitionLinkedListTests().testPartition()
+        try SumListsTests().testReverseSum()
+        try SumListsTests().testSumWithPadding()
+        try SumListsTests().testSumWithExcessCarry()
     }
 }
