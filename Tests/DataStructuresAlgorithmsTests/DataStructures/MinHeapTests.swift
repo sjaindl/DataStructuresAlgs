@@ -46,7 +46,6 @@ open class MinHeapTests: XCTestCase {
         var lastElement = Int.min
         while !heap.isEmpty() {
             let element = try heap.extractMin()
-            debugPrint(element)
             XCTAssertLessThanOrEqual(lastElement, element)
             lastElement = element
         }

@@ -27,7 +27,6 @@ open class GraphSearch {
         visited[start.id] = true
         while !q.isEmpty() {
             let v = try! q.dequeue()
-            debugPrint(v.id)
             
             let n = graph.neighbours(v: v)
             var curNode = n.head
@@ -47,7 +46,6 @@ open class GraphSearch {
     }
     
     open func dfs(v: Vertice) {
-        debugPrint(v.id)
         let n = graph.neighbours(v: v)
         var curVertice = n.head
         
@@ -69,7 +67,6 @@ open class GraphSearch {
         while !s.isEmpty() {
             do {
                 let v = try s.pop()
-                debugPrint(v.id)
                 
                 let n = graph.neighbours(v: v)
                 var curVertice = n.head

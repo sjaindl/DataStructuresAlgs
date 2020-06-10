@@ -1,6 +1,6 @@
 import Foundation
 
-open class SingleNode<T> {
+open class SingleNode<T: Comparable> {
     var next: SingleNode?
     var val: T
     
@@ -10,7 +10,7 @@ open class SingleNode<T> {
     }
 }
 
-open class SingleLinkedList<T> {
+open class SingleLinkedList<T: Comparable> {
     public var head: SingleNode<T>?
     public var count: Int = 0
     
