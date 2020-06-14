@@ -57,5 +57,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try SumListsTests().testReverseSum()
         try SumListsTests().testSumWithPadding()
         try SumListsTests().testSumWithExcessCarry()
+        try LoopDetectorTests().testLoopDetector()
+        try MultiStackTests().testMultiStack()
     }
 }
