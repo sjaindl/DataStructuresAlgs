@@ -59,5 +59,10 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try SumListsTests().testSumWithExcessCarry()
         try LoopDetectorTests().testLoopDetector()
         try MultiStackTests().testMultiStack()
+        try MinStackTests().testMinStack()
+        try AnimalShelterTests().testAnimalShelter()
+        try QueueWithStackTests().testQueueWithStacks()
+        try StackSetTests().testStackSet()
+        try StackSetTests().testStackSet()
     }
 }
