@@ -28,6 +28,14 @@ open class Stack<T> {
         return node.val
     }
     
+    open func peek() throws -> T {
+        guard let node = head else {
+            throw NSError(domain: "Stack: Invalid call", code: 0, userInfo: nil)
+        }
+        
+        return node.val
+    }
+    
     open func isEmpty() -> Bool {
         return size == 0
     }   

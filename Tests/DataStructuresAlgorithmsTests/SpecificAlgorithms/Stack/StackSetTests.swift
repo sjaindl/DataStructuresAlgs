@@ -1,8 +1,8 @@
 //
-//  MultiStackTests.swift
+//  StackSetTests.swift
 //  
 //
-//  Created by Stefan Jaindl on 14.06.20.
+//  Created by Stefan Jaindl on 21.06.20.
 //
 
 import Foundation

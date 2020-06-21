@@ -1,5 +1,5 @@
 //
-//  MultiStackTests.swift
+//  MinStackTests.swift
 //  
 //
 //  Created by Stefan Jaindl on 14.06.20.
