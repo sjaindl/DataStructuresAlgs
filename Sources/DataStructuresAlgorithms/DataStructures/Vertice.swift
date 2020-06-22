@@ -38,6 +38,8 @@ open class Vertice: NSObject, Comparable {
         }
     }
     
+    public var visited: Bool = false
+    
     public init(id: Int) {
         self.id = id
     }
