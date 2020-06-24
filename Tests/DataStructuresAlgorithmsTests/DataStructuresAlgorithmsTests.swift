@@ -64,5 +64,8 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try QueueWithStackTests().testQueueWithStacks()
         try StackSetTests().testStackSet()
         try StackSetTests().testStackSet()
+        PathCheckerTests().testPathChecker()
+        try MinTreeTests().testMinTree()
+        ListOfDepthsTests().testListOfDepths()
     }
 }

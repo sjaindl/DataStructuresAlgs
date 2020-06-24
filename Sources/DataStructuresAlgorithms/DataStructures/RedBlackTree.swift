@@ -1,6 +1,6 @@
 import Foundation
 
-open class TreeNode {
+open class TreeNode<T: Comparable> {
     
     public enum TreeColor {
         case red
@@ -10,10 +10,10 @@ open class TreeNode {
     public var left: TreeNode?
     public var right: TreeNode?
     public var parent: TreeNode?
-    public var value: Int
+    public var value: T
     public var color = TreeColor.red
     
-    public init(parent: TreeNode?, value: Int) {
+    public init(parent: TreeNode?, value: T) {
         self.parent = parent
         self.value = value
     }
@@ -36,12 +36,12 @@ extension TreeNode : Equatable {
     }
 }
 
-open class RedBlackTree {
-    public var root: TreeNode?
+open class RedBlackTree<T: Comparable> {
+    public var root: TreeNode<T>?
     
     public init() { }
     
-    open func insert(value: Int) {
+    open func insert(value: T) {
         if root == nil {
             root = TreeNode(parent: nil, value: value)
             root?.color = .black
@@ -76,7 +76,7 @@ open class RedBlackTree {
         }
     }
     
-    private func bstInsert(value: Int) -> TreeNode { //assumption: no equal value nodes, root exists
+    private func bstInsert(value: T) -> TreeNode<T> { //assumption: no equal value nodes, root exists
         var curNode = root
         
         while true {
@@ -102,7 +102,7 @@ open class RedBlackTree {
         return curNode!
     }
     
-    private func recolor(node: TreeNode?) {
+    private func recolor(node: TreeNode<T>?) {
         guard node != nil else {
             return
         }
@@ -122,7 +122,7 @@ open class RedBlackTree {
         recolor(node: g)
     }
     
-    private func rightRotate(n: TreeNode?) {
+    private func rightRotate(n: TreeNode<T>?) {
         let p = n?.parent
         p?.left = n?.right
         p?.left?.parent = p
@@ -138,7 +138,7 @@ open class RedBlackTree {
         n?.color = .black
     }
     
-    private func leftRotate(n: TreeNode?) {
+    private func leftRotate(n: TreeNode<T>?) {
         let p = n?.parent
         p?.right = n?.left
         p?.right?.parent = p

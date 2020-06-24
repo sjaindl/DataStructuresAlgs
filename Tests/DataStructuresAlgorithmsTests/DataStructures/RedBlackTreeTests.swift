@@ -5,7 +5,7 @@ open class RedBlackTreeTests: XCTestCase {
     
     open func testRedBlackTree() {
         let rootValue = 10
-        let tree = RedBlackTree()
+        let tree = RedBlackTree<Int>()
 
         tree.insert(value: rootValue)
         tree.insert(value: 5)
