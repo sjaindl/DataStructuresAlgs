@@ -33,7 +33,7 @@ open class LinkedListPalindrome<T: Comparable> {
         return resultSoFar
     }
     
-    public struct ResultWrapper<T: Comparable> {
+    private struct ResultWrapper<T: Comparable> {
         var node: SingleNode<T>?
         var isPalindrome: Bool
     }

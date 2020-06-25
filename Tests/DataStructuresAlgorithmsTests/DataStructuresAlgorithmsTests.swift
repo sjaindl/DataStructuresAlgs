@@ -67,5 +67,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         PathCheckerTests().testPathChecker()
         try MinTreeTests().testMinTree()
         ListOfDepthsTests().testListOfDepths()
+        BalancedTreeCheckerTests().testBalancedTree()
+        BalancedTreeCheckerTests().testUnbalancedTree()
     }
 }

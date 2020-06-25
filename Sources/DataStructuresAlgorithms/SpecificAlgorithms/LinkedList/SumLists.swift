@@ -72,7 +72,7 @@ open class SumLists {
         }
     }
     
-    func sum(first: SingleNode<Int>?, second: SingleNode<Int>?) -> ResultWrapper {
+    private func sum(first: SingleNode<Int>?, second: SingleNode<Int>?) -> ResultWrapper {
         guard let first = first, let second = second else {
             return ResultWrapper(carry: 0, resultList: SingleLinkedList<Int>())
         }
@@ -88,7 +88,7 @@ open class SumLists {
     }
 }
 
-public struct ResultWrapper {
+private struct ResultWrapper {
     var carry: Int
     var resultList: SingleLinkedList<Int>
 }
