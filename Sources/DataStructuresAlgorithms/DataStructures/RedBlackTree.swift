@@ -1,19 +1,19 @@
 import Foundation
 
-open class TreeNode<T: Comparable> {
+open class RedBlackTreeNode<T: Comparable> {
     
     public enum TreeColor {
         case red
         case black
     }
     
-    public var left: TreeNode?
-    public var right: TreeNode?
-    public var parent: TreeNode?
+    public var left: RedBlackTreeNode?
+    public var right: RedBlackTreeNode?
+    public var parent: RedBlackTreeNode?
     public var value: T
     public var color = TreeColor.red
     
-    public init(parent: TreeNode?, value: T) {
+    public init(parent: RedBlackTreeNode?, value: T) {
         self.parent = parent
         self.value = value
     }
@@ -22,7 +22,7 @@ open class TreeNode<T: Comparable> {
         return parent == nil
     }
     
-    open func uncle() -> TreeNode? {
+    open func uncle() -> RedBlackTreeNode? {
         if let left = parent?.parent?.left, left.value == parent?.value {
             return parent?.parent?.right
         }
@@ -30,20 +30,20 @@ open class TreeNode<T: Comparable> {
     }
 }
 
-extension TreeNode : Equatable {
-    public static func == (lhs: TreeNode, rhs: TreeNode) -> Bool {
+extension RedBlackTreeNode : Equatable {
+    public static func == (lhs: RedBlackTreeNode, rhs: RedBlackTreeNode) -> Bool {
         return lhs.value == rhs.value
     }
 }
 
 open class RedBlackTree<T: Comparable> {
-    public var root: TreeNode<T>?
+    public var root: RedBlackTreeNode<T>?
     
     public init() { }
     
     open func insert(value: T) {
         if root == nil {
-            root = TreeNode(parent: nil, value: value)
+            root = RedBlackTreeNode(parent: nil, value: value)
             root?.color = .black
             return
         }
@@ -76,7 +76,7 @@ open class RedBlackTree<T: Comparable> {
         }
     }
     
-    private func bstInsert(value: T) -> TreeNode<T> { //assumption: no equal value nodes, root exists
+    private func bstInsert(value: T) -> RedBlackTreeNode<T> { //assumption: no equal value nodes, root exists
         var curNode = root
         
         while true {
@@ -84,7 +84,7 @@ open class RedBlackTree<T: Comparable> {
                 if curNode?.left != nil {
                     curNode = curNode?.left
                 } else {
-                    curNode?.left = TreeNode(parent: curNode, value: value)
+                    curNode?.left = RedBlackTreeNode(parent: curNode, value: value)
                     curNode = curNode?.left
                     break
                 }
@@ -92,7 +92,7 @@ open class RedBlackTree<T: Comparable> {
                 if curNode?.right != nil {
                     curNode = curNode?.right
                 } else {
-                    curNode?.right = TreeNode(parent: curNode, value: value)
+                    curNode?.right = RedBlackTreeNode(parent: curNode, value: value)
                     curNode = curNode?.right
                     break
                 }
@@ -102,7 +102,7 @@ open class RedBlackTree<T: Comparable> {
         return curNode!
     }
     
-    private func recolor(node: TreeNode<T>?) {
+    private func recolor(node: RedBlackTreeNode<T>?) {
         guard node != nil else {
             return
         }
@@ -122,7 +122,7 @@ open class RedBlackTree<T: Comparable> {
         recolor(node: g)
     }
     
-    private func rightRotate(n: TreeNode<T>?) {
+    private func rightRotate(n: RedBlackTreeNode<T>?) {
         let p = n?.parent
         p?.left = n?.right
         p?.left?.parent = p
@@ -138,7 +138,7 @@ open class RedBlackTree<T: Comparable> {
         n?.color = .black
     }
     
-    private func leftRotate(n: TreeNode<T>?) {
+    private func leftRotate(n: RedBlackTreeNode<T>?) {
         let p = n?.parent
         p?.right = n?.left
         p?.right?.parent = p

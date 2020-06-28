@@ -69,5 +69,10 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         ListOfDepthsTests().testListOfDepths()
         BalancedTreeCheckerTests().testBalancedTree()
         BalancedTreeCheckerTests().testUnbalancedTree()
+        ValidateBSTTests().testValidTree()
+        ValidateBSTTests().testInvalidTree()
+        NodeSuccessorTests().testNodeSuccessorCaseOne()
+        NodeSuccessorTests().testNodeSuccessorCaseTwo()
+        NodeSuccessorTests().testNodeSuccessorCaseThree()
     }
 }
