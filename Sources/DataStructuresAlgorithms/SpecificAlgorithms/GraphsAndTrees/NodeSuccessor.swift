@@ -20,8 +20,8 @@ open class NodeSuccessor<T: Comparable> {
             //Case 2: If node is left child, parent node is successor
             return root.parent
         } else {
-            //Case 3: Node is right child -> traverse up until node with value >= node value found
-            return traverseParent(valueToMatch: root.value, node: root.parent)
+            //Case 3: Node is right child -> traverse up until node which is a left child is found
+            return traverseParent(node: root.parent)
         }
     }
     
@@ -34,14 +34,11 @@ open class NodeSuccessor<T: Comparable> {
         return current
     }
     
-    private func traverseParent(valueToMatch: T, node: TreeNode<T>?) -> TreeNode<T>? {
+    private func traverseParent(node: TreeNode<T>?) -> TreeNode<T>? {
         var current = node
-        if let currentValue = current?.value, currentValue >= valueToMatch {
-            return current
-        }
         
         while let parent = current?.parent {
-            if parent.value >= valueToMatch {
+            if current == parent.left {
                 return parent
             }
             
