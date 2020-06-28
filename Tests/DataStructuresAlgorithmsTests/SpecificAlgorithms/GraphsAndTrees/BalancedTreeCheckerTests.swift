@@ -1,5 +1,5 @@
 //
-//  ListOfDepthsTests.swift
+//  BalancedTreeCheckerTests.swift
 //  
 //
 //  Created by Stefan Jaindl on 24.06.20.
