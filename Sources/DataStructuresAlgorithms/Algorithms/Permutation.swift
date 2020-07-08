@@ -14,6 +14,10 @@ open class Permuation<T> {
     public init() { }
     
     open func permutations(array: inout [T]) -> [[T]] {
+        if array.isEmpty {
+            return []
+        }
+        
         var generatedPermutations: [[T]] = []
         permutations(array: &array, currentArrayCount: array.count, generatedPermutations: &generatedPermutations)
         return generatedPermutations
@@ -33,7 +37,12 @@ open class Permuation<T> {
     }
     
     open func heapsPermutations(array: inout [T]) -> [[T]] {
+        if array.isEmpty {
+            return []
+        }
+        
         var permutations: [[T]] = []
+        
         heapsPermutations(array: &array, currentArrayCount: array.count, permutations: &permutations)
         return permutations
     }
