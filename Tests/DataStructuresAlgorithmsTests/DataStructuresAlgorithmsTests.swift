@@ -76,5 +76,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         NodeSuccessorTests().testNodeSuccessorCaseThree()
         FirstCommonAncestorTests().testFirstCommonAncestor()
         BSTSequenceTests().testBSTSequence()
+        SubtreeCheckerTests().testSubtreeChecker()
     }
 }

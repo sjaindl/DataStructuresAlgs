@@ -13,9 +13,15 @@ open class SimpleTreeNode<T: Comparable> {
     public var left: SimpleTreeNode<T>?
     public var right: SimpleTreeNode<T>?
     public var value: T
+    public var numElements = 0
     
     public init(value: T) {
         self.value = value
+    }
+    
+    public init(value: T, numElements: Int) {
+        self.value = value
+        self.numElements = numElements
     }
     
     public func isLeaveNode() -> Bool {

@@ -26,8 +26,6 @@ open class BSTSequenceTests: XCTestCase {
         let sequencer = BSTSequence<Int>()
         let possibleSequences = sequencer.BSTSequences(root: root)
         
-        debugPrint(possibleSequences)
-        
         var values: [[Int]] = []
         possibleSequences.forEach { sequence in
             let singleValue = sequence.map { $0.value }
