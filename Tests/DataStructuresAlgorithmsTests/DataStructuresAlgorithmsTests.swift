@@ -4,6 +4,14 @@ import XCTest
 open class DataStructuresAlgorithmsTests: XCTestCase {
 
     open func testAll() throws {
+        try testMajorDatastructuresAndAlgorithms()
+        testStringAndArray()
+        try testLinkedList()
+        try testStackAndQueue()
+        try testTreeAndGraph()
+    }
+    
+    private func testMajorDatastructuresAndAlgorithms() throws {
         BellmanFordTests().testBellmanFord()
         BipartiteGraphCheckerTests().testBipartiteGraph()
         try DjikstraTests().testDjikstra()
@@ -42,6 +50,9 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         TrieTests().testTrie()
         UnionFindTests().testUnionFind()
         StringPermutationCheckerTests().testStringPermutations()
+    }
+    
+    private func testStringAndArray() {
         UniqueStringSearchTests().testUniqueStringSearch()
         UrlifierTests().testUrlify()
         PalindromePermutationTests().testPalindromePermutations()
@@ -50,6 +61,9 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         MatrixRotationTests().testMatrixRightRotation()
         ZeroMatrixTests().testZeroMatrix()
         StringRotationTests().testStringRotation()
+    }
+    
+    private func testLinkedList() throws {
         try DuplicateRemoverTests().testDuplicateRemoval()
         try KToLastTest().testKToLast()
         try DeleteMiddleNodeTest().testDeleteMiddleNode()
@@ -58,12 +72,18 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try SumListsTests().testSumWithPadding()
         try SumListsTests().testSumWithExcessCarry()
         try LoopDetectorTests().testLoopDetector()
+    }
+    
+    private func testStackAndQueue() throws {
         try MultiStackTests().testMultiStack()
         try MinStackTests().testMinStack()
         try AnimalShelterTests().testAnimalShelter()
         try QueueWithStackTests().testQueueWithStacks()
         try StackSetTests().testStackSet()
         try StackSetTests().testStackSet()
+    }
+    
+    private func testTreeAndGraph() throws {
         PathCheckerTests().testPathChecker()
         try MinTreeTests().testMinTree()
         ListOfDepthsTests().testListOfDepths()
