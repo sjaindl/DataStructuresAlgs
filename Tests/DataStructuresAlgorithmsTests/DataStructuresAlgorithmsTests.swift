@@ -78,5 +78,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         BSTSequenceTests().testBSTSequence()
         SubtreeCheckerTests().testSubtreeChecker()
         RandomBinarySearchTreeTests().testRandomBinarySearchTree()
+        PathSumTests().testPathSum()
     }
 }
