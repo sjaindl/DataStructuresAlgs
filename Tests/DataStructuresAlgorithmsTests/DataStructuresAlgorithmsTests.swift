@@ -9,6 +9,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try testLinkedList()
         try testStackAndQueue()
         try testTreeAndGraph()
+        testBitManipulation()
     }
     
     private func testMajorDatastructuresAndAlgorithms() throws {
@@ -99,5 +100,9 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         SubtreeCheckerTests().testSubtreeChecker()
         RandomBinarySearchTreeTests().testRandomBinarySearchTree()
         PathSumTests().testPathSum()
+    }
+    
+    private func testBitManipulation() {
+        BitInserterTests().testBitsInsertion()
     }
 }
