@@ -104,5 +104,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
     
     private func testBitManipulation() {
         BitInserterTests().testBitsInsertion()
+        BinaryToStringConverterTests().testDoubleConversion()
+        BitFlipperTests().testLongestOneBitSequence()
     }
 }
