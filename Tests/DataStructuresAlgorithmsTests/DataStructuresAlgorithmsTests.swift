@@ -107,5 +107,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         BinaryToStringConverterTests().testDoubleConversion()
         BitFlipperTests().testLongestOneBitSequence()
         BinaryNearbySearcherTests().testNearestBinaryNumbers()
+        BinaryNumberConverterTests().testBinaryNumberConverter()
     }
 }
