@@ -18,6 +18,6 @@ open class BinaryNumberConverterTests: XCTestCase {
         
         let converter = BinaryNumberConverter()
         let bitDifferentCount = converter.binaryConversionCount(from: from, to: to)
-        XCTAssertEqual(bitDifferentCount, 3)
+        XCTAssertEqual(bitDifferentCount, 4)
     }
 }

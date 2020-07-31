@@ -16,7 +16,7 @@ open class BinaryNumberConverter {
         var bitsDifferentCount = 0
         
         while result > 0 {
-            if result & 0b1 == 0 {
+            if result & 0b1 == 1 {
                 bitsDifferentCount += 1
             }
             result >>= 1
