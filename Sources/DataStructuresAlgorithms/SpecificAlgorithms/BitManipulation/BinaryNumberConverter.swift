@@ -22,6 +22,13 @@ open class BinaryNumberConverter {
             result >>= 1
         }
         
+        /* Alternative:
+          while result > 0 {
+             bitsDifferentCount += 1
+             result = result & (result - 1)
+          }
+         */
+        
         return bitsDifferentCount
     }
 }
