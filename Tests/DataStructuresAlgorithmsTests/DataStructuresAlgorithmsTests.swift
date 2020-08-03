@@ -109,5 +109,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         BinaryNearbySearcherTests().testNearestBinaryNumbers()
         BinaryNumberConverterTests().testBinaryNumberConverter()
         PairwiseSwapTests().testSwap()
+        ScreenManipulatorTests().testDrawLine()
     }
 }
