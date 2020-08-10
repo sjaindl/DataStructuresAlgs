@@ -62,6 +62,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         MatrixRotationTests().testMatrixRightRotation()
         ZeroMatrixTests().testZeroMatrix()
         StringRotationTests().testStringRotation()
+        CircularArrayTests().testCircularArray()
     }
     
     private func testLinkedList() throws {
