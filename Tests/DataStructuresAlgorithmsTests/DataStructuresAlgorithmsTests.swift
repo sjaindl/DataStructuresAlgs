@@ -10,6 +10,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try testStackAndQueue()
         try testTreeAndGraph()
         testBitManipulation()
+        testRecursionAndDynamicProgramming()
     }
     
     private func testMajorDatastructuresAndAlgorithms() throws {
@@ -111,5 +112,10 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         BinaryNumberConverterTests().testBinaryNumberConverter()
         PairwiseSwapTests().testSwap()
         ScreenManipulatorTests().testDrawLine()
+    }
+    
+    private func testRecursionAndDynamicProgramming() {
+        TripleStepTests().testTripleSteps()
+        GridPathFinderTests().testGridPathFinder()
     }
 }
