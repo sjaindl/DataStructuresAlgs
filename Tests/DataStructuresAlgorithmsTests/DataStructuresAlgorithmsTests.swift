@@ -13,7 +13,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         testRecursionAndDynamicProgramming()
     }
     
-    private func testMajorDatastructuresAndAlgorithms() throws {
+    open func testMajorDatastructuresAndAlgorithms() throws {
         BellmanFordTests().testBellmanFord()
         BipartiteGraphCheckerTests().testBipartiteGraph()
         try DjikstraTests().testDjikstra()
@@ -54,7 +54,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         StringPermutationCheckerTests().testStringPermutations()
     }
     
-    private func testStringAndArray() {
+    open func testStringAndArray() {
         UniqueStringSearchTests().testUniqueStringSearch()
         UrlifierTests().testUrlify()
         PalindromePermutationTests().testPalindromePermutations()
@@ -66,7 +66,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         CircularArrayTests().testCircularArray()
     }
     
-    private func testLinkedList() throws {
+    open func testLinkedList() throws {
         try DuplicateRemoverTests().testDuplicateRemoval()
         try KToLastTest().testKToLast()
         try DeleteMiddleNodeTest().testDeleteMiddleNode()
@@ -77,7 +77,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try LoopDetectorTests().testLoopDetector()
     }
     
-    private func testStackAndQueue() throws {
+    open func testStackAndQueue() throws {
         try MultiStackTests().testMultiStack()
         try MinStackTests().testMinStack()
         try AnimalShelterTests().testAnimalShelter()
@@ -86,7 +86,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try StackSetTests().testStackSet()
     }
     
-    private func testTreeAndGraph() throws {
+    open func testTreeAndGraph() throws {
         PathCheckerTests().testPathChecker()
         try MinTreeTests().testMinTree()
         ListOfDepthsTests().testListOfDepths()
@@ -104,7 +104,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         PathSumTests().testPathSum()
     }
     
-    private func testBitManipulation() {
+    open func testBitManipulation() {
         BitInserterTests().testBitsInsertion()
         BinaryToStringConverterTests().testDoubleConversion()
         BitFlipperTests().testLongestOneBitSequence()
@@ -114,7 +114,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         ScreenManipulatorTests().testDrawLine()
     }
     
-    private func testRecursionAndDynamicProgramming() {
+    open func testRecursionAndDynamicProgramming() {
         TripleStepTests().testTripleSteps()
         GridPathFinderTests().testGridPathFinder()
         PowerSetTests().testPowerSetPermutations()
