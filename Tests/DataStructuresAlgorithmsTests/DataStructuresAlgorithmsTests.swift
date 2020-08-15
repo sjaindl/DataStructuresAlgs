@@ -117,5 +117,8 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
     private func testRecursionAndDynamicProgramming() {
         TripleStepTests().testTripleSteps()
         GridPathFinderTests().testGridPathFinder()
+        PowerSetTests().testPowerSetPermutations()
+        PowerSetTests().testPowerSetCombinations()
+        PowerSetTests().testPowerSetCombinationsByBitmasking()
     }
 }

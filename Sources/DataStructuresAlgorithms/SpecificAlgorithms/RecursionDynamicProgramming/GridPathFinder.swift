@@ -17,7 +17,7 @@ open class GridPathFinder<T> {
     
     //Finds a path from the top-left cell to the bottom-right cell, if one exists
     //Path can only go downwards and right
-    func findPath() -> [T]? {
+    open func findPath() -> [T]? {
         if cellGrid.isEmpty || cellGrid[0].isEmpty {
             return nil
         }
