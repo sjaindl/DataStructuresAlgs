@@ -120,5 +120,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         PowerSetTests().testPowerSetPermutations()
         PowerSetTests().testPowerSetCombinations()
         PowerSetTests().testPowerSetCombinationsByBitmasking()
+        MultiplyTests().testMultiply()
     }
 }
