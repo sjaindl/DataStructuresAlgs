@@ -10,7 +10,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try testStackAndQueue()
         try testTreeAndGraph()
         testBitManipulation()
-        testRecursionAndDynamicProgramming()
+        try testRecursionAndDynamicProgramming()
     }
     
     open func testMajorDatastructuresAndAlgorithms() throws {
@@ -114,12 +114,13 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         ScreenManipulatorTests().testDrawLine()
     }
     
-    open func testRecursionAndDynamicProgramming() {
+    open func testRecursionAndDynamicProgramming() throws {
         TripleStepTests().testTripleSteps()
         GridPathFinderTests().testGridPathFinder()
         PowerSetTests().testPowerSetPermutations()
         PowerSetTests().testPowerSetCombinations()
         PowerSetTests().testPowerSetCombinationsByBitmasking()
         MultiplyTests().testMultiply()
+        try TowerOfHanoiTests().testTowersOfHanoi()
     }
 }
