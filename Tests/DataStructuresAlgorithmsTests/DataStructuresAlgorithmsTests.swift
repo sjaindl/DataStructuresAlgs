@@ -125,5 +125,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         PermutationsTests().testPermutationsWithoutDuplicates()
         ParensBuilderTests().testParens()
         try PaintFillTests().testPaintFill()
+        CoinCounterTests().testCoinCounter()
     }
 }
