@@ -123,5 +123,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         MultiplyTests().testMultiply()
         try TowerOfHanoiTests().testTowersOfHanoi()
         PermutationsTests().testPermutationsWithoutDuplicates()
+        ParensBuilderTests().testParens()
     }
 }
