@@ -127,5 +127,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try PaintFillTests().testPaintFill()
         CoinCounterTests().testCoinCounter()
         QueensOnChessboardTests().testQueensArrangements()
+        StackOfBoxesTests().testStackOfBoxes()
     }
 }
