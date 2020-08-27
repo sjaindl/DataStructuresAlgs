@@ -128,5 +128,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         CoinCounterTests().testCoinCounter()
         QueensOnChessboardTests().testQueensArrangements()
         StackOfBoxesTests().testStackOfBoxes()
+        try BoolEvaluationTests().testEvaluation()
     }
 }
