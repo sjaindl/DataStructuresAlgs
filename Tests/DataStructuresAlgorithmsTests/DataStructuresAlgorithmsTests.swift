@@ -135,5 +135,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
     open func testSortingAndSearching() {
         SortedMergeTests().testSortedMerge()
         AnagramGrouperTests().testAnagramGrouper()
+        RotatedArraySearchTests().testRotatedArraySearch()
     }
 }

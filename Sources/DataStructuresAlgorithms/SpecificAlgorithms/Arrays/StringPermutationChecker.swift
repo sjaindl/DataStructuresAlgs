@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  StringPermuationChecker.swift
 //  
 //
 //  Created by Stefan Jaindl on 09.05.20.
