@@ -136,5 +136,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         SortedMergeTests().testSortedMerge()
         AnagramGrouperTests().testAnagramGrouper()
         RotatedArraySearchTests().testRotatedArraySearch()
+        ListyTests().testListy()
     }
 }
