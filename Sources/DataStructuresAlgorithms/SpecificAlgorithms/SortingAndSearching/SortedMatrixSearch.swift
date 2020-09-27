@@ -71,11 +71,13 @@ open class SortedMatrixSearch<T: Comparable> {
             }
         }
         
-        return containsRecursiveFaster(matrix: matrix, searched: searched, minRow: 0, maxRow: matrix.count - 1, minColumn: 0, maxColumn: columnCount - 1)
+        let from = Coordinate(row: 0, column: 0)
+        let to = Coordinate(row: matrix.count - 1, column: columnCount - 1)
+        return containsRecursiveFaster(matrix: matrix, searched: searched, from: from, to: to)
     }
     
-    private func containsRecursiveFaster(matrix: [[T]], searched: T, minRow: Int, maxRow: Int, minColumn: Int, maxColumn: Int) -> Bool {
-        let currentValue = matrix[minRow][minColumn]
+    private func containsRecursiveFaster(matrix: [[T]], searched: T, from: Coordinate, to: Coordinate) -> Bool {
+        let currentValue = value(of: matrix, at: from)
         if currentValue == searched { //found
             return true
         }
@@ -84,47 +86,116 @@ open class SortedMatrixSearch<T: Comparable> {
             return false
         }
         
-        if (minColumn == maxColumn && minRow == maxRow) { //only 1 field left
+        if (from == to) { //only 1 field left
             return false
         }
         
-        if minColumn == maxColumn { //only 1 column left, move on to next row
-            return containsRecursiveFaster(matrix: matrix, searched: searched, minRow: minRow + 1, maxRow: maxRow, minColumn: minColumn, maxColumn: maxColumn)
+        if from.column == to.column { //only 1 column left, move on to next row
+            let newFrom = Coordinate(row: from.row + 1, column: from.column)
+            return containsRecursiveFaster(matrix: matrix, searched: searched, from: newFrom, to: to)
         }
         
-        if minRow == maxRow { //only 1 row left, move on to next column
-            return containsRecursiveFaster(matrix: matrix, searched: searched, minRow: minRow, maxRow: maxRow, minColumn: minColumn + 1, maxColumn: maxColumn)
+        if from.row == to.row { //only 1 row left, move on to next column
+            let newFrom = Coordinate(row: from.row, column: from.column + 1)
+            return containsRecursiveFaster(matrix: matrix, searched: searched, from: newFrom, to: to)
         }
         
-        //Move columns diagonally along, until match is found, end of matrix reached or 1 element < searched and 1 element > searched
-        //In the latter case, we just have to search the bottom left and upper right part recursively. The other 2 quadrants all have lower (top left) or higher (bottom right) values.
-        var lastRow = minRow
-        var lastCol = minColumn
-        var curRow = minRow
-        var curCol = minColumn
-        while isInBounds(matrix: matrix, row: curRow, column: curCol) && matrix[curRow][curCol] < searched {
-            lastRow = curRow
-            lastCol = curCol
-            curCol += 1
-            curRow += 1
+        guard let partition = partitionDiagonally(matrix: matrix, searched: searched, from: from, to: to) else {
+            return false
         }
         
-        //Might be out of bounds if we moved over the end of the matrix columns
-        if isInBounds(matrix: matrix, row: minRow, column: curCol), matrix[curRow][curCol] == searched {
+        if partition.found {
             return true
         }
         
         var found = false
         //search top right
-        if isInBounds(matrix: matrix, row: minRow, column: curCol)  {
-            found = containsRecursiveFaster(matrix: matrix, searched: searched, minRow: minRow, maxRow: lastRow, minColumn: curCol, maxColumn: maxColumn)
+        let topRightFrom = Coordinate(row: from.row, column: partition.bottomRightCoordinate.column)
+        let topRightTo = Coordinate(row: partition.topLeftCoordinate.row, column: to.column)
+        if isInBounds(matrix: matrix, coordinate: topRightFrom)  {
+            found = containsRecursiveFaster(matrix: matrix, searched: searched, from: topRightFrom, to: topRightTo)
         }
         
         //search bottom left
-        if !found && isInBounds(matrix: matrix, row: curRow, column: minColumn)  {
-            found = containsRecursiveFaster(matrix: matrix, searched: searched, minRow: curRow, maxRow: maxRow, minColumn: minColumn, maxColumn: lastCol)
+        let bottomLeftFrom = Coordinate(row: partition.bottomRightCoordinate.row, column: from.column)
+        let bottomLeftTo = Coordinate(row: to.row, column: partition.topLeftCoordinate.column)
+        if !found && isInBounds(matrix: matrix, coordinate: bottomLeftFrom) {
+            found = containsRecursiveFaster(matrix: matrix, searched: searched, from: bottomLeftFrom, to: bottomLeftTo)
         }
         
         return found
+    }
+    
+    private func partitionDiagonally(matrix: [[T]], searched: T, from: Coordinate, to: Coordinate) -> (topLeftCoordinate: Coordinate, bottomRightCoordinate: Coordinate, found: Bool)? {
+        if value(of: matrix, at: from) > searched {
+            //searched value lower than any in  matrix
+            return nil
+        }
+        
+        if value(of: matrix, at: to) < searched {
+            //searched value higher than any in  matrix
+            return nil
+        }
+        
+        //find partitioning element, where first coordinate < searched and last coordinate > searched.
+        //Or return true if element found
+        
+        let maxAllowedDiff = min(to.column - from.column, to.row - from.row)
+        var topLeftCoordinate = from
+        var bottomRightCoordinate = to
+        let bottomRightCoordinateToCompare = Coordinate(row: min(to.row, from.row + maxAllowedDiff), column: min(to.column, from.column + maxAllowedDiff))
+        while topLeftCoordinate < bottomRightCoordinate {
+            let center = coordinatesCenter(from: topLeftCoordinate, to: bottomRightCoordinateToCompare)
+            let diff = center.column - topLeftCoordinate.column
+            let valueAtCenter = value(of: matrix, at: center)
+            let valueAtTopLeft = value(of: matrix, at: topLeftCoordinate)
+            let valueAtBottomRight = value(of: matrix, at: bottomRightCoordinate)
+            let valueAtBottomRightToCompare = value(of: matrix, at: bottomRightCoordinateToCompare)
+            
+            if valueAtCenter == searched || valueAtTopLeft == searched || valueAtBottomRight == searched || valueAtBottomRightToCompare == searched {
+                //value found
+                return (center, center, true)
+            } else if bottomRightCoordinate.column - topLeftCoordinate.column == 1
+            && valueAtTopLeft < searched && valueAtBottomRight > searched, valueAtTopLeft < searched && valueAtBottomRight > searched {
+                //coordinates are next to each other and searched value is in between
+                break
+            } else if valueAtCenter < searched {
+                //go right/down
+                topLeftCoordinate = Coordinate(row: topLeftCoordinate.row + diff, column: topLeftCoordinate.column + diff)
+            } else { //valueAtCenter < searched
+                //go left/up
+                bottomRightCoordinate = Coordinate(row: center.row, column: center.column)
+            }
+        }
+        
+        return (topLeftCoordinate, bottomRightCoordinate, false)
+    }
+    
+    private func isInBounds(matrix: [[T]], coordinate: Coordinate) -> Bool {
+        return coordinate.row >= 0 && coordinate.column >= 0 && coordinate.row < matrix.count && coordinate.column < matrix[0].count
+    }
+    
+    private func value(of matrix: [[T]], at coordinate: Coordinate) -> T {
+        return matrix[coordinate.row][coordinate.column]
+    }
+    
+    private func coordinatesCenter(from: Coordinate, to: Coordinate) -> Coordinate {
+        let centerRow = (from.row + to.row) / 2
+        let centerColumn = (from.column + to.column) / 2
+        
+        return Coordinate(row: centerRow, column: centerColumn)
+    }
+}
+
+private struct Coordinate: Equatable, Comparable {
+    var row: Int
+    var column: Int
+    
+    static func == (lhs: Coordinate, rhs: Coordinate) -> Bool {
+        return lhs.row == rhs.row && lhs.column == rhs.column
+    }
+    
+    static func < (lhs: Coordinate, rhs: Coordinate) -> Bool {
+        return lhs.row < rhs.row && lhs.column < rhs.column
     }
 }
