@@ -140,5 +140,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         SparseSearchTests().testSparseSearch()
         DuplicateFinderTests().testFindDuplicates()
         SortedMatrixSearchTests().testSortedMatrixSearch()
+        SortedMatrixSearchTests().testSortedMatrixSearchFaster()
     }
 }

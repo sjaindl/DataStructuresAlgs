@@ -10,8 +10,6 @@ import Foundation
 open class SortedMatrixSearch<T: Comparable> {
     public init() { }
     
-    var count = 0
-    
     //Searches a path through the matrix: O(M * N) average case. O(M * N) additional space.
     open func sortedMatrixSearch(matrix: [[T]], searched: T) -> Bool {
         guard !matrix.isEmpty, !matrix[0].isEmpty else {
@@ -28,13 +26,10 @@ open class SortedMatrixSearch<T: Comparable> {
         
         var lookupMatrix: [[Bool]] = [[Bool]](repeating: [Bool](repeating: false, count: columnCount), count: matrix.count)
         
-        let rec = containsRecursive(matrix: matrix, searched: searched, row: 0, column: 0, lookupMatrix: &lookupMatrix)
-        debugPrint(count)
-        return rec
+        return containsRecursive(matrix: matrix, searched: searched, row: 0, column: 0, lookupMatrix: &lookupMatrix)
     }
     
     private func containsRecursive(matrix: [[T]], searched: T, row: Int, column: Int, lookupMatrix: inout [[Bool]]) -> Bool {
-        count += 1
         lookupMatrix[row][column] = true
         let matrixValue = matrix[row][column]
         
@@ -76,40 +71,60 @@ open class SortedMatrixSearch<T: Comparable> {
             }
         }
         
-        let rec = containsRecursiveFaster(matrix: matrix, searched: searched, minRow: 0, maxRow: matrix.count - 1, minColumn: 0, maxColumn: columnCount - 1)
-        debugPrint(count)
-        return rec
+        return containsRecursiveFaster(matrix: matrix, searched: searched, minRow: 0, maxRow: matrix.count - 1, minColumn: 0, maxColumn: columnCount - 1)
     }
     
     private func containsRecursiveFaster(matrix: [[T]], searched: T, minRow: Int, maxRow: Int, minColumn: Int, maxColumn: Int) -> Bool {
-        count += 1
-        let centerRow = (minRow + maxRow) / 2
-        let centerColumn = (minColumn + maxColumn) / 2
-        let currentValue = matrix[centerRow][centerColumn]
-        
-        if currentValue == searched {
+        let currentValue = matrix[minRow][minColumn]
+        if currentValue == searched { //found
             return true
         }
         
-        if minRow == maxRow, minColumn == maxColumn {
+        if currentValue > searched { //not in matrix
             return false
         }
         
-        var submatch = false
-        if searched < currentValue && (minRow < centerRow || minColumn < centerColumn) { //search top left side
-            submatch = containsRecursiveFaster(matrix: matrix, searched: searched, minRow: minRow, maxRow: centerRow, minColumn: minColumn, maxColumn: centerColumn)
-        }
-        if !submatch && maxColumn > centerColumn && minRow < centerRow { //search top right side
-            submatch = containsRecursiveFaster(matrix: matrix, searched: searched, minRow: minRow, maxRow: centerRow - 1, minColumn: centerColumn + 1, maxColumn: maxColumn)
-        }
-        if !submatch && maxRow > centerRow { //search bottom left side
-            submatch = containsRecursiveFaster(matrix: matrix, searched: searched, minRow: centerRow + 1, maxRow: maxRow, minColumn: minColumn, maxColumn: centerColumn)
-            //Possible optimization: Exclude same column based on currentValue
-        }
-        if !submatch && searched > currentValue && maxColumn > centerColumn { //search bottom right side
-            submatch = containsRecursiveFaster(matrix: matrix, searched: searched, minRow: centerRow, maxRow: maxRow, minColumn: centerColumn + 1, maxColumn: maxColumn)
+        if (minColumn == maxColumn && minRow == maxRow) { //only 1 field left
+            return false
         }
         
-        return submatch
+        if minColumn == maxColumn { //only 1 column left, move on to next row
+            return containsRecursiveFaster(matrix: matrix, searched: searched, minRow: minRow + 1, maxRow: maxRow, minColumn: minColumn, maxColumn: maxColumn)
+        }
+        
+        if minRow == maxRow { //only 1 row left, move on to next column
+            return containsRecursiveFaster(matrix: matrix, searched: searched, minRow: minRow, maxRow: maxRow, minColumn: minColumn + 1, maxColumn: maxColumn)
+        }
+        
+        //Move columns diagonally along, until match is found, end of matrix reached or 1 element < searched and 1 element > searched
+        //In the latter case, we just have to search the bottom left and upper right part recursively. The other 2 quadrants all have lower (top left) or higher (bottom right) values.
+        var lastRow = minRow
+        var lastCol = minColumn
+        var curRow = minRow
+        var curCol = minColumn
+        while isInBounds(matrix: matrix, row: curRow, column: curCol) && matrix[curRow][curCol] < searched {
+            lastRow = curRow
+            lastCol = curCol
+            curCol += 1
+            curRow += 1
+        }
+        
+        //Might be out of bounds if we moved over the end of the matrix columns
+        if isInBounds(matrix: matrix, row: minRow, column: curCol), matrix[curRow][curCol] == searched {
+            return true
+        }
+        
+        var found = false
+        //search top right
+        if isInBounds(matrix: matrix, row: minRow, column: curCol)  {
+            found = containsRecursiveFaster(matrix: matrix, searched: searched, minRow: minRow, maxRow: lastRow, minColumn: curCol, maxColumn: maxColumn)
+        }
+        
+        //search bottom left
+        if !found && isInBounds(matrix: matrix, row: curRow, column: minColumn)  {
+            found = containsRecursiveFaster(matrix: matrix, searched: searched, minRow: curRow, maxRow: maxRow, minColumn: minColumn, maxColumn: lastCol)
+        }
+        
+        return found
     }
 }
