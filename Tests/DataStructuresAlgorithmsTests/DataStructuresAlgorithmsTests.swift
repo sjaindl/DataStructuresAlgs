@@ -148,5 +148,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
     
     open func testThreading() {
         DiningPhilosophersTests().testDiningPhilosophers()
+        DeadlockPreventingLockTests().testDeadlockPreventingLock()
     }
 }
