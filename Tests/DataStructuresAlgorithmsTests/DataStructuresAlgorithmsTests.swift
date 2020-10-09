@@ -12,6 +12,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         testBitManipulation()
         try testRecursionAndDynamicProgramming()
         testSortingAndSearching()
+        testThreading()
     }
     
     open func testMajorDatastructuresAndAlgorithms() throws {
@@ -138,5 +139,15 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         RotatedArraySearchTests().testRotatedArraySearch()
         ListyTests().testListy()
         SparseSearchTests().testSparseSearch()
+        DuplicateFinderTests().testFindDuplicates()
+        SortedMatrixSearchTests().testSortedMatrixSearch()
+        SortedMatrixSearchTests().testSortedMatrixSearchFaster()
+        StreamRankTests().testStreamRank()
+        PeakSortTests().testPeakSort()
+    }
+    
+    open func testThreading() {
+        DiningPhilosophersTests().testDiningPhilosophers()
+        DeadlockPreventingLockTests().testDeadlockPreventingLock()
     }
 }

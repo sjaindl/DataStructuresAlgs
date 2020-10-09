@@ -24,6 +24,12 @@ open class DirectedGraph {
         adjList[v1.id].add(node: Node(val: v2))
     }
     
+    open func removeEdge(v1: Vertice, v2: Vertice) {
+        if adjList.count > v1.id {
+            adjList[v1.id].removeByKey(val: v2.id)
+        }
+    }
+    
     open func neighbours(v: Vertice) -> DoubleLinkedList<Vertice> {
         return adjList[v.id]
     }
