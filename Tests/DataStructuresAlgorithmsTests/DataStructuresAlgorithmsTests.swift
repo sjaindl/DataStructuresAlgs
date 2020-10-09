@@ -2,8 +2,13 @@ import XCTest
 @testable import DataStructuresAlgorithms
 
 open class DataStructuresAlgorithmsTests: XCTestCase {
-
+    
     open func testAll() throws {
+        try testSynchronous()
+        testThreading()
+    }
+    
+    open func testSynchronous() throws {
         try testMajorDatastructuresAndAlgorithms()
         testStringAndArray()
         try testLinkedList()
@@ -12,7 +17,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         testBitManipulation()
         try testRecursionAndDynamicProgramming()
         testSortingAndSearching()
-        testThreading()
     }
     
     open func testMajorDatastructuresAndAlgorithms() throws {
@@ -149,5 +153,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
     open func testThreading() {
         DiningPhilosophersTests().testDiningPhilosophers()
         DeadlockPreventingLockTests().testDeadlockPreventingLock()
+        FizzBuzzTests().testFizzBuzz()
     }
 }
