@@ -9,10 +9,9 @@
 import Foundation
 
 open class BitVector {
-    
     private let numberOfBits: Int
     private var bitStorage: [UInt64]
-    private var base = 64
+    private let base = 64
     
     public init(numberOfBits: Int) {
         self.numberOfBits = numberOfBits
@@ -23,24 +22,24 @@ open class BitVector {
     }
     
     open func setBit(index: Int) {
-        let arrayIndex = index / 64
-        let bitIndex = UInt64(index - arrayIndex * 64)
+        let arrayIndex = index / base
+        let bitIndex = index % base
         let bit: UInt64 = 1 << bitIndex
         
         bitStorage[arrayIndex] |= bit
     }
     
     open func unsetBit(index: Int) {
-        let arrayIndex = index / 64
-        let bitIndex = UInt64(index - arrayIndex * 64)
+        let arrayIndex = index / base
+        let bitIndex = index % base
         let bit: UInt64 = ~(1 << bitIndex)
         
         bitStorage[arrayIndex] &= bit
     }
     
     open func isBitSet(index: Int) -> Bool {
-        let arrayIndex = index / 64
-        let bitIndex = UInt64(index - arrayIndex * 64)
+        let arrayIndex = index / base
+        let bitIndex = index % base
         let bit: UInt64 = 1 << bitIndex
         
         return bitStorage[arrayIndex] & bit > 0
