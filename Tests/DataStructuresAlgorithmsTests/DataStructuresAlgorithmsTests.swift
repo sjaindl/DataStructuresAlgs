@@ -118,6 +118,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         BinaryNumberConverterTests().testBinaryNumberConverter()
         PairwiseSwapTests().testSwap()
         ScreenManipulatorTests().testDrawLine()
+        NumberSwapperTests().testSwap()
     }
     
     open func testRecursionAndDynamicProgramming() throws {
