@@ -150,6 +150,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         SortedMatrixSearchTests().testSortedMatrixSearchFaster()
         StreamRankTests().testStreamRank()
         PeakSortTests().testPeakSort()
+        IntersectionFinderTests().testIntersection()
     }
     
     open func testThreading() {
