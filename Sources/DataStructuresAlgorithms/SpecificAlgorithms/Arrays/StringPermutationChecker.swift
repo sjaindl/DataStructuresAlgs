@@ -20,11 +20,6 @@ open class StringPermuationChecker {
             return false
         }
         
-        if first.count <= 1 {
-            //for size 0 & 1 permutations can't be different
-            return true
-        }
-        
         //Check for same character count:
         var array = [Int] (repeating: 0, count: alphabetSize)
         for char in Array(first) {
@@ -53,11 +48,6 @@ open class StringPermuationChecker {
         if first.count != second.count {
             //Permutations must have same size
             return false
-        }
-        
-        if first.count <= 1 {
-            //for size 0 & 1 permutations can't be different
-            return true
         }
         
         //Sort strings
