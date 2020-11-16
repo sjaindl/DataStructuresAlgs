@@ -137,6 +137,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         QueensOnChessboardTests().testQueensArrangements()
         StackOfBoxesTests().testStackOfBoxes()
         try BoolEvaluationTests().testEvaluation()
+        FactorialZeroesTests().testTrailingZeroCount()
     }
     
     open func testSortingAndSearching() {
