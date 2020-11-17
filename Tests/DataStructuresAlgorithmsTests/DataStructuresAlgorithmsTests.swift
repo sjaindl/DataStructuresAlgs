@@ -71,6 +71,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         StringRotationTests().testStringRotation()
         CircularArrayTests().testCircularArray()
         WordFrequencyCounterTests().testCounts()
+        SmallestDifferenceTests().testSmallestDifference()
     }
     
     open func testLinkedList() throws {
