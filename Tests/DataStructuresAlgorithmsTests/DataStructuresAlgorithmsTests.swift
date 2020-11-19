@@ -10,7 +10,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
     
     open func testSynchronous() throws {
         try testMajorDatastructuresAndAlgorithms()
-        testStringAndArray()
+        try testStringAndArray()
         try testLinkedList()
         try testStackAndQueue()
         try testTreeAndGraph()
@@ -60,7 +60,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         StringPermutationCheckerTests().testStringPermutations()
     }
     
-    open func testStringAndArray() {
+    open func testStringAndArray() throws {
         UniqueStringSearchTests().testUniqueStringSearch()
         UrlifierTests().testUrlify()
         PalindromePermutationTests().testPalindromePermutations()
@@ -72,6 +72,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         CircularArrayTests().testCircularArray()
         WordFrequencyCounterTests().testCounts()
         SmallestDifferenceTests().testSmallestDifference()
+        try IntToEnglishStringTests().testEnglishString()
     }
     
     open func testLinkedList() throws {
@@ -121,6 +122,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         PairwiseSwapTests().testSwap()
         ScreenManipulatorTests().testDrawLine()
         NumberSwapperTests().testSwap()
+        NumberMaxTests().testMaxNumber()
     }
     
     open func testRecursionAndDynamicProgramming() throws {
