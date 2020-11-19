@@ -63,11 +63,11 @@ open class IntToEnglishString {
         9: "Nineteen"
     ]
     
-    private let zero = "zero"
-    private let hundred = "hundred"
-    private let thousand = "thousand"
-    private let million = "million"
-    private let billion = "billion"
+    private let zero = "Zero"
+    private let hundred = "Hundred"
+    private let thousand = "Thousand"
+    private let million = "Million"
+    private let billion = "Billion"
     
     open func convertToEnglishString(number: Int) throws -> String {
         let stack = Stack<String>()
@@ -126,10 +126,13 @@ open class IntToEnglishString {
             }
             
             stack.push(val: valueOfPlace)
-            convertedString += valueOfPlace
             
             orderIndex += 1
-            curNumber %= 10
+            curNumber /= 10
+        }
+        
+        while !stack.isEmpty() {
+            convertedString = "\(convertedString) \(try stack.pop())".trimmingCharacters(in: CharacterSet(arrayLiteral: " "))
         }
         
         return convertedString.isEmpty ? zero : convertedString
@@ -137,11 +140,16 @@ open class IntToEnglishString {
     
     private func tens(with appended: String, stack: Stack<String>, currentDigit: Int) throws -> String {
         var valueOfPlace = ""
-        
-        let onesPlace = try stack.pop()
         valueOfPlace = tens[currentDigit]!
-        if valueOfPlace == ones[1]! {
-            valueOfPlace = specialTens[Int(onesPlace)!]!
+        if valueOfPlace == tens[1]! /* , try !stack.peek().isEmpty */ {
+            let onesPlace = try stack.pop()
+            if !onesPlace.isEmpty {
+                let value = ones.filter { $0.value == onesPlace }.first!
+                valueOfPlace = specialTens[value.key]!
+            } else {
+                valueOfPlace = valueOfPlace.trimmingCharacters(in: CharacterSet(arrayLiteral: " "))
+                valueOfPlace.append(" \(appended)")
+            }
         }
         
         return valueOfPlace
