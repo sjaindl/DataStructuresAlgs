@@ -86,7 +86,7 @@ open class IntToEnglishString {
             
             switch place {
             case .ones:
-                valueOfPlace = ones[currentDigit]!
+                valueOfPlace = ones[currentDigit] ?? ""
             case .tens:
                 valueOfPlace = try tens(with: "", stack: stack, currentDigit: currentDigit)
             case .hundred:
@@ -139,13 +139,14 @@ open class IntToEnglishString {
     }
     
     private func tens(with appended: String, stack: Stack<String>, currentDigit: Int) throws -> String {
-        var valueOfPlace = ""
-        valueOfPlace = tens[currentDigit]!
-        if valueOfPlace == tens[1]! /* , try !stack.peek().isEmpty */ {
+        guard var valueOfPlace = tens[currentDigit] else {
+            return ""
+        }
+        
+        if valueOfPlace == tens[1] {
             let onesPlace = try stack.pop()
-            if !onesPlace.isEmpty {
-                let value = ones.filter { $0.value == onesPlace }.first!
-                valueOfPlace = specialTens[value.key]!
+            if !onesPlace.isEmpty, let value = ones.filter({ $0.value == onesPlace }).first {
+                valueOfPlace = specialTens[value.key] ?? ""
             } else {
                 valueOfPlace = valueOfPlace.trimmingCharacters(in: CharacterSet(arrayLiteral: " "))
                 valueOfPlace.append(" \(appended)")
@@ -156,9 +157,10 @@ open class IntToEnglishString {
     }
     
     private func digit(with appended: String, stack: Stack<String>, currentDigit: Int) -> String {
-        var valueOfPlace = ""
+        guard var valueOfPlace = ones[currentDigit] else {
+            return ""
+        }
         
-        valueOfPlace = ones[currentDigit]!
         if !valueOfPlace.isEmpty, !appended.isEmpty {
             valueOfPlace.append(" \(appended)")
         }
