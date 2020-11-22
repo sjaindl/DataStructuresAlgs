@@ -122,7 +122,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         PairwiseSwapTests().testSwap()
         ScreenManipulatorTests().testDrawLine()
         NumberSwapperTests().testSwap()
-//        NumberMaxTests().testMaxNumber()
+        NumberMaxTests().testMaxNumber()
     }
     
     open func testRecursionAndDynamicProgramming() throws {

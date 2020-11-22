@@ -10,11 +10,16 @@ import Foundation
 open class NumberMax {
     public init() { }
     
-    //Finding max element withou if-else and comparison operators
+    //Finding max element without if-else and comparison operators
     open func max(first: Int, second: Int) -> Int {
         var firstShifted = first
         var secondShifted = second
         var diff = first ^ second
+        
+        if diff == 0 {
+            //first == second, return any
+            return first
+        }
         
         while diff != 1 {
             diff >>= 1
