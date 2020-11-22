@@ -122,7 +122,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         PairwiseSwapTests().testSwap()
         ScreenManipulatorTests().testDrawLine()
         NumberSwapperTests().testSwap()
-        NumberMaxTests().testMaxNumber()
+//        NumberMaxTests().testMaxNumber()
     }
     
     open func testRecursionAndDynamicProgramming() throws {
@@ -141,6 +141,8 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         StackOfBoxesTests().testStackOfBoxes()
         try BoolEvaluationTests().testEvaluation()
         FactorialZeroesTests().testTrailingZeroCount()
+        DivingBoardTests().testDivingBoard()
+        DivingBoardTests().testDivingBoardFast()
     }
     
     open func testSortingAndSearching() {
