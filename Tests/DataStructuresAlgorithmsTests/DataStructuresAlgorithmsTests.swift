@@ -73,6 +73,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         WordFrequencyCounterTests().testCounts()
         SmallestDifferenceTests().testSmallestDifference()
         try IntToEnglishStringTests().testEnglishString()
+        try XMLEncoderTests().testXMLEncoding()
     }
     
     open func testLinkedList() throws {
