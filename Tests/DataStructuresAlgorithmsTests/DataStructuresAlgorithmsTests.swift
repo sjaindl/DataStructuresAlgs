@@ -123,6 +123,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         ScreenManipulatorTests().testDrawLine()
         NumberSwapperTests().testSwap()
         NumberMaxTests().testMaxNumber()
+        OperationsTests().testOperations()
     }
     
     open func testRecursionAndDynamicProgramming() throws {
