@@ -159,6 +159,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         PeakSortTests().testPeakSort()
         IntersectionFinderTests().testIntersection()
         LivingPeopleTests().testLivingPeople()
+        SquareConnectorTests().testSquareConnector()
     }
     
     open func testThreading() {
