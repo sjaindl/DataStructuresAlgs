@@ -162,6 +162,8 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         IntersectionFinderTests().testIntersection()
         LivingPeopleTests().testLivingPeople()
         BestLineSearcherTests().testBestLineSearcher()
+        SubSorterTests().testShortestSubsortSequence()
+        ContiguousSumTests().testLargestContiguousSum()
     }
     
     open func testThreading() {
