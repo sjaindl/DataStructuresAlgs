@@ -75,6 +75,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         SmallestDifferenceTests().testSmallestDifference()
         try IntToEnglishStringTests().testEnglishString()
         try XMLEncoderTests().testXMLEncoding()
+        PatternMatcherTests().testPatterns()
     }
     
     open func testLinkedList() throws {
@@ -146,6 +147,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         FactorialZeroesTests().testTrailingZeroCount()
         DivingBoardTests().testDivingBoard()
         DivingBoardTests().testDivingBoardFast()
+        PondSizesTests().testPatterns()
     }
     
     open func testSortingAndSearching() {
