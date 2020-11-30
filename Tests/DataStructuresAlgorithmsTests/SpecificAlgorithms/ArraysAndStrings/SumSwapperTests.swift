@@ -13,8 +13,8 @@ open class SumSwapperTests: XCTestCase {
     open func testSumSwapper() {
         let swapper = SumSwapper()
         
-        let first = [4, 1, 2, 1, 1, 2] //sum: 11
-        let second = [3, 6, 3, 3] //sum 15
+        let first = [4, 2, 2, 1, 1, 2] //sum: 12
+        let second = [3, 7, 3, 3] //sum 16
         XCTAssertEqual(swapper.swap(first: first, second: second), Swappable(first: 1, second: 3))
     }
 }
