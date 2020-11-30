@@ -76,6 +76,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try IntToEnglishStringTests().testEnglishString()
         try XMLEncoderTests().testXMLEncoding()
         PatternMatcherTests().testPatterns()
+        try T9KeyboardTests().testT9Keyboard()
     }
     
     open func testLinkedList() throws {
