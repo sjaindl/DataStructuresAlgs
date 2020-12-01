@@ -179,5 +179,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
     open func testOtherAlgorithms() throws {
         SquareConnectorTests().testSquareConnector()
         try MasterMindCheckerTests().testMasterMindChecker()
+        LangthonsCellTests().testLangthons()
     }
 }
