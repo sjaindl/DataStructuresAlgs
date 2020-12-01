@@ -180,5 +180,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         SquareConnectorTests().testSquareConnector()
         try MasterMindCheckerTests().testMasterMindChecker()
         LangthonsCellTests().testLangthons()
+        Rand7Tests().testRand7()
     }
 }
