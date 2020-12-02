@@ -7,7 +7,7 @@
 
 import Foundation
 
-open class TowerOfHanoi<T: Comparable> {
+open class TowerOfHanoi<T: Comparable & Hashable> {
     public let disks = Stack<T>()
     public let index: Int
     

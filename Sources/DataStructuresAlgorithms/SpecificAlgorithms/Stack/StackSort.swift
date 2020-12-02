@@ -7,7 +7,7 @@
 
 import Foundation
 
-open class StackSort<T: Comparable> {
+open class StackSort<T: Comparable & Hashable> {
     
     public init() { }
     

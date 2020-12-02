@@ -43,7 +43,6 @@ open class Langthons {
         let nextCoordinate = getNextCoordinate()
         let nextCell = grid[nextCoordinate] ?? Cell(color: randomColor(), coordinate: nextCoordinate)
         
-        debugPrint(antPosition)
         antPosition = nextCoordinate
         grid[nextCoordinate] = nextCell
     }

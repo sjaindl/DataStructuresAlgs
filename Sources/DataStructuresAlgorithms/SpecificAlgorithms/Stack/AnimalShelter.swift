@@ -81,11 +81,19 @@ open class AnimalShelter {
     
 }
 
-open class Animal {
+open class Animal: Hashable, Equatable {
     var name: String
     
     init(name: String) {
         self.name = name
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+    }
+    
+    public static func == (lhs: Animal, rhs: Animal) -> Bool {
+        return lhs.name == rhs.name
     }
 }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-open class QueueWithStacks<T: Comparable> {
+open class QueueWithStacks<T: Comparable & Hashable> {
     private var firstStack = Stack<T>()
     private var secondStack = Stack<T>()
     

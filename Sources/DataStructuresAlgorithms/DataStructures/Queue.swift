@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class Queue<T> {
+open class Queue<T: Hashable> {
     private var items: [Node<T>?]
     private var capacity: Int = 10
     private var nextPos: Int = 0

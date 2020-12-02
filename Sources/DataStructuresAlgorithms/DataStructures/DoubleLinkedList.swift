@@ -4,7 +4,7 @@ public enum MyError: Error {
     case runtimeError(String)
 }
 
-open class Node<T> {
+open class Node<T: Hashable>: Hashable {
     var next: Node?
     var val: T
     var prev: Node?
@@ -14,9 +14,19 @@ open class Node<T> {
         self.next = next
         self.prev = prev
     }
+    
+    public static func == (lhs: Node<T>, rhs: Node<T>) -> Bool {
+        return lhs.val == rhs.val && lhs.next == rhs.next && lhs.prev == rhs.prev
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(val)
+        hasher.combine(next)
+        hasher.combine(prev)
+    }
 }
 
-open class DoubleLinkedList<T> {
+open class DoubleLinkedList<T: Hashable> {
     public var head: Node<T>?
     public var tail: Node<T>?
     public var count: Int = 0

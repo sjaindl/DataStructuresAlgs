@@ -28,7 +28,7 @@ open class PaintFillTests: XCTestCase {
                          [white, white, white, white],
                          [white, white, white, white] ]
         
-        try paintfill.paintFill(screen: &screen, point: CGPoint(x: 2, y: 3), newColor: red)
+        try paintfill.paintFill(screen: &screen, point: Point(x: 2, y: 3), newColor: red)
         
         XCTAssertEqual(screen, expected)
     }

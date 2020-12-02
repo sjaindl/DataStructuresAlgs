@@ -78,6 +78,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         PatternMatcherTests().testPatterns()
         try T9KeyboardTests().testT9Keyboard()
         SumSwapperTests().testSumSwapper()
+        ArrayPairsWithSumTests().testPairs()
     }
     
     open func testLinkedList() throws {

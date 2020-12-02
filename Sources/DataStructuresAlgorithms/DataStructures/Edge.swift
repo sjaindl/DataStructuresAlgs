@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class Edge: Comparable {
+open class Edge: Comparable, Hashable {
     public let from: Vertice
     public let to: Vertice
     public let weight: Int
@@ -27,4 +27,9 @@ open class Edge: Comparable {
         return lhs.from == rhs.from && lhs.to == rhs.to
     }
     
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(from)
+        hasher.combine(to)
+        hasher.combine(weight)
+    }
 }

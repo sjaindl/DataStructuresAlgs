@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class BTreeNode<T: Comparable> {
+open class BTreeNode<T: Comparable & Hashable> {
     
     public var degree: Int
     
@@ -125,7 +125,7 @@ open class BTreeNode<T: Comparable> {
     }
 }
 
-open class BTree<T: Comparable> {
+open class BTree<T: Comparable & Hashable> {
     public var root: BTreeNode<T>?
     
     public init(root: BTreeNode<T>) {

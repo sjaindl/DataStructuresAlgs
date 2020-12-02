@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class Stack<T> {
+open class Stack<T: Hashable> {
     public var head: Node<T>?
     public var size: Int = 0
     
