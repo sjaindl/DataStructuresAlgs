@@ -59,6 +59,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         TrieTests().testTrie()
         UnionFindTests().testUnionFind()
         StringPermutationCheckerTests().testStringPermutations()
+        LRUCacheTests().testCache()
     }
     
     open func testStringAndArray() throws {
