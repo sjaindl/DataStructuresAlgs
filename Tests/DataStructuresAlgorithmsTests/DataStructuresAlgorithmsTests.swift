@@ -100,6 +100,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try QueueWithStackTests().testQueueWithStacks()
         try StackSetTests().testStackSet()
         try StackSetTests().testStackSet()
+        try CalculatorTests().testCalculator()
     }
     
     open func testTreeAndGraph() throws {
