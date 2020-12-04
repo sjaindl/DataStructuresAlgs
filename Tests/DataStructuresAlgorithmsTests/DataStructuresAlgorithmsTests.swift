@@ -185,5 +185,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try MasterMindCheckerTests().testMasterMindChecker()
         LangthonsCellTests().testLangthons()
         Rand7Tests().testRand7()
+        DeckShufflerTests().testShuffle()
     }
 }

@@ -60,6 +60,8 @@ open class Adder {
         let mask = Int.max & ((Int.max >> index) << index)
         
         return bit & mask
+        
+        //alternative: let mask = (1 << index) - 1; return bit ^ mask
     }
     
     private func setBitToOne(of bit: Int, until index: Int) -> Int {
