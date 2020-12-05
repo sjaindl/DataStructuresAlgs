@@ -81,6 +81,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         SumSwapperTests().testSumSwapper()
         ArrayPairsWithSumTests().testPairs()
         MissingNumberTests().testMissingNumber()
+        LettersAndNumbersLargestSubsequenceTests().testLargestSubsequence()
     }
     
     open func testLinkedList() throws {
