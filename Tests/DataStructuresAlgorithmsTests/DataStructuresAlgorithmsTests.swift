@@ -80,6 +80,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try T9KeyboardTests().testT9Keyboard()
         SumSwapperTests().testSumSwapper()
         ArrayPairsWithSumTests().testPairs()
+        MissingNumberTests().testMissingNumber()
     }
     
     open func testLinkedList() throws {
@@ -186,5 +187,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         LangthonsCellTests().testLangthons()
         Rand7Tests().testRand7()
         DeckShufflerTests().testShuffle()
+        RandomSetTests().testRandomSet()
     }
 }
