@@ -189,5 +189,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         Rand7Tests().testRand7()
         DeckShufflerTests().testShuffle()
         RandomSetTests().testRandomSet()
+        CountOfTwosTests().testTwosCount()
     }
 }
