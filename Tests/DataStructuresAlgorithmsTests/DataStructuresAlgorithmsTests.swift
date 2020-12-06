@@ -82,6 +82,8 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         ArrayPairsWithSumTests().testPairs()
         MissingNumberTests().testMissingNumber()
         LettersAndNumbersLargestSubsequenceTests().testLargestSubsequence()
+        try NamesMergerTests().testMerging1()
+        try NamesMergerTests().testMerging2()
     }
     
     open func testLinkedList() throws {

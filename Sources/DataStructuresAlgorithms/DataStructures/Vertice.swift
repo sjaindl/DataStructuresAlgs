@@ -20,6 +20,8 @@ open class Vertice: NSObject, Comparable {
     
     public var id: Int
     
+    public var name: String
+    
     //Needed for topological sort:
     public var inboundCount: Int = 0
     
@@ -40,7 +42,12 @@ open class Vertice: NSObject, Comparable {
     
     public var visited: Bool = false
     
-    public init(id: Int) {
+    public init(id: Int, name: String = "") {
         self.id = id
+        self.name = name
     }
+    
+//    public override static func == (lhs: Vertice, rhs: Vertice) -> Bool {
+//        return lhs.id == rhs.id
+//    }
 }
