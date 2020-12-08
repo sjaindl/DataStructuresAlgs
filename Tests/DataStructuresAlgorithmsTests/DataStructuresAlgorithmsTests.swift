@@ -84,6 +84,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         LettersAndNumbersLargestSubsequenceTests().testLargestSubsequence()
         try NamesMergerTests().testMerging1()
         try NamesMergerTests().testMerging2()
+        MajorityElementTests().testMajorityElement()
     }
     
     open func testLinkedList() throws {
@@ -158,6 +159,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         DivingBoardTests().testDivingBoard()
         DivingBoardTests().testDivingBoardFast()
         PondSizesTests().testPatterns()
+        CircusTowerTests().testMaxTower()
     }
     
     open func testSortingAndSearching() {
@@ -192,5 +194,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         DeckShufflerTests().testShuffle()
         RandomSetTests().testRandomSet()
         CountOfTwosTests().testTwosCount()
+        try KthMultipleTests().testMultiples()
     }
 }

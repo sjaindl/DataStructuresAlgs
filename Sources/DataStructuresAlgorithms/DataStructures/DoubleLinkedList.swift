@@ -46,10 +46,32 @@ open class DoubleLinkedList<T: Hashable> {
         count += 1
     }
     
+    open func removeFirst() throws -> Node<T>? {
+        if count == 0 {
+            throw MyError.runtimeError("Invalid call")
+        }
+        
+        let node = head
+        
+        if count == 1 {
+            head = nil; tail = nil
+        } else {
+            head = node?.next
+            head?.prev = nil
+            node?.next = nil
+        }
+        
+        count -= 1
+        
+        return node
+    }
+    
     open func removeLast() throws -> Node<T>? {
         if count == 0 {
             throw MyError.runtimeError("Invalid call")
         }
+        
+        let node = tail
         
         if count == 1 {
             head = nil; tail = nil
@@ -60,7 +82,7 @@ open class DoubleLinkedList<T: Hashable> {
         
         count -= 1
         
-        return tail
+        return node
     }
     
     open func removeByKey(val: Int) {
