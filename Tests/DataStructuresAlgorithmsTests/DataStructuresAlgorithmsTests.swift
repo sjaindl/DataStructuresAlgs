@@ -195,5 +195,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         RandomSetTests().testRandomSet()
         CountOfTwosTests().testTwosCount()
         try KthMultipleTests().testMultiples()
+        WordDistanceTests().testMinDistance()
     }
 }

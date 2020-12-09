@@ -18,21 +18,21 @@ open class CircusTower {
         let sorted = people.sorted(by: { $0.height < $1.height })
         var lookup: [CircusPeople: Int] = [:]
         
-        return towerSize(of: sorted, minWidht: -1, minHeight: -1, countSoFar: 0, lookup: &lookup)
+        return towerSize(of: sorted, minWidth: -1, minHeight: -1, countSoFar: 0, lookup: &lookup)
     }
     
-    private func towerSize(of people: [CircusPeople], minWidht: Double, minHeight: Double, countSoFar: Int, lookup: inout [CircusPeople: Int]) -> Int {
+    private func towerSize(of people: [CircusPeople], minWidth: Double, minHeight: Double, countSoFar: Int, lookup: inout [CircusPeople: Int]) -> Int {
         if people.isEmpty {
             return countSoFar
         }
         
         var maxCount = countSoFar
         for (index, guy) in people.enumerated() {
-            if guy.height > minHeight, guy.width > minWidht {
+            if guy.height > minHeight, guy.width > minWidth {
                 if let count = lookup[guy] {
                     maxCount = max(maxCount, countSoFar + count)
                 } else {
-                    let subCount = towerSize(of: Array(people[index + 1 ..< people.count]), minWidht: guy.width, minHeight: guy.height, countSoFar: countSoFar + 1, lookup: &lookup)
+                    let subCount = towerSize(of: Array(people[index + 1 ..< people.count]), minWidth: guy.width, minHeight: guy.height, countSoFar: countSoFar + 1, lookup: &lookup)
                     maxCount = max(maxCount, subCount)
                     lookup[guy] = subCount - countSoFar
                 }
