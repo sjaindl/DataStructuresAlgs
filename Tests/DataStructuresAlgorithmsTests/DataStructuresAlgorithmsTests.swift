@@ -96,6 +96,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try SumListsTests().testSumWithPadding()
         try SumListsTests().testSumWithExcessCarry()
         try LoopDetectorTests().testLoopDetector()
+        BinaryNodeConverterTests().testConvertion()
     }
     
     open func testStackAndQueue() throws {
