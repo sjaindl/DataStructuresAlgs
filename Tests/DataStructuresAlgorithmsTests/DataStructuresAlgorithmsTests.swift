@@ -85,6 +85,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try NamesMergerTests().testMerging1()
         try NamesMergerTests().testMerging2()
         MajorityElementTests().testMajorityElement()
+        SpaceInserterTests().testSpaceInserter()
     }
     
     open func testLinkedList() throws {
