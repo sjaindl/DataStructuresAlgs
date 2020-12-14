@@ -60,6 +60,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         UnionFindTests().testUnionFind()
         StringPermutationCheckerTests().testStringPermutations()
         LRUCacheTests().testCache()
+        try MaxHeapTests().testMaxHeap()
     }
     
     open func testStringAndArray() throws {
@@ -86,6 +87,8 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try NamesMergerTests().testMerging2()
         MajorityElementTests().testMajorityElement()
         SpaceInserterTests().testSpaceInserter()
+        MinElementsFinderTests().testFindMinElements()
+        try MinElementsFinderTests().testFindMinElementsSorted()
     }
     
     open func testLinkedList() throws {
