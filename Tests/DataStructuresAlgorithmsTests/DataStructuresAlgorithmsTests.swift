@@ -166,6 +166,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         DivingBoardTests().testDivingBoardFast()
         PondSizesTests().testPatterns()
         CircusTowerTests().testMaxTower()
+        AppointmentTimeOptimizerTests().testAppointments()
     }
     
     open func testSortingAndSearching() {
