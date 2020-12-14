@@ -185,6 +185,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         BestLineSearcherTests().testBestLineSearcher()
         SubSorterTests().testShortestSubsortSequence()
         ContiguousSumTests().testLargestContiguousSum()
+        MultiSearchTests().testMultiSearch()
     }
     
     open func testThreading() {
