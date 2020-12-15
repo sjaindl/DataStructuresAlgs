@@ -38,6 +38,7 @@ extension RedBlackTreeNode : Equatable {
 
 open class RedBlackTree<T: Comparable> {
     public var root: RedBlackTreeNode<T>?
+    public var count = 0
     
     public init() { }
     
@@ -47,6 +48,8 @@ open class RedBlackTree<T: Comparable> {
             root?.color = .black
             return
         }
+        
+        count += 1
         
         let node = bstInsert(value: value)
         

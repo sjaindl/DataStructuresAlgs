@@ -37,10 +37,13 @@ open class AVLTreeNode<T: Comparable> {
 
 open class AVLTree<T: Comparable> {
     public var root: AVLTreeNode<T>?
+    public var count = 0
     
     public init() { }
     
     open func insert(val: T) {
+        count += 1
+        
         if root == nil {
             root = AVLTreeNode(parent: nil, value: val, height: 1)
             return
@@ -66,6 +69,106 @@ open class AVLTree<T: Comparable> {
                 }
             }
         }
+    }
+    
+    @discardableResult
+    open func deleteTop() -> AVLTreeNode<T>? {
+        guard let value = root?.value else {
+            return nil
+        }
+        
+        count -= 1
+        
+        return delete(value: value, root: &root)
+    }
+    
+    private func delete(value: T, root: inout AVLTreeNode<T>?) -> AVLTreeNode<T>? {
+        // step 1: Standard BST deletion
+        guard let currentRoot = root else {
+            return nil
+        }
+        
+        if value < currentRoot.value {
+            // If the key to be deleted is smaller than the root's key, then it lies in left subtree
+            currentRoot.left = delete(value: value, root: &currentRoot.left)
+        } else if value > currentRoot.value {
+            // If the key to be deleted is greater than the root's key, then it lies in right subtree
+            currentRoot.right = delete(value: value, root: &currentRoot.right)
+        } else {
+            // if key is same as root's key, then this is the node to be deleted
+            
+            // node with only one child or no child
+            if currentRoot.left == nil || currentRoot.right == nil {
+                root = currentRoot.right == nil ? currentRoot.left : currentRoot.right //could be no or one child
+            } else {
+                // node with two children: Get the inorder successor (smallest in the right subtree)
+                let temp = min(from: currentRoot.right)!
+                
+                // Copy the inorder successor's data to this node
+                currentRoot.value = temp.value
+                  
+                // Delete the inorder successor
+                currentRoot.right = delete(value: temp.value, root: &currentRoot.right)
+            }
+        }
+        
+        // If the tree had only one node then return
+        if root == nil {
+            return nil
+        }
+        
+        // step 2: Update height of the current node
+        currentRoot.height = max(currentRoot.left?.height ?? 0, currentRoot.right?.height ?? 0) + 1
+          
+        // step 3: Get the balance factor of this node (to check whether this node became unbalanced)
+        let rootBalance = balance(of: currentRoot)
+  
+        // If this node becomes unbalanced, then there are 4 cases Left Left Case
+        if rootBalance > 1 && balance(of: currentRoot.left) >= 0 {
+            return rightRotateForDelete(y: currentRoot)
+        }
+  
+        // Left Right Case
+        if rootBalance > 1 && balance(of: currentRoot.left) < 0 {
+            currentRoot.left = leftRotateForDelete(x: currentRoot.left)
+            return rightRotateForDelete(y: currentRoot)
+        }
+  
+        // Right Right Case
+        if (rootBalance < -1 && balance(of: currentRoot.right) <= 0) {
+            return leftRotateForDelete(x: currentRoot)
+        }
+  
+        // Right Left Case
+        if (rootBalance < -1 && balance(of: currentRoot.right) > 0)
+        {
+            currentRoot.right = rightRotateForDelete(y: currentRoot.right);
+            return leftRotateForDelete(x: currentRoot)
+        }
+  
+        return root
+    }
+    
+    open func minNode() -> AVLTreeNode<T>? {
+        return min(from: root)
+    }
+    
+    open func min(from node: AVLTreeNode<T>?) -> AVLTreeNode<T>? {
+        var curNode = node
+        while curNode?.left != nil {
+            curNode = curNode?.left
+        }
+        
+        return curNode
+    }
+    
+    // Get Balance factor of node N
+    private func balance(of node: AVLTreeNode<T>?) -> Int {
+        guard let left = node?.left, let right = node?.right else {
+            return 0
+        }
+        
+        return left.height - right.height
     }
     
     private func increaseHeight(_ node: AVLTreeNode<T>) {
@@ -193,5 +296,37 @@ open class AVLTree<T: Comparable> {
         let nLeftHeight = n?.left?.height ?? 0
         let nRightHeight = n?.right?.height ?? 0
         n?.height = max(nLeftHeight, nRightHeight) + 1
+    }
+    
+    private func rightRotateForDelete(y: AVLTreeNode<T>?) -> AVLTreeNode<T>? {
+        let x = y?.left
+        let T2 = x?.right
+  
+        // Perform rotation
+        x?.right = y
+        y?.left = T2
+  
+        // Update heights
+        y?.height = max(y?.left?.height ?? 0, y?.right?.height ?? 0) + 1
+        x?.height = max(x?.left?.height ?? 0, x?.right?.height ?? 0) + 1
+  
+        // Return new root
+        return x
+    }
+    
+    private func leftRotateForDelete(x: AVLTreeNode<T>?) -> AVLTreeNode<T>? {
+        let y = x?.left
+        let T2 = y?.right
+  
+        // Perform rotation
+        y?.left = x
+        x?.right = T2
+  
+        // Update heights
+        x?.height = max(x?.left?.height ?? 0, x?.right?.height ?? 0) + 1
+        y?.height = max(y?.left?.height ?? 0, y?.right?.height ?? 0) + 1
+  
+        // Return new root
+        return y
     }
 }
