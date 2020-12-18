@@ -207,5 +207,6 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try KthMultipleTests().testMultiples()
         WordDistanceTests().testMinDistance()
         MissingTwoTests().testMissing()
+        HistogramVolumeTests().testVolume()
     }
 }
