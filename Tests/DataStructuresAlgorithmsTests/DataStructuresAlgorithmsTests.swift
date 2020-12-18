@@ -90,6 +90,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         MinElementsFinderTests().testFindMinElements()
         try MinElementsFinderTests().testFindMinElementsSorted()
         LongestWordFinderTests().testLongest()
+        WordTransformerTests().testTransform()
     }
     
     open func testLinkedList() throws {
