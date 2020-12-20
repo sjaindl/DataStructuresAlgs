@@ -91,6 +91,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try MinElementsFinderTests().testFindMinElementsSorted()
         LongestWordFinderTests().testLongest()
         WordTransformerTests().testTransform()
+        MaxBlackTests().testMaxBlack()
     }
     
     open func testLinkedList() throws {
