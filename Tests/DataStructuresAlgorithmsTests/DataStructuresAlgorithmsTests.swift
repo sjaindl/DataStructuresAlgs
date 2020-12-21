@@ -92,6 +92,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         LongestWordFinderTests().testLongest()
         WordTransformerTests().testTransform()
         MaxBlackTests().testMaxBlack()
+        MaxMatrixSumTests().testMaxSum()
     }
     
     open func testLinkedList() throws {

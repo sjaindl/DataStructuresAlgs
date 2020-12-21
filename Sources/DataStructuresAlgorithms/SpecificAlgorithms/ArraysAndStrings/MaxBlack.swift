@@ -10,7 +10,7 @@ import Foundation
 open class MaxBlack {
     public init() { }
     
-    open func maxBorder(of square: BlackWhiteSquare) -> BlackWhiteSubSquare? {
+    open func maxBorder(of square: BlackWhiteSquare) -> SubSquare? {
         var len = square.cells.count
         let count = square.cells.count
         let blackRowCounts = blackRightRowCounts(of: square)
@@ -19,7 +19,7 @@ open class MaxBlack {
         while len > 0 {
             for row in 0 ... count - len {
                 for col in 0 ... count - len {
-                    let cell = BlackWhiteSubSquare(topLeft: CellIndex(row: row, col: col), bottomRight: CellIndex(row: row + len - 1, col: col + len - 1))
+                    let cell = SubSquare(topLeft: CellIndex(row: row, col: col), bottomRight: CellIndex(row: row + len - 1, col: col + len - 1))
                     if isAllBlackBorder(square: square, cell: cell, blackRowCounts: blackRowCounts, blackColCounts: blackColCounts, len: len) {
                         return cell
                     }
@@ -76,7 +76,7 @@ open class MaxBlack {
         return colBottomCounts
     }
     
-    private func isAllBlackBorder(square: BlackWhiteSquare, cell: BlackWhiteSubSquare, blackRowCounts: [CellIndex: Int], blackColCounts: [CellIndex: Int], len: Int) -> Bool {
+    private func isAllBlackBorder(square: BlackWhiteSquare, cell: SubSquare, blackRowCounts: [CellIndex: Int], blackColCounts: [CellIndex: Int], len: Int) -> Bool {
         let minRow = cell.topLeft.row
         let maxRow = cell.bottomRight.row
         let minCol = cell.topLeft.col
@@ -109,7 +109,7 @@ open class MaxBlack {
     }
     
     //Given an NxN matrix of black & white cells, return the max sized black-only square (in O(n^4))
-    open func maxBlackFilled(of square: BlackWhiteSquare) -> BlackWhiteSubSquare? {
+    open func maxBlackFilled(of square: BlackWhiteSquare) -> SubSquare? {
         let count = square.cells.count
         for size in sizes(count: count) {
             let rowSize = size.rowSize
@@ -118,7 +118,7 @@ open class MaxBlack {
             for row in 0 ... count - rowSize {
                 for col in 0 ... count - colSize {
                     //debugPrint("\(row)_\(col) - \(row + rowSize - 1)_\(col + colSize - 1)")
-                    let cell = BlackWhiteSubSquare(topLeft: CellIndex(row: row, col: col), bottomRight: CellIndex(row: row + rowSize - 1, col: col + colSize - 1))
+                    let cell = SubSquare(topLeft: CellIndex(row: row, col: col), bottomRight: CellIndex(row: row + rowSize - 1, col: col + colSize - 1))
                     if isAllBlack(square: square, cell: cell) {
                         return cell
                     }
@@ -129,7 +129,7 @@ open class MaxBlack {
         return nil
     }
     
-    private func isAllBlack(square: BlackWhiteSquare, cell: BlackWhiteSubSquare) -> Bool {
+    private func isAllBlack(square: BlackWhiteSquare, cell: SubSquare) -> Bool {
         for row in cell.rowRange {
             for col in cell.colRange {
                 if square.cells[row][col].color == .white {
@@ -160,15 +160,15 @@ open class MaxBlack {
 }
 
 public struct BlackWhiteSquare {
-    let cells: [[BlackWhiteSquareCell]]
+    let cells: [[SquareCell]]
 }
 
 
-public struct BlackWhiteSquareCell {
-    let color: BlackWhiteSquareCellColor
+public struct SquareCell {
+    let color: SquareCellColor
 }
 
-public struct BlackWhiteSubSquare: Equatable {
+public struct SubRectangle: Equatable, Hashable {
     let topLeft: CellIndex
     let bottomRight: CellIndex
     
@@ -189,7 +189,9 @@ public struct BlackWhiteSubSquare: Equatable {
     }
 }
 
-public enum BlackWhiteSquareCellColor {
+public typealias SubSquare = SubRectangle
+
+public enum SquareCellColor {
     case black
     case white
 }

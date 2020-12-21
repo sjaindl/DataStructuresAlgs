@@ -25,7 +25,7 @@ open class MaxBlackTests: XCTestCase {
         var square = BlackWhiteSquare(cells: cells)
         var max = maxBlacker.maxBorder(of: square)
 
-        XCTAssertEqual(max, BlackWhiteSubSquare(topLeft: CellIndex(row: 0, col: 1), bottomRight: CellIndex(row: 3, col: 4)))
+        XCTAssertEqual(max, SubSquare(topLeft: CellIndex(row: 0, col: 1), bottomRight: CellIndex(row: 3, col: 4)))
 
         cells = [
             [white(), black(), black(), black(), black()],
@@ -38,7 +38,7 @@ open class MaxBlackTests: XCTestCase {
         square = BlackWhiteSquare(cells: cells)
         max = maxBlacker.maxBorder(of: square)
 
-        XCTAssertEqual(max, BlackWhiteSubSquare(topLeft: CellIndex(row: 0, col: 1), bottomRight: CellIndex(row: 2, col: 3)))
+        XCTAssertEqual(max, SubSquare(topLeft: CellIndex(row: 0, col: 1), bottomRight: CellIndex(row: 2, col: 3)))
 
         cells = [
             [white(), white(), white(), white(), white()],
@@ -51,7 +51,7 @@ open class MaxBlackTests: XCTestCase {
         square = BlackWhiteSquare(cells: cells)
         max = maxBlacker.maxBorder(of: square)
 
-        XCTAssertEqual(max, BlackWhiteSubSquare(topLeft: CellIndex(row: 2, col: 2), bottomRight: CellIndex(row: 3, col: 3)))
+        XCTAssertEqual(max, SubSquare(topLeft: CellIndex(row: 2, col: 2), bottomRight: CellIndex(row: 3, col: 3)))
 
         cells = [
             [white(), white(), white(), white(), white()],
@@ -64,7 +64,7 @@ open class MaxBlackTests: XCTestCase {
         square = BlackWhiteSquare(cells: cells)
         max = maxBlacker.maxBorder(of: square)
 
-        XCTAssertEqual(max, BlackWhiteSubSquare(topLeft: CellIndex(row: 4, col: 4), bottomRight: CellIndex(row: 4, col: 4)))
+        XCTAssertEqual(max, SubSquare(topLeft: CellIndex(row: 4, col: 4), bottomRight: CellIndex(row: 4, col: 4)))
         
         cells = [
             [white(), white(), white(), white(), white()],
@@ -94,7 +94,7 @@ open class MaxBlackTests: XCTestCase {
         var square = BlackWhiteSquare(cells: cells)
         var max = maxBlacker.maxBlackFilled(of: square)
 
-        XCTAssertEqual(max, BlackWhiteSubSquare(topLeft: CellIndex(row: 0, col: 1), bottomRight: CellIndex(row: 4, col: 4)))
+        XCTAssertEqual(max, SubSquare(topLeft: CellIndex(row: 0, col: 1), bottomRight: CellIndex(row: 4, col: 4)))
 
         cells = [
             [white(), black(), black(), black(), black()],
@@ -107,7 +107,7 @@ open class MaxBlackTests: XCTestCase {
         square = BlackWhiteSquare(cells: cells)
         max = maxBlacker.maxBlackFilled(of: square)
 
-        XCTAssertEqual(max, BlackWhiteSubSquare(topLeft: CellIndex(row: 0, col: 1), bottomRight: CellIndex(row: 4, col: 3)))
+        XCTAssertEqual(max, SubSquare(topLeft: CellIndex(row: 0, col: 1), bottomRight: CellIndex(row: 4, col: 3)))
 
         cells = [
             [white(), white(), white(), white(), white()],
@@ -120,7 +120,7 @@ open class MaxBlackTests: XCTestCase {
         square = BlackWhiteSquare(cells: cells)
         max = maxBlacker.maxBlackFilled(of: square)
 
-        XCTAssertEqual(max, BlackWhiteSubSquare(topLeft: CellIndex(row: 2, col: 2), bottomRight: CellIndex(row: 3, col: 3)))
+        XCTAssertEqual(max, SubSquare(topLeft: CellIndex(row: 2, col: 2), bottomRight: CellIndex(row: 3, col: 3)))
 
         cells = [
             [white(), white(), white(), white(), white()],
@@ -133,7 +133,7 @@ open class MaxBlackTests: XCTestCase {
         square = BlackWhiteSquare(cells: cells)
         max = maxBlacker.maxBlackFilled(of: square)
 
-        XCTAssertEqual(max, BlackWhiteSubSquare(topLeft: CellIndex(row: 4, col: 4), bottomRight: CellIndex(row: 4, col: 4)))
+        XCTAssertEqual(max, SubSquare(topLeft: CellIndex(row: 4, col: 4), bottomRight: CellIndex(row: 4, col: 4)))
         
         cells = [
             [white(), white(), white(), white(), white()],
@@ -149,11 +149,11 @@ open class MaxBlackTests: XCTestCase {
         XCTAssertEqual(max, nil)
     }
     
-    private func black() -> BlackWhiteSquareCell {
-        return BlackWhiteSquareCell(color: .black)
+    private func black() -> SquareCell {
+        return SquareCell(color: .black)
     }
     
-    private func white() -> BlackWhiteSquareCell {
-        return BlackWhiteSquareCell(color: .white)
+    private func white() -> SquareCell {
+        return SquareCell(color: .white)
     }
 }
