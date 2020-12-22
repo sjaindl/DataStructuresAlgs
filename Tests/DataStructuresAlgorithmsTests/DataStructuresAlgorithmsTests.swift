@@ -93,6 +93,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         WordTransformerTests().testTransform()
         MaxBlackTests().testMaxBlack()
         MaxMatrixSumTests().testMaxSum()
+        WordRectangleTests().testWordRectangle()
     }
     
     open func testLinkedList() throws {
