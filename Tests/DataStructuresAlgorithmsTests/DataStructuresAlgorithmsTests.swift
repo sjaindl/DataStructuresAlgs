@@ -94,6 +94,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         MaxBlackTests().testMaxBlack()
         MaxMatrixSumTests().testMaxSum()
         WordRectangleTests().testWordRectangle()
+        SparseMatrixTests().testSparseMatrix()
     }
     
     open func testLinkedList() throws {

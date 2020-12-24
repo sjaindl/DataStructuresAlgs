@@ -53,7 +53,7 @@ open class WordRectangle {
                 var colWord = [Character]()
                 for rowIndex in 0 ..< rowLen {
                     let row = Array(rows[rowIndex])
-                    let char: Character = row[colIndex]
+                    let char = row[colIndex]
                     colWord.append(char)
                 }
                 if !availableRowWords.contains(colWord) {
