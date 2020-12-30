@@ -28,5 +28,10 @@ open class RotatedArraySearchTests: XCTestCase {
         XCTAssertEqual(searcher.search(array: array, searched: 2) , 0)
         XCTAssertEqual(searcher.search(array: array, searched: 3) , 1)
         XCTAssertEqual(searcher.search(array: array, searched: 4) , 2)
+        
+        array = [1, 2, 3, 4, 5, 6, 7, 8]
+        XCTAssertEqual(searcher.search(array: array, searched: 1) , 0)
+        XCTAssertEqual(searcher.search(array: array, searched: 3) , 2)
+        XCTAssertEqual(searcher.search(array: array, searched: 8) , 7)
     }
 }
