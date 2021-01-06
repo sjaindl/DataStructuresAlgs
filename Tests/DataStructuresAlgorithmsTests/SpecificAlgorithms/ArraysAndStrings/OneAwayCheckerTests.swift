@@ -1,5 +1,5 @@
 //
-//  PalindromePermutationTests.swift
+//  OneAwayCheckerTests.swift
 //  DataStructuresAlgs
 //
 //  Created by Stefan Jaindl on 14.05.20.

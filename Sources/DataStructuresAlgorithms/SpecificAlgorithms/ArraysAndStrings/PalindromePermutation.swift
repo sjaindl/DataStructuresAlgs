@@ -36,15 +36,11 @@ open class PalindromePermutation {
             }
         }
         
-        if oddCounter <= 1 {
-            //For odd strings there must be exactly 1 odd char (center char) and for even strings no odd char
-            return true
-        }
+        //For odd strings there must be exactly 1 odd char (center char) and for even strings no odd char
+        return oddCounter <= 1
         
         //Alternative with bit manipulation - It's a palindrome permuation, if:
         //1. no bit is set (= no unique chars)  --> bitvector Int == 0
         //2. or not more than 1 bit is set (middle one for odd strings) --> bitVector Int at pos - 1. pos - 1 & pos
-        
-        return false
     }
 }

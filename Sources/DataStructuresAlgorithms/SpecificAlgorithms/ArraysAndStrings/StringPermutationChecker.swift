@@ -15,7 +15,7 @@ open class StringPermuationChecker {
     }
     
     open func isPermutationOfByCharArray(first: String, second: String) -> Bool {
-        if first.count != second.count {
+        guard first.count == second.count else {
             //Permutations must have same size
             return false
         }
