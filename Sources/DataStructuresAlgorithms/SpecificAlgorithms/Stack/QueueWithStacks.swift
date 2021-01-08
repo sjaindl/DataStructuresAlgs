@@ -32,8 +32,10 @@ open class QueueWithStacks<T: Comparable & Hashable> {
     }
     
     private func moveElements(from: Stack<T>, to: Stack<T>) {
-        while !from.isEmpty(), let node = try? from.pop() {
-            to.push(val: node)
+        if to.isEmpty() {
+            while !from.isEmpty(), let node = try? from.pop() {
+                to.push(val: node)
+            }
         }
     }
 }
