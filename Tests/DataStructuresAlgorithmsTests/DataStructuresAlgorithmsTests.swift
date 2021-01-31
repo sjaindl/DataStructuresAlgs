@@ -107,6 +107,9 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         try SumListsTests().testSumWithExcessCarry()
         try LoopDetectorTests().testLoopDetector()
         BinaryNodeConverterTests().testConvertion()
+        ListFlattenerTests().testFlatten()
+        ListFlattenerTests().testFlattenAlreadyFlat()
+        ListFlattenerTests().testFlattenMultipleChilds()
     }
     
     open func testStackAndQueue() throws {
