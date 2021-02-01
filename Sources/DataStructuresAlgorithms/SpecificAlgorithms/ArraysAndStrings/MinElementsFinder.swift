@@ -114,4 +114,45 @@ open class MinElementsFinder {
         
         return middle
     }
+    
+    open func findMinElementsNonUnique(numberOfElements: Int, array: [Int]) -> [Int] {
+        //1. safety checks:
+        guard !array.isEmpty, numberOfElements <= array.count, numberOfElements > 0 else {
+            return []
+        }
+        
+        //e.g. min 3 of array: [3, 6, 1, 2, 5, 3]) = [1, 2, 3] (any order)
+        
+        var minIndex = 0
+        var maxIndex = array.count - 1
+        //2. choose random pivot + partition
+        while minIndex < maxIndex {
+            let pivot = medianOfThree(array: array, min: minIndex, max: maxIndex)
+            let index = partitionNonUnique(array: &array, min: minIndex, max: maxIndex, pivot: pivot)
+        }
+        
+    }
+    
+    private func partitionNonUnique(array: inout [Int], min: Int, max: Int, pivot: Int) -> Int {
+        var left = min
+        var mid = min
+        var right = max
+        
+        //e.g. [3, 6, 1, 2, 5, 3], pivot 5 --> [3, 3, 1, 2, 5, 6] -> return 3 (4 - 1)
+        //e.g. [3, 6, 1, 2, 5, 3], pivot 3 --> [3, 3, 1, 2, 5, 6] -> return 3 (4 - 1)
+        while right > mid {
+            if array[mid] == pivot {
+                mid += 1
+            } else if array[mid] > pivot {
+                array.swapAt(mid, right)
+                right -= 1
+            } else { //array[mid] < pivot
+                array.swapAt(left, mid)
+                left += 1
+                mid += 1
+            }
+        }
+        
+        return mid - 1
+    }
 }
