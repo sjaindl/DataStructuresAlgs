@@ -24,7 +24,7 @@ open class SimpleTreeNode<T: Comparable> {
         self.numElements = numElements
     }
     
-    public func isLeaveNode() -> Bool {
+    public func isLeafNode() -> Bool {
         return left == nil && right == nil
     }
 }

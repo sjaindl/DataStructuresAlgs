@@ -152,7 +152,6 @@ open class RandomBinarySearchTree<T: Comparable> {
         var currentNode: SimpleTreeNode<T>? = root
         
         while let current = currentNode {
-            
             var rootId = 0
             if let left = current.left {
                 rootId += left.numElements

@@ -123,7 +123,10 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
     }
     
     open func testTreeAndGraph() throws {
-        PathCheckerTests().testPathChecker()
+        PathCheckerTests().testPathCheckerConnected()
+        PathCheckerTests().testPathCheckerUnconnected()
+        PathCheckerTests().testPathCheckerBidirectionalConnected()
+        PathCheckerTests().testPathCheckerBidirectionalUnconnected()
         try MinTreeTests().testMinTree()
         ListOfDepthsTests().testListOfDepths()
         BalancedTreeCheckerTests().testBalancedTree()

@@ -43,7 +43,7 @@ open class BSTValidator<T: Comparable> {
             return rightResult
         }
         
-        if !root.isLeaveNode() && !(root.value >= leftResult.max && root.value < rightResult.min) {
+        if !root.isLeafNode() && !(root.value >= leftResult.max && root.value < rightResult.min) {
             leftResult.valid = false
             return leftResult
         }

@@ -12,14 +12,40 @@ import XCTest
 
 open class PathCheckerTests: XCTestCase {
     
-    open func testPathChecker() {
+    open func testPathCheckerConnected() {
         let from = Vertice(id: 0)
         let to = Vertice(id: 3)
         let unconnected = Vertice(id: 6)
         let graph = setupTestGraph(from: from, to: to, unconnected: unconnected)
         
         XCTAssertTrue(graph.pathExists(from: from, to: to))
+    }
+    
+    open func testPathCheckerUnconnected() {
+        let from = Vertice(id: 0)
+        let to = Vertice(id: 3)
+        let unconnected = Vertice(id: 6)
+        let graph = setupTestGraph(from: from, to: to, unconnected: unconnected)
+        
         XCTAssertFalse(graph.pathExists(from: from, to: unconnected))
+    }
+    
+    open func testPathCheckerBidirectionalConnected() {
+        let from = Vertice(id: 0)
+        let to = Vertice(id: 3)
+        let unconnected = Vertice(id: 6)
+        let graph = setupTestGraph(from: from, to: to, unconnected: unconnected)
+        
+        XCTAssertTrue(graph.pathExistsByBidirectionalSearch(from: from, to: to))
+    }
+    
+    open func testPathCheckerBidirectionalUnconnected() {
+        let from = Vertice(id: 0)
+        let to = Vertice(id: 3)
+        let unconnected = Vertice(id: 6)
+        let graph = setupTestGraph(from: from, to: to, unconnected: unconnected)
+        
+        XCTAssertFalse(graph.pathExistsByBidirectionalSearch(from: from, to: unconnected))
     }
     
     private func setupTestGraph(from: Vertice, to: Vertice, unconnected: Vertice) -> DirectedGraph {

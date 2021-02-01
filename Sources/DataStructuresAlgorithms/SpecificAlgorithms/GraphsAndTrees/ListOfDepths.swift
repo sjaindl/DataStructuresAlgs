@@ -13,18 +13,8 @@ open class ListOfDepths<T: Comparable> {
     
     open func listOfDepths(root: SimpleTreeNode<T>) -> Array<SingleLinkedList<T>> {
         var resultList = Array<SingleLinkedList<T>>()
-        let rootList = SingleLinkedList<T>()
         
-        rootList.add(node: SingleNode(val: root.value))
-        resultList.append(rootList)
-        
-        if let left = root.left {
-            listOfDepths(resultList: &resultList, depth: 2, treeNode: left)
-        }
-        
-        if let right = root.right {
-            listOfDepths(resultList: &resultList, depth: 2, treeNode: right)
-        }
+        listOfDepths(resultList: &resultList, depth: 1, treeNode: root)
         
         return resultList
     }

@@ -22,7 +22,9 @@ open class PathSum {
             return 0
         }
         
-        return traverse(root: root, sums: &sums, offset: offset, runningSum: 0, valueToMatch: valueToMatch) + sumUp(root: root.left, sums: &sums, offset: offset + root.value, valueToMatch: valueToMatch) + sumUp(root: root.right, sums: &sums, offset: offset + root.value, valueToMatch: valueToMatch)
+        return traverse(root: root, sums: &sums, offset: offset, runningSum: 0, valueToMatch: valueToMatch)
+            + sumUp(root: root.left, sums: &sums, offset: offset + root.value, valueToMatch: valueToMatch)
+            + sumUp(root: root.right, sums: &sums, offset: offset + root.value, valueToMatch: valueToMatch)
     }
     
     //Traverse down from a given root
@@ -33,7 +35,7 @@ open class PathSum {
         
         let currentSum = runningSum + root.value
         
-        //Sums maps from running sum to node count (that sum to that value)
+        //Sums map from running sum to node count (that sum to that value)
         if let sumForCount = sums[currentSum] {
             sums[currentSum] = sumForCount + 1
         } else {
@@ -42,6 +44,8 @@ open class PathSum {
         
         let matching = currentSum == valueToMatch ? 1 : 0
         
-        return matching + traverse(root: root.left, sums: &sums, offset: offset, runningSum: currentSum, valueToMatch: valueToMatch) + traverse(root: root.right, sums: &sums, offset: offset, runningSum: currentSum, valueToMatch: valueToMatch)
+        return matching
+            + traverse(root: root.left, sums: &sums, offset: offset, runningSum: currentSum, valueToMatch: valueToMatch)
+            + traverse(root: root.right, sums: &sums, offset: offset, runningSum: currentSum, valueToMatch: valueToMatch)
     }
 }

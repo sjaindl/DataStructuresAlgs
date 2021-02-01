@@ -55,15 +55,17 @@ open class MapReduceWordCount {
     }
     
     open func reduce(partialResults: [Result]) {
-        if partialResults.count > 0 {
-            let key = partialResults[0].key
-            var sum = 0
-            
-            for partialResult in partialResults {
-                sum += partialResult.value
-            }
-            
-            finalResults.append(Result(key: key, value: sum))
+        guard !partialResults.isEmpty else {
+            return
         }
+        
+        let key = partialResults[0].key
+        var sum = 0
+        
+        for partialResult in partialResults {
+            sum += partialResult.value
+        }
+        
+        finalResults.append(Result(key: key, value: sum))
     }
 }
