@@ -89,6 +89,7 @@ open class DataStructuresAlgorithmsTests: XCTestCase {
         SpaceInserterTests().testSpaceInserter()
         MinElementsFinderTests().testFindMinElements()
         try MinElementsFinderTests().testFindMinElementsSorted()
+        MinElementsFinderTests().testFindMinElementsNonUnique()
         LongestWordFinderTests().testLongest()
         WordTransformerTests().testTransform()
         MaxBlackTests().testMaxBlack()

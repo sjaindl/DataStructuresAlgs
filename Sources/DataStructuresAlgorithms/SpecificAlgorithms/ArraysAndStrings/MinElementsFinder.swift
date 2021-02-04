@@ -125,15 +125,35 @@ open class MinElementsFinder {
         
         var minIndex = 0
         var maxIndex = array.count - 1
+        var searchedArray = array
+        
         //2. choose random pivot + partition
         while minIndex < maxIndex {
-            let pivot = medianOfThree(array: array, min: minIndex, max: maxIndex)
-            let index = partitionNonUnique(array: &array, min: minIndex, max: maxIndex, pivot: pivot)
+            let pivot = medianOfThree(array: searchedArray, min: minIndex, max: maxIndex)
+            let partitionResult = partitionNonUnique(array: &searchedArray, min: minIndex, max: maxIndex, pivot: pivot)
+            
+            if numberOfElements >= partitionResult.midIndex && numberOfElements < partitionResult.rightIndex {
+                break //element is at treshold
+            } else if numberOfElements < partitionResult.leftIndex {
+                //search left
+                maxIndex = partitionResult.leftIndex
+            } else {
+                //search right
+                minIndex = partitionResult.rightIndex
+            }
         }
         
+        var minElements: [Int] = []
+        var index = 0
+        while index < numberOfElements {
+            minElements.append(searchedArray[index])
+            index += 1
+        }
+        
+        return minElements
     }
     
-    private func partitionNonUnique(array: inout [Int], min: Int, max: Int, pivot: Int) -> Int {
+    private func partitionNonUnique(array: inout [Int], min: Int, max: Int, pivot: Int) -> PartitionResult {
         var left = min
         var mid = min
         var right = max
@@ -153,6 +173,14 @@ open class MinElementsFinder {
             }
         }
         
-        return mid - 1
+        array.swapAt(min, mid)
+        
+        return PartitionResult(leftIndex: left, midIndex: mid, rightIndex: Swift.min(max, right + 1))
+    }
+    
+    struct PartitionResult {
+        let leftIndex: Int
+        let midIndex: Int
+        let rightIndex: Int
     }
 }
